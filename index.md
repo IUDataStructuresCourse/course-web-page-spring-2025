@@ -63,32 +63,26 @@ Time    | Monday            | Tuesday    | Wednesday    | Thursday    | Friday
 **Schedule**
 
 Day     | Lecture Topic                                             | Reading Due  | Assignments and Due Dates | Link
-<!------  Week 1  ----------------------------------------------------------------------------------------------------------->
 Jan. 14 | [Introduction](./lectures/introduction.md)                |              |         |
 Jan. 16 | [Arrays, Rotation, Testing](./lectures/array-rotation.md) | Ch. 1        |         |
 Jan. 16 or 17 |                                                     |              | [Lab: Array Search and Testing](./Search) | TBD
 Jan. 20 |                                                           |              | Lab Array Search due |
-<!------  Week 2  ----------------------------------------------------------------------------------------------------------->
 Jan. 21 | [Algorithm Analysis](./lectures/algo-analysis.md)         | Ch. 2        | 
 Jan. 23 | [Algorithm Analysis, continued](./lectures/more-algo-analysis.md) 
 Jan. 23 or 24 |                                                     |              | [Project: FloodIt!](./flood-it)
 Jan. 27 |                                                           |              | Project FloodIt! due |
-<!------  Week 3  ----------------------------------------------------------------------------------------------------------->
 Jan. 28 | [Programming in Deduce with Linked Lists](./deduce-programming.md)
 Jan. 30 | Proving Theorems in Deduce                                |              | 
 Jan. 30 or 31 |                                                     |              | [Lab: Linked Lists in Deduce](./LabDeduceProg)
 Feb. 3  |                                                           |              | Lab Linked Lists in Deduce due
-<!------  Week 4  ----------------------------------------------------------------------------------------------------------->
 Feb. 4  | Proof by Induction on Linked Lists                        |              | [Proof Exercises](./ProofExercises)
 Feb. 6  | Discovering and Generalizing Lemmas
 Feb. 6 or 7 |                                                       |              | [Lab: List Search](./ListSearch)
 Feb. 10 |                                                           |              | Lab due
-<!------  Week 5  ----------------------------------------------------------------------------------------------------------->
 Feb. 11 | Binary Trees
 Feb. 13 |                                                           |              | [Proof: reverse of reverse]()
 Feb. 13 or 14 |                                                     |              | [Lab: Binary Tree Search](  )
 Feb. 17 |
-<!------  Week 6  ----------------------------------------------------------------------------------------------------------->
 Feb. 18 | Insertion Sort
 Feb. 20 | Merge Sort
 Feb. 20 or 21 |                                                     |              | [Lab: Insertion Sort](  )

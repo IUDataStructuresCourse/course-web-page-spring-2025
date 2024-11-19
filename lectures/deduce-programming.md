@@ -80,7 +80,7 @@ that represents the sequence `7, 4, 5`.
 ```
    ___      ___      ___
   | 7 |--> | 4 |--> | 5 |-/
-  -----    -----    -----
+   ---      ---      ---
 ```
 
 
@@ -206,6 +206,7 @@ print area(3, 4)
 
 The output is `12`.
 
+<!--
 ## Functions Returning Functions: nth element of list
 
 The `nth` function retrieves the element at position `i` in list
@@ -243,3 +244,4 @@ element. We could have instead made `nth` take three parameters and
 directly return an element. We made this design choice because it
 means we can use `nth` with several other functions and theorems that
 work with functions of the type `fn Nat -> T`.
+-->
