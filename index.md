@@ -71,7 +71,7 @@ Jan. 21 | [Algorithm Analysis](./lectures/algo-analysis.md)         | Ch. 2     
 Jan. 23 | [Algorithm Analysis, continued](./lectures/more-algo-analysis.md) 
 Jan. 23 or 24 |                                                     |              | [Project: FloodIt!](./flood-it)
 Jan. 27 |                                                           |              | Project FloodIt! due |
-Jan. 28 | [Programming in Deduce with Linked Lists](./deduce-programming.md)
+Jan. 28 | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md)
 Jan. 30 | Proving Theorems in Deduce                                |              | 
 Jan. 30 or 31 |                                                     |              | [Lab: Linked Lists in Deduce](./LabDeduceProg)
 Feb. 3  |                                                           |              | Lab Linked Lists in Deduce due
