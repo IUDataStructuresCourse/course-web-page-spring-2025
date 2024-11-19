@@ -1,3 +1,7 @@
+DEDUCE_DIR=/Users/jsiek/deduce
+LIB_DIR=$(DEDUCE_DIR)/lib
+PYTHON=/opt/homebrew/bin/python3.11
+
 %.png: %.dot
 	dot $< -Tpng > $@
 
@@ -56,3 +60,8 @@ BellmanFord:
 	~/bin/lmt lecture-notes.md
 	javac src/BellmanFord.java
 	cd src ; java -ea -cp . BellmanFord
+
+induction_list:
+	cat InductionOnLists.md | sed 's/deduce\^/deduce /' > InductionOnLists.en
+	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
+	$(PYTHON) $(DEDUCE_DIR)/deduce.py InductionOnLists.pf --dir $(LIB_DIR)
