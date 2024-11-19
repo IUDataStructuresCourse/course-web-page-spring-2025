@@ -75,9 +75,9 @@ Jan. 28 | [Programming in Deduce with Linked Lists](./deduce-programming.md)
 Jan. 30 | Proving Theorems in Deduce                                |              | 
 Jan. 30 or 31 |                                                     |              | [Lab: Linked Lists in Deduce](./LabDeduceProg)
 Feb. 3  |                                                           |              | Lab Linked Lists in Deduce due
-Feb. 4  | Proof by Induction on Linked Lists                        |              | [Proof Exercises](./ProofExercises)
+Feb. 4  | Proof by Induction on Linked Lists                        |              | [Proof Exercises](./ProofExercises.md)
 Feb. 6  | Discovering and Generalizing Lemmas
-Feb. 6 or 7 |                                                       |              | [Lab: List Search](./ListSearch)
+Feb. 6 or 7 |                                                       |              | [Lab: List Search](./ListSearch.md)
 Feb. 10 |                                                           |              | Lab due
 Feb. 11 | Binary Trees
 Feb. 13 |                                                           |              | [Proof: reverse of reverse]()
