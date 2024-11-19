@@ -62,17 +62,39 @@ Time    | Monday            | Tuesday    | Wednesday    | Thursday    | Friday
 
 **Schedule**
 
-TBD
+Day     | Lecture Topic                                             | Reading Due  | Assignments and Due Dates | Link
+<!------  Week 1  ----------------------------------------------------------------------------------------------------------->
+Jan. 14 | [Introduction](./lectures/introduction.md)                |              |         |
+Jan. 16 | [Arrays, Rotation, Testing](./lectures/array-rotation.md) | Ch. 1        |         |
+Jan. 16 or 17 |                                                     |              | [Lab: Array Search and Testing](./Search) | TBD
+Jan. 20 |                                                           |              | Lab Array Search due |
+<!------  Week 2  ----------------------------------------------------------------------------------------------------------->
+Jan. 21 | [Algorithm Analysis](./lectures/algo-analysis.md)         | Ch. 2        | 
+Jan. 23 | [Algorithm Analysis, continued](./lectures/more-algo-analysis.md) 
+Jan. 23 or 24 |                                                     |              | [Project: FloodIt!](./flood-it)
+Jan. 27 |                                                           |              | Project FloodIt! due |
+<!------  Week 3  ----------------------------------------------------------------------------------------------------------->
+Jan. 28 | [Programming in Deduce with Linked Lists](./deduce-programming.md)
+Jan. 30 | Proving Theorems in Deduce                                |              | 
+Jan. 30 or 31 |                                                     |              | [Lab: Linked Lists in Deduce](./LabDeduceProg)
+Feb. 3  |                                                           |              | Lab Linked Lists in Deduce due
+<!------  Week 4  ----------------------------------------------------------------------------------------------------------->
+Feb. 4  | Proof by Induction on Linked Lists                        |              | [Proof Exercises](./ProofExercises)
+Feb. 6  | Discovering and Generalizing Lemmas
+Feb. 6 or 7 |                                                       |              | [Lab: List Search](./ListSearch)
+Feb. 10 |                                                           |              | Lab due
+<!------  Week 5  ----------------------------------------------------------------------------------------------------------->
+Feb. 11 | Binary Trees
+Feb. 13 |                                                           |              | [Proof: reverse of reverse]()
+Feb. 13 or 14 |                                                     |              | [Lab: Binary Tree Search](  )
+Feb. 17 |
+<!------  Week 6  ----------------------------------------------------------------------------------------------------------->
+Feb. 18 | Insertion Sort
+Feb. 20 | Merge Sort
+Feb. 20 or 21 |                                                     |              | [Lab: Insertion Sort](  )
+Feb. 24 |
 
 <!--
-Day     | Lecture Topic                                             | Reading Due  | Assignments and Due Dates | Link
-Jan. 9 | [Introduction](./lectures/introduction.md)                 |              |         |
-Jan. 11 | [Arrays, Rotation, Testing](./lectures/array-rotation.md) | Ch. 1        |         |
-Jan. 11 or 12 |                                                     |              | No lab
-Jan. 16 | [Algorithm Analysis](./lectures/algo-analysis.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_uluqvhj2))  | Ch. 2        | 
-Jan. 18 | [Algorithm Analysis, continued](./lectures/more-algo-analysis.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_cvtootj1))
-Jan. 18 or 19 |                                                     |              | [Lab 1: Array Search and Testing](./lab1) | [code](https://autograder.luddy.indiana.edu/web/project/927), [test](https://autograder.luddy.indiana.edu/web/project/941)
-Jan. 22 | | | Lab 1 due |
 Jan. 23 | [Linked Lists and Interfaces](./lectures/linked-lists.md) | Ch. 3 sec. 1-5 |
 Jan. 25 | [More Interfaces, Binary Trees](./lectures/binary-trees.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_m7ud77ew)) | Ch. 3 sec. 6-7,<br> Ch. 4 sec. 1-2
 Jan. 25 or 26 | | | Lab: work on <br> [Project 1: Flood It](./proj1-flood-it), <br> [Quiz 1](https://iu.instructure.com/courses/2201400/quizzes/4164125) | [code](https://autograder.luddy.indiana.edu/web/project/922)
