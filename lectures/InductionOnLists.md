@@ -1,5 +1,23 @@
 # Induction on Lists
 
+```{.deduce^#list_append_empty}
+theorem list_append_empty: <U> all xs :List<U>.
+  xs ++ [] = xs
+proof
+  arbitrary U:type
+  induction List<U>
+  case empty {
+    conclude @[]<U> ++ [] = []  by definition operator++
+  }
+  case node(n, xs') suppose IH: xs' ++ [] = xs' {
+    equations
+          node(n, xs') ++ []
+        = node(n, xs' ++ [])    by definition operator++
+    ... = node(n, xs')          by rewrite IH
+  }
+end
+```
+
 ```{.deduce^#take_drop_append}
 theorem take_drop_append:  <T> all xs:List<T>, n:Nat.
   if n ≤ length(xs)
@@ -43,6 +61,7 @@ end
 import Nat
 import List
 
+<<list_append_empty>>
 <<take_drop_append>>
 ```
 -->
