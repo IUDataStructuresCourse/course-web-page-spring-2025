@@ -26,6 +26,7 @@ doing better on job interview questions.
     - Shulin Gonsalves (1st choice)
     - Lillie Donato (2nd choice)
     - Matei Cloteaux (1st choice)
+    - Javaria Ghafoor (1st choice)
 
 * Friday 8:45am-10:40am, Luddy Hall (IF) Room 1019
 
@@ -36,6 +37,7 @@ doing better on job interview questions.
 * Friday 12:55pm-2:40pm, Myles Brand Hall (I) Room E150
 
     - Lillie Donato (1st choice)
+    - Javaria Ghafoor (2nd choice)
 
 Expect at least one quiz per month during lab time.
 * 15 minutes, at the end of a lab session
@@ -79,7 +81,7 @@ Time    | Monday            | Tuesday    | Wednesday    | Thursday    | Friday
 **Slack (communicating with instructors and other students)**
 
 [Workspace](https://c343-spring-2025.slack.com)
- ([signup](https://join.slack.com/t/c343-spring-2025/shared_invite/zt-2xcslhwid-y59836A2HqiiwrvtYtbxTA)
+ ([signup](https://join.slack.com/t/c343-spring-2025/shared_invite/zt-2xcslhwid-y59836A2HqiiwrvtYtbxTA))
 
 **Schedule**
 
