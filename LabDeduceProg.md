@@ -9,6 +9,11 @@ lists in the Deduce programming language.
 
 1. [Deduce Setup](#deduce-setup)
 2. **[Problem Set](#problem-set)**
+   * Sum
+   * Concatenation
+   * Quick Reverse
+   * Cumulative Sum
+   * Search
 
 ## Deduce Setup
 
@@ -167,4 +172,12 @@ assert cumulative_sum([3,1,5,2,4]) = [3,4,9,11,15]
 
 Test your `cumulative_sum` function with several more `assert`
 statements.
+
+### Search (Variant)
+
+```
+function search(List<Nat>, Nat) -> Pair<List<Nat>, List<Nat> > {
+  FILL IN
+}
+```
 

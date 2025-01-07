@@ -189,6 +189,42 @@ function length<E>(List<E>) -> Nat {
 }
 ```
 
+## If-Then-Else
+
+Deduce provides an if-then-else term that branches on the value of a
+boolean. For example, the following if-then-else term is evaluates to
+`42`.
+
+```{.deduce^#assertIfTrue}
+print if first(pair(3,7)) = 3 then 42 else 0
+```
+
+## Linear Search
+
+The following `search` function returns the position in the list of
+the first occurence of the given number.
+
+```{.deduce^#search}
+function search(List<Nat>, Nat) -> Nat {
+  search(empty, y) = 0
+  search(node(x, xs), y) =
+    if x = y then 0
+    else 1 + search(xs, y)
+}
+```
+
+If the given number is not in the list, then `search` returns an index
+that is one-past the last element of the list.
+
+```{.deduce^#searchExamples}
+assert search(list_123, 1) = 0
+assert search(list_123, 2) = 1
+assert search(list_123, 3) = 2
+assert search(list_123, 4) = 3
+```
+
+The time complexity of `search` is O(n) where n is the length of the list.
+
 ## Import
 
 The `import` declaration makes available the contents of another
@@ -260,16 +296,6 @@ assert first(pair(3,7)) = 3
 assert second(pair(3,7)) = 7
 ```
 
-## If-Then-Else
-
-Deduce provides an if-then-else term that branches on the value of a
-boolean. For example, the following if-then-else term is evaluates to
-`42`.
-
-```{.deduce^#assertIfTrue}
-print if first(pair(3,7)) = 3 then 42 else 0
-```
-
 
 
 <!--
@@ -337,6 +363,9 @@ work with functions of the type `fn Nat -> T`.
 <<List456>>
 <<List123456>>
 <<length>>
+<<assertIfTrue>>
+<<search>>
+<<searchExamples>>
 <<Pair>>
 <<firstSecond>>
 <<firstPair>>
