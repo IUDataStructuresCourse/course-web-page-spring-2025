@@ -11,7 +11,7 @@ After this lecture, we recommend that you work through the tutorial at
 the following URL, and complete the exercises at the bottom of that
 web page.
 
-[https://github.com/jsiek/deduce/blob/main/FunctionalProgramming.md](https://github.com/jsiek/deduce/blob/main/FunctionalProgramming.md)
+[https://jsiek.github.io/deduce/doc/FunctionalProgramming.html](https://jsiek.github.io/deduce/doc/FunctionalProgramming.html)
 
 # Programming in Deduce
 
