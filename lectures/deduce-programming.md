@@ -223,7 +223,11 @@ assert search(list_123, 3) = 2
 assert search(list_123, 4) = 3
 ```
 
-The time complexity of `search` is O(n) where n is the length of the list.
+The time complexity of `search` is O(n) where n is the length of the
+list.  This is because the depth of the recursion is n (in the worst
+case) and the `search` function does at most a constant amount of work
+in each call (the comparison `x = y`, the `if`, and the addition `1 +`).
+
 
 ## Import
 
