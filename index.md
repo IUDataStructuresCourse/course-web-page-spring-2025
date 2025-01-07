@@ -96,7 +96,7 @@ Jan. 23 | [Algorithm Analysis, continued](./lectures/more-algo-analysis.md)
 Jan. 23 or 24 |                                                     |              | [Project: FloodIt!](./flood-it)
 Jan. 27 |                                                           |              | Project FloodIt! due |
 Jan. 28 | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | [Programming in Deduce](https://jsiek.github.io/deduce/doc/FunctionalProgramming.html)
-Jan. 30 | Proving Theorems in Deduce                                |              | 
+Jan. 30 | Proving Theorems in Deduce                                | [Proofs in Deduce](https://jsiek.github.io/deduce/doc/ProofIntro.html)
 Jan. 30 or 31 |                                                     |              | [Lab: Linked Lists in Deduce](./LabDeduceProg)
 Feb. 3  |                                                           |              | Lab Linked Lists in Deduce due
 Feb. 4  | [Proof by Induction on Linked Lists](./lectures/InductionOnLists.md)                        |              | [Proof Exercises](./ProofExercises.md)
