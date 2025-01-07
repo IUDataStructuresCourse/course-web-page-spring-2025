@@ -25,6 +25,8 @@ doing better on job interview questions.
 
 * Friday 8:45am-10:40am, Luddy Hall (IF) Room 1019
 
+    - Calvin Josenhans
+
 * Friday 12:55pm-2:40pm, Myles Brand Hall (I) Room E150
 
 Expect at least one quiz per month during lab time.
@@ -37,17 +39,28 @@ Expect at least one quiz per month during lab time.
 
 **Teaching Assistants**
 
+* Chavan, Dhruv (dvchavan)
+* Cloteaux, Matei (mcloteau)
+* Donato, Lillie (mdonato)
+* Ghafoor, Javaria (jghafoor)
+* Gonsalves, Shulin (shugons)
+* Josenhans, Calvin (cjosenha)
+* Ishoel, Ashley (aarolson)
+* Shetty, Darshal (dcshetty)
+* Sivakumar, Aniruthan (ansiva)
+
 **Office Hours**
 
 Office hours with TAs are in Luddy Hall Room 0121.
 
 Time    | Monday            | Tuesday    | Wednesday    | Thursday    | Friday
-11am    |                   |            |      |             | 
-12pm    |                   |            |      |        |
-1pm     |                   |            |              |       | 
-2pm     |                   |            |              |       |
-3pm     |                   |            |        |         | 
-4pm     |                   |            |        |         |
+10am    |                   |            |              |             |
+11am    |                   |            |              |             | 
+12pm    |                   |            |              |             |
+1pm     |                   |            |              |             | 
+2pm     |                   |            |              |             |
+3pm     |                   |            |              |             | 
+4pm     |                   |            |              |             |
 5pm     |                   |            |              |             |
 
 
