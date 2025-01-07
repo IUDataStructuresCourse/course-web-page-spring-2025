@@ -24,18 +24,23 @@ doing better on job interview questions.
 * Thursday 5:30pm-7:25pm, Luddy Hall (IF) Room 1019
 
     - Shulin Gonsalves (1st choice)
-    - Lillie Donato (2nd choice)
     - Matei Cloteaux (1st choice)
+    - Javaria Ghafoor (1st choice)
+    - Lillie Donato (2nd choice)
+    - Darshal Shetty (1st choice)
 
 * Friday 8:45am-10:40am, Luddy Hall (IF) Room 1019
 
     - Calvin Josenhans (only choice)
+    - Dhruv Chavan (only choice)
     - Shulin Gonsalves (2nd choice)
     - Matei Cloteaux (2nd choice)
 
 * Friday 12:55pm-2:40pm, Myles Brand Hall (I) Room E150
 
     - Lillie Donato (1st choice)
+    - Javaria Ghafoor (2nd choice)
+    - Darshal Shetty (2nd choice)
 
 Expect at least one quiz per month during lab time.
 * 15 minutes, at the end of a lab session
@@ -63,12 +68,12 @@ Office hours with TAs are in Luddy Hall Room 0121.
 
 Time    | Monday            | Tuesday    | Wednesday    | Thursday    | Friday
 10am    |                   |            |              |             |
-11am    |                   |            |              |             | 
+11am    |                   |            |              |             | Dhruv
 12pm    |                   |            |              |             |
 1pm     | Calvin            |            | Calvin       |             | 
-2pm     |                   |            |              |             |
-3pm     | Matei             |            | Matei        |             | 
-4pm     |                   |            |              |             |
+2pm     | Dhruv             |            |              |             |
+3pm     | Matei             | Darshal    | Matei        |             | 
+4pm     |                   | Darshal    |              |             |
 5pm     |                   |            |              |             |
 
 
@@ -79,7 +84,7 @@ Time    | Monday            | Tuesday    | Wednesday    | Thursday    | Friday
 **Slack (communicating with instructors and other students)**
 
 [Workspace](https://c343-spring-2025.slack.com)
- ([signup](https://join.slack.com/t/c343-spring-2025/shared_invite/zt-2xcslhwid-y59836A2HqiiwrvtYtbxTA)
+ ([signup](https://join.slack.com/t/c343-spring-2025/shared_invite/zt-2xcslhwid-y59836A2HqiiwrvtYtbxTA))
 
 **Schedule**
 
@@ -92,8 +97,8 @@ Jan. 21 | [Algorithm Analysis](./lectures/algo-analysis.md)         | Ch. 2     
 Jan. 23 | [Algorithm Analysis, continued](./lectures/more-algo-analysis.md) 
 Jan. 23 or 24 |                                                     |              | [Project: FloodIt!](./flood-it)
 Jan. 27 |                                                           |              | Project FloodIt! due |
-Jan. 28 | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md)
-Jan. 30 | Proving Theorems in Deduce                                |              | 
+Jan. 28 | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | [Programming in Deduce](https://jsiek.github.io/deduce/doc/FunctionalProgramming.html)
+Jan. 30 | Proving Theorems in Deduce                                | [Proofs in Deduce](https://jsiek.github.io/deduce/doc/ProofIntro.html)
 Jan. 30 or 31 |                                                     |              | [Lab: Linked Lists in Deduce](./LabDeduceProg)
 Feb. 3  |                                                           |              | Lab Linked Lists in Deduce due
 Feb. 4  | [Proof by Induction on Linked Lists](./lectures/InductionOnLists.md)                        |              | [Proof Exercises](./ProofExercises.md)

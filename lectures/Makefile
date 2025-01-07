@@ -1,6 +1,7 @@
 DEDUCE_DIR=/Users/jsiek/deduce
 LIB_DIR=$(DEDUCE_DIR)/lib
 PYTHON=/opt/homebrew/bin/python3.11
+DEDUCE = $(DEDUCE_DIR)/deduce.py
 
 %.png: %.dot
 	dot $< -Tpng > $@
@@ -65,3 +66,9 @@ induction_list:
 	cat InductionOnLists.md | sed 's/deduce\^/deduce /' > InductionOnLists.en
 	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
 	$(PYTHON) $(DEDUCE_DIR)/deduce.py InductionOnLists.pf --dir $(LIB_DIR)
+
+deduce_programming:
+	cat deduce-programming.md | sed 's/deduce\^/deduce /' > deduce-programming.en
+	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
+	$(PYTHON) $(DEDUCE) DeduceProgramming1.pf --dir $(LIB_DIR)
+	$(PYTHON) $(DEDUCE) DeduceProgramming2.pf --dir $(LIB_DIR)
