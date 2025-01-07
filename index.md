@@ -66,10 +66,10 @@ Office hours with TAs are in Luddy Hall Room 0121.
 
 Time    | Monday            | Tuesday    | Wednesday    | Thursday    | Friday
 10am    |                   |            |              |             |
-11am    |                   |            |              |             | 
+11am    |                   |            |              |             | Dhruv
 12pm    |                   |            |              |             |
 1pm     | Calvin            |            | Calvin       |             | 
-2pm     |                   |            |              |             |
+2pm     | Dhruv             |            |              |             |
 3pm     | Matei             |            | Matei        |             | 
 4pm     |                   |            |              |             |
 5pm     |                   |            |              |             |
