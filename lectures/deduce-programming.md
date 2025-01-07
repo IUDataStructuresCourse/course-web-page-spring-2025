@@ -17,7 +17,7 @@ The main way to represent data in Deduce is with `union` types.
 The following statement defines a union type named `Fruit` and it
 defines three kinds of fruit: apples, oranges, and bananas.
 
-```
+```{.deduce^#Fruit}
 union Fruit {
   apple
   orange
@@ -29,7 +29,7 @@ We can create fruit values by mentioning one of the alternatives.  The
 following statements put an apple into variable `f1` and a banana into
 `f2`.
 
-```
+```{.deduce^#apple}
 define f1 : Fruit = apple
 define f2 : Fruit = banana
 ```
@@ -38,7 +38,7 @@ Of course, we all know that bananas tend to go rotten quickly, so we
 should keep track of that information. We can accomplish that by
 adding a parameter of type `bool` to the `banana` alternative:
 
-```
+```{.deduce^#Fruit2}
 union Fruit {
   apple
   orange
@@ -49,7 +49,7 @@ union Fruit {
 and now when we create a banana, we have to say whether it is rotten
 or not.
 
-```
+```{.deduce^#banana}
 define f3 : Fruit = banana(false)
 define f4 : Fruit = banana(true)
 ```
@@ -60,7 +60,8 @@ and figures out whether it is rotten or not. In the case for `banana`,
 Deduce initializes the `r` variable to `true` (because `f4` is
 `banana(true)`).
 
-```
+
+```{.deduce^#switchFruit}
 define r4 : bool = 
     switch f4 {
       case apple { false }
@@ -88,7 +89,7 @@ In Deduce we can define the type of linked lists of natural numbers
 with the following `union` type. (`Nat` is the type of natural numbers
 and is defined in `Nat.pf`.)
 
-```
+```{.deduce^#NatList}
 union NatList {
   Empty
   Node(Nat, NatList)
@@ -98,7 +99,7 @@ union NatList {
 Then we can create the linked list for `7, 4, 5` with the following
 statement that creates three nodes.
 
-```
+```{.deduce^#NatListL}
 define L = Node(7, Node(4, Node(5, Empty)))
 ```
 
@@ -109,7 +110,7 @@ a linked list. The length of an empty list is `0` and the length of a
 list that starts with a node is one more than the length of the list
 starting at the next node.
 
-```
+```{.deduce^#len}
 function len(NatList) -> Nat {
   len(Empty) = 0
   len(Node(n, next)) = 1 + len(next)
@@ -118,7 +119,7 @@ function len(NatList) -> Nat {
 
 The length of list `L` defined above is `3`.
 
-```
+```{.deduce^#lenL3}
 assert len(L) = 3
 ```
 
@@ -138,7 +139,7 @@ One often needs to create lists with other kinds of elements, not just
 `Nat`.  Thus, Deduce supports generic unions. Here is the generic
 `List` type defined in `List.pf`.
 
-```
+```{.deduce^#List}
 union List<T> {
   empty
   node(T, List<T>)
@@ -148,13 +149,13 @@ union List<T> {
 For example, the sequence of numbers `1, 2, 3` is represented
 by the following linked list.
 
-```
+```{.deduce^#List123}
 define list_123 : List<Nat> = node(1, node(2, node(3, empty)))
 ```
 
 ## Generic Functions
 
-```
+```{.deduce^#length}
 function length<E>(List<E>) -> Nat {
   length(empty) = 0
   length(node(n, next)) = 1 + length(next)
@@ -167,7 +168,7 @@ The `import` declaration makes available the contents of another
 Deduce file in the current file. For example, you can import the
 contents of `Nat.pf` as follows
 
-```
+```{.deduce^#importNat}
 import Nat
 ```
 
@@ -176,8 +177,8 @@ import Nat
 You can ask Deduce to print a value to standard output using the
 `print` statement.
 
-```
-print five
+```{.deduce^#printFive}
+print 5
 ```
 
 The output is `5`.
@@ -185,26 +186,21 @@ The output is `5`.
 
 ## Functions (`fun`)
 
-Functions are created with a `fun` expression.  Their syntax starts with
-λ, followed by parameter names, then the body of the function enclosed
-in braces.  For example, the following defines a function for
+Functions are created with an expression that starts with the `fun`
+keyword, followed by parameter names, then the body of the function
+enclosed in braces.  For example, the following defines a function for
 computing the area of a rectangle.
 
+```{.deduce^#area}
+define area = fun h : Nat, w : Nat { h * w }
 ```
-define area : fn Nat,Nat -> Nat = fun h, w { h * w }
-```
-
-The type of a function starts with `fn`, followed by the
-parameter types, then `->`, and finally the return type.
 
 To call a function, apply it to the appropriate number and type of
 arguments.
 
+```{.deduce^#area12}
+assert area(3, 4) = 12
 ```
-print area(3, 4)
-```
-
-The output is `12`.
 
 <!--
 ## Functions Returning Functions: nth element of list
@@ -244,4 +240,29 @@ element. We could have instead made `nth` take three parameters and
 directly return an element. We made this design choice because it
 means we can use `nth` with several other functions and theorems that
 work with functions of the type `fn Nat -> T`.
+-->
+
+<!--
+```{.deduce^file=DeduceProgramming1.pf}
+<<importNat>>
+<<Fruit>>
+<<apple>>
+<<NatList>>
+<<NatListL>>
+<<len>>
+<<lenL3>>
+<<printFive>>
+<<area>>
+<<area12>>
+```
+
+```{.deduce^file=DeduceProgramming2.pf}
+<<importNat>>
+<<Fruit2>>
+<<banana>>
+<<switchFruit>>
+<<List>>
+<<List123>>
+<<length>>
+```
 -->
