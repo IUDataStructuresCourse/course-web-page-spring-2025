@@ -72,8 +72,8 @@ define r4 : bool =
 
 ## Assert
 
-To check whether the result of an expression produces `true`, use the `assert` statement.
-It will halt with an error if the expression produces `false`.
+To check whether the result of an term produces `true`, use the `assert` statement.
+It will halt with an error if the term produces `false`.
 
 ```{.deduce^#assertR4}
 assert r4
@@ -96,7 +96,7 @@ that represents the sequence `7, 4, 5`.
 
 In Deduce we can define the type of linked lists of natural numbers
 with the following `union` type. (`Nat` is the type of natural numbers
-and is defined in `Nat.pf`.)
+and is defined in `lib/Nat.pf`.)
 
 ```{.deduce^#NatList}
 union NatList {
@@ -208,10 +208,10 @@ The output is `5`.
 
 ## Functions (`fun`)
 
-Functions are created with an expression that starts with the `fun`
-keyword, followed by parameter names, then the body of the function
-enclosed in braces.  For example, the following defines a function for
-computing the area of a rectangle.
+Functions are created with an term that starts with the `fun`
+keyword, followed by parameter names and their types, then the body of
+the function enclosed in braces.  For example, the following defines a
+function for computing the area of a rectangle.
 
 ```{.deduce^#area}
 define area = fun h : Nat, w : Nat { h * w }
@@ -223,6 +223,49 @@ arguments.
 ```{.deduce^#area12}
 assert area(3, 4) = 12
 ```
+
+## Pairs
+
+The `Pair` type is define in `lib/Pair.pf` as a generic union:
+
+```{.deduce^#Pair}
+union Pair<T,U> {
+  pair(T,U)
+}
+```
+
+The `first` function returns the first element of the pair
+and `second` returns the second element.
+
+```{.deduce^#firstSecond}
+function first<T,U>(Pair<T,U>) -> T {
+  first(pair(x,y)) = x
+}
+
+function second<T,U>(Pair<T,U>) -> U {
+  second(pair(x,y)) = y
+}
+```
+
+The following is an example of creating a pair and then accessing its
+first and second elements.
+
+```{.deduce^#firstPair}
+assert first(pair(3,7)) = 3
+assert second(pair(3,7)) = 7
+```
+
+## If-Then-Else
+
+Deduce provides an if-then-else term that branches on the value of a
+boolean. For example, the following if-then-else term is evaluates to
+`42`.
+
+```{.deduce^#assertIfTrue}
+print if first(pair(3,7)) = 3 then 42 else 0
+```
+
+
 
 <!--
 ## Functions Returning Functions: nth element of list
@@ -289,5 +332,8 @@ work with functions of the type `fn Nat -> T`.
 <<List456>>
 <<List123456>>
 <<length>>
+<<Pair>>
+<<firstSecond>>
+<<firstPair>>
 ```
 -->
