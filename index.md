@@ -65,7 +65,7 @@ Time    | Monday            | Tuesday    | Wednesday    | Thursday    | Friday
 12pm    |                   |            |              |             |
 1pm     |                   |            |              |             | 
 2pm     |                   |            |              |             |
-3pm     |                   |            |              |             | 
+3pm     | Matei             |            | Matei        |             | 
 4pm     |                   |            |              |             |
 5pm     |                   |            |              |             |
 
