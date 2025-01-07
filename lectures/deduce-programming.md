@@ -70,6 +70,15 @@ define r4 : bool =
     }
 ```
 
+## Assert
+
+To check whether the result of an expression produces `true`, use the `assert` statement.
+It will halt with an error if the expression produces `false`.
+
+```{.deduce^#assertR4}
+assert r4
+```
+
 ## Linked Lists via unions
 
 A **linked list** is a data structure that represents a sequence of
@@ -151,6 +160,19 @@ by the following linked list.
 
 ```{.deduce^#List123}
 define list_123 : List<Nat> = node(1, node(2, node(3, empty)))
+```
+
+As shorthand for a sequence of `node` with `empty` at the end, there
+is square-bracket syntax for creating a list.
+
+```{.deduce^#List456}
+define list_456 = [4,5,6]
+```
+
+Because `List` is generic, we can create a list that contains lists.
+
+```{.deduce^#List123456}
+define list_of_list = [list_123, list_456]
 ```
 
 ## Generic Functions
@@ -261,8 +283,11 @@ work with functions of the type `fn Nat -> T`.
 <<Fruit2>>
 <<banana>>
 <<switchFruit>>
+<<assertR4>>
 <<List>>
 <<List123>>
+<<List456>>
+<<List123456>>
 <<length>>
 ```
 -->
