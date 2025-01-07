@@ -24,6 +24,7 @@ doing better on job interview questions.
 * Thursday 5:30pm-7:25pm, Luddy Hall (IF) Room 1019
 
     - Shulin Gonsalves (1st choice)
+    - Lillie Donato (2nd choice)
 
 * Friday 8:45am-10:40am, Luddy Hall (IF) Room 1019
 
@@ -31,6 +32,8 @@ doing better on job interview questions.
     - Shulin Gonsalves (2nd choice)
 
 * Friday 12:55pm-2:40pm, Myles Brand Hall (I) Room E150
+
+    - Lillie Donato (1st choice)
 
 Expect at least one quiz per month during lab time.
 * 15 minutes, at the end of a lab session
