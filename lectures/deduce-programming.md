@@ -151,7 +151,7 @@ always terminate.
 
 One often needs to create lists with other kinds of elements, not just
 `Nat`.  Thus, Deduce supports generic unions. Here is the generic
-`List` type defined in `List.pf`.
+`List` type defined in `lib/List.pf`.
 
 ```{.deduce^#List}
 union List<T> {
@@ -229,7 +229,7 @@ The time complexity of `search` is O(n) where n is the length of the list.
 
 The `import` declaration makes available the contents of another
 Deduce file in the current file. For example, you can import the
-contents of `Nat.pf` as follows
+contents of `lib/Nat.pf` as follows
 
 ```{.deduce^#importNat}
 import Nat
