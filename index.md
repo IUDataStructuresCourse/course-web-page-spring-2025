@@ -23,9 +23,12 @@ doing better on job interview questions.
 
 * Thursday 5:30pm-7:25pm, Luddy Hall (IF) Room 1019
 
+    - Shulin Gonsalves (1st choice)
+
 * Friday 8:45am-10:40am, Luddy Hall (IF) Room 1019
 
-    - Calvin Josenhans
+    - Calvin Josenhans (only choice)
+    - Shulin Gonsalves (2nd choice)
 
 * Friday 12:55pm-2:40pm, Myles Brand Hall (I) Room E150
 
@@ -70,8 +73,8 @@ Time    | Monday            | Tuesday    | Wednesday    | Thursday    | Friday
 
 **Slack (communicating with instructors and other students)**
 
-[Workspace](https://datastructure-mq73289.slack.com)
- ([signup](https://join.slack.com/t/slack-lnu5295/shared_invite/zt-29wtfkgte-lwQGy7F5pvioqQpBAl1t0Q))
+[Workspace]()
+ ([signup]()
 
 **Schedule**
 
