@@ -65,7 +65,7 @@ Time    | Monday            | Tuesday    | Wednesday    | Thursday    | Friday
 10am    |                   |            |              |             |
 11am    |                   |            |              |             | 
 12pm    |                   |            |              |             |
-1pm     |                   |            |              |             | 
+1pm     | Calvin            |            | Calvin       |             | 
 2pm     |                   |            |              |             |
 3pm     | Matei             |            | Matei        |             | 
 4pm     |                   |            |              |             |
