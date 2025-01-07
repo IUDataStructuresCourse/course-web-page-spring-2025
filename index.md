@@ -25,11 +25,13 @@ doing better on job interview questions.
 
     - Shulin Gonsalves (1st choice)
     - Lillie Donato (2nd choice)
+    - Matei Cloteaux (1st choice)
 
 * Friday 8:45am-10:40am, Luddy Hall (IF) Room 1019
 
     - Calvin Josenhans (only choice)
     - Shulin Gonsalves (2nd choice)
+    - Matei Cloteaux (2nd choice)
 
 * Friday 12:55pm-2:40pm, Myles Brand Hall (I) Room E150
 
