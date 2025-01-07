@@ -24,13 +24,14 @@ doing better on job interview questions.
 * Thursday 5:30pm-7:25pm, Luddy Hall (IF) Room 1019
 
     - Shulin Gonsalves (1st choice)
-    - Lillie Donato (2nd choice)
     - Matei Cloteaux (1st choice)
     - Javaria Ghafoor (1st choice)
+    - Lillie Donato (2nd choice)
 
 * Friday 8:45am-10:40am, Luddy Hall (IF) Room 1019
 
     - Calvin Josenhans (only choice)
+    - Dhruv Chavan (only choice)
     - Shulin Gonsalves (2nd choice)
     - Matei Cloteaux (2nd choice)
 

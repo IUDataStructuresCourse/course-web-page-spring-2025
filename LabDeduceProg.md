@@ -175,9 +175,25 @@ statements.
 
 ### Search (Variant)
 
+Fill in the definition of the following variant of linear `search`.
+This `search` function separates the input list into two lists, the
+first list does not contain the given number, and the second list
+starts with the given number. If the given number is not in the input
+list, then the first list is the entire input list and the second list
+is empty.
+
 ```
 function search(List<Nat>, Nat) -> Pair<List<Nat>, List<Nat> > {
   FILL IN
 }
 ```
 
+Here are some example uses of this `search`.
+
+```
+define list_123 = [1,2,3]
+assert search(list_123, 1) = pair([], [1,2,3])
+assert search(list_123, 2) = pair([1], [2,3])
+assert search(list_123, 3) = pair([1,2], [3])
+assert search(list_123, 4) = pair([1,2,3], [])
+```
