@@ -27,6 +27,7 @@ doing better on job interview questions.
     - Matei Cloteaux (1st choice)
     - Javaria Ghafoor (1st choice)
     - Lillie Donato (2nd choice)
+    - Darshal Shetty (1st choice)
 
 * Friday 8:45am-10:40am, Luddy Hall (IF) Room 1019
 
@@ -39,6 +40,7 @@ doing better on job interview questions.
 
     - Lillie Donato (1st choice)
     - Javaria Ghafoor (2nd choice)
+    - Darshal Shetty (2nd choice)
 
 Expect at least one quiz per month during lab time.
 * 15 minutes, at the end of a lab session
@@ -70,8 +72,8 @@ Time    | Monday            | Tuesday    | Wednesday    | Thursday    | Friday
 12pm    |                   |            |              |             |
 1pm     | Calvin            |            | Calvin       |             | 
 2pm     | Dhruv             |            |              |             |
-3pm     | Matei             |            | Matei        |             | 
-4pm     |                   |            |              |             |
+3pm     | Matei             | Darshal    | Matei        |             | 
+4pm     |                   | Darshal    |              |             |
 5pm     |                   |            |              |             |
 
 
