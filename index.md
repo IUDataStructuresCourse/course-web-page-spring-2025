@@ -29,6 +29,7 @@ doing better on job interview questions.
     - Lillie Donato (2nd choice)
     - Aniruthan Sivakumar (1st choice)
     - Darshal Shetty (1st choice)
+    - Ashley Ishoel (1st choice)
 
 * Friday 8:45am-10:40am, Luddy Hall (IF) Room 1019
 
@@ -36,6 +37,7 @@ doing better on job interview questions.
     - Dhruv Chavan (only choice)
     - Shulin Gonsalves (2nd choice)
     - Matei Cloteaux (2nd choice)
+    - Ashley Ishoel (2nd choice)
 
 * Friday 12:55pm-2:40pm, Myles Brand Hall (I) Room E150
 
@@ -70,7 +72,7 @@ Office hours with TAs are in Luddy Hall Room 0121.
 
 Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
 10am    |                   |            | Lillie         |             |
-11am    |                   |            |                |             | Dhruv
+11am    |                   | Ashley     |                | Ashley      | Dhruv
 12pm    |                   |            |                |             |
 1pm     | Calvin            |            | Calvin, Lillie |             | 
 2pm     | Dhruv             |            |                |             |
