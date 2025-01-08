@@ -74,8 +74,8 @@ Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
 12pm    |                   |            |                |             |
 1pm     | Calvin            |            | Calvin, Lillie |             | 
 2pm     | Dhruv             |            |                |             |
-3pm     | Matei             | Darshal    | Matei          |             | 
-4pm     |                   | Darshal    |                |             |
+3pm     | Matei             | Darshal    | Matei          | Aniruthan   | 
+4pm     |                   | Darshal    |                | Aniruthan   |
 5pm     |                   |            |                |             |
 
 
