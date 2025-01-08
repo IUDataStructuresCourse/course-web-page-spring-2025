@@ -28,6 +28,7 @@ doing better on job interview questions.
     - Javaria Ghafoor (1st choice)
     - Lillie Donato (2nd choice)
     - Aniruthan Sivakumar (1st choice)
+    - Darshal Shetty (1st choice)
 
 * Friday 8:45am-10:40am, Luddy Hall (IF) Room 1019
 
@@ -41,6 +42,7 @@ doing better on job interview questions.
     - Lillie Donato (1st choice)
     - Javaria Ghafoor (2nd choice)
     - Aniruthan Sivakumar (2nd choice)
+    - Darshal Shetty (2nd choice)
 
 Expect at least one quiz per month during lab time.
 * 15 minutes, at the end of a lab session
@@ -66,15 +68,15 @@ Expect at least one quiz per month during lab time.
 
 Office hours with TAs are in Luddy Hall Room 0121.
 
-Time    | Monday            | Tuesday    | Wednesday    | Thursday    | Friday
-10am    |                   |            |              |             |
-11am    |                   |            |              |             | 
-12pm    |                   |            |              |             |
-1pm     | Calvin            |            | Calvin       |             | 
-2pm     |                   |            |              |             |
-3pm     | Matei             |            | Matei        |             | 
-4pm     |                   |            |              |             |
-5pm     |                   |            |              |             |
+Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
+10am    |                   |            | Lillie         |             |
+11am    |                   |            |                |             | Dhruv
+12pm    |                   |            |                |             |
+1pm     | Calvin            |            | Calvin, Lillie |             | 
+2pm     | Dhruv             |            |                |             |
+3pm     | Matei             | Darshal    | Matei          |             | 
+4pm     |                   | Darshal    |                |             |
+5pm     |                   |            |                |             |
 
 
 **Textbook**
