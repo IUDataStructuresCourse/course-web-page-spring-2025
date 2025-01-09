@@ -32,12 +32,13 @@ end
 ```
 
 
-(4) Prove of the following theorem about `length` and `++`.
-Hint: you will need to use the `induction` proof statement.
+(4) Prove of the following theorem about `length` and `take`.
+Hint: you will need to use the `induction` and `switch` proof statements.
 
-```{.deduce^#length_append}
-theorem length_append: all U :type. all xs :List<U>. all ys :List<U>.
-  length(xs ++ ys) = length(xs) + length(ys)
+```{.deduce^#length_take}
+theorem length_take: all T:type. all n:Nat, xs:List<T>.
+  if n ≤ length(xs)
+  then length(take(n, xs)) = n
 proof
   ?
 end
