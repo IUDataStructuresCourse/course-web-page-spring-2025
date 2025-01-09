@@ -111,7 +111,7 @@ Feb. 6 or 7 |                                                       |           
 Feb. 10 |                                                           |              | Lab due
 Feb. 11 | Binary Trees
 Feb. 13 |                                                           |              | Proof: reverse of reverse
-Feb. 13 or 14 |                                                     |              | [Lab: Insertion Sort](./InsertionSort.md)
+Feb. 13 or 14 |                                                     |              | [Lab: Insertion Sort](./LabInsertionSort.md)
 Feb. 17 |
 Feb. 18 | Insertion Sort
 Feb. 20 | Merge Sort
