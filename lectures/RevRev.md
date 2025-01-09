@@ -22,8 +22,8 @@ theorem reverse_reverse_first_attempt: all U :type. all ls :List<U>.
 proof
   arbitrary U :type
   induction List<U>
-  case empty {
-    conclude reverse(reverse(@empty<U>)) = empty by definition reverse
+  case [] {
+    conclude reverse(reverse(@[]<U>)) = [] by definition reverse
   }
   case node(n, ls') suppose IH: reverse(reverse(ls')) = ls' {
     equations
@@ -78,13 +78,13 @@ lemma reverse_append: all U :type. all xs :List<U>. all ys :List<U>.
 proof
   arbitrary U :type
   induction List<U>
-  case empty {
+  case [] {
     arbitrary ys :List<U>
     equations
-          reverse(@empty<U> ++ ys)
-        = reverse(ys)                   by definition operator++
-    ... = # reverse(ys) ++ empty #       by rewrite append_empty<U>[reverse(ys)]
-    ... = # reverse(ys) ++ reverse(empty) # by definition reverse
+          reverse(@[]<U> ++ ys)
+        = reverse(ys)                     by definition operator++
+    ... = # reverse(ys) ++ [] #           by rewrite append_empty<U>[reverse(ys)]
+    ... = # reverse(ys) ++ reverse([]) #  by definition reverse
   }
   case node(n, xs') suppose IH {
     arbitrary ys :List<U>
@@ -108,8 +108,8 @@ theorem reverse_reverse: all U :type. all ls :List<U>.
 proof
   arbitrary U :type
   induction List<U>
-  case empty {
-    conclude reverse(reverse(@empty<U>)) = empty by definition reverse
+  case [] {
+    conclude reverse(reverse(@[]<U>)) = []   by definition reverse
   }
   case node(n, ls') suppose IH: reverse(reverse(ls')) = ls' {
     equations
