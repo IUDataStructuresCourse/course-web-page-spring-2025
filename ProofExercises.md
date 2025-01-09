@@ -1,2 +1,68 @@
 # Proof Exercises
 
+1. Complete the following proof.
+
+```{.deduce^#append_node_x_node_y}
+theorem append_xy:
+  all T:type. all x:T, y:T. [x] ++ [y] = [x, y]
+proof
+  ?
+end
+```
+
+2. Prove that `[1] ++ [2] = [1, 2]` by using the `append_xy` theorem.
+
+```{.deduce^#append_node_1_node_2}
+theorem append_node_1_node_2:
+  [1] ++ [2] = [1, 2]
+proof
+  ?
+end
+```
+
+3. Prove the following theorem using the `add_zero` and `mult_one`
+theorems from `lib/Nat.pf`.
+
+```{.deduce^#x_0_x_eq_2_x}
+theorem x_0_x_eq_2_x: 
+  all x:Nat. (x + 0) + x = (x + x) * 1
+proof
+  ?
+end
+```
+
+
+4. Prove of the following theorem about `length` and `++`.
+Hint: you will need to use the `induction` proof statement.
+
+```{.deduce^#length_append}
+theorem length_append: all U :type. all xs :List<U>. all ys :List<U>.
+  length(xs ++ ys) = length(xs) + length(ys)
+proof
+  ?
+end
+```
+
+5. Using the `rewrite`-`in` statement, prove the following variation
+on the transitivity theorem for `≤`. Prove that if `y = x` and 
+`y ≤ z`, then `x ≤ z`.
+
+```{.deduce^#equal_less_trans}
+theorem equal_less_trans: all x:Nat, y:Nat, z:Nat.
+  if y = x and y ≤ z then x ≤ z
+proof
+  ?
+end
+```
+
+6. Prove that adding two odd numbers yields an even number.
+The definition of `Odd` and `Even` are in `lib/Nat.pf`.
+Hint: use the `obtain`, `choose`, and `equations` proof statements.
+
+```{.deduce #addition_of_odds}
+theorem addition_of_odds: all x:Nat, y:Nat. 
+  if Odd(x) and Odd(y) then Even(x + y)
+proof
+  ?
+end
+```
