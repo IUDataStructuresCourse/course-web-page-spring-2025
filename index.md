@@ -105,15 +105,15 @@ Jan. 28 | [Programming in Deduce with Linked Lists](./lectures/deduce-programmin
 Jan. 30 | Proving Theorems in Deduce                                | [Proofs in Deduce](https://jsiek.github.io/deduce/doc/ProofIntro.html)
 Jan. 30 or 31 |                                                     |              | [Lab: Linked Lists in Deduce](./LabDeduceProg)
 Feb. 3  |                                                           |              | Lab Linked Lists in Deduce due
-Feb. 4  | [Proof by Induction on Linked Lists](./lectures/InductionOnLists.md)                        |              | [Proof Exercises](./ProofExercises.md)
-Feb. 6  | Discovering and Generalizing Lemmas
+Feb. 4  | [Proof by Induction on Linked Lists](./lectures/InductionOnLists.md) 
+Feb. 6  | Discovering and Generalizing Lemmas                       |              | [Proof Exercises](./ProofExercises.md)
 Feb. 6 or 7 |                                                       |              | [Lab: List Search](./ListSearch.md)
 Feb. 10 |                                                           |              | Lab due
-Feb. 11 | Binary Trees
-Feb. 13 |                                                           |              | Proof: reverse of reverse
+Feb. 11 | Insertion Sort
+Feb. 13 |                                                           |              | [Proof: Quick Reverse Correct](./QuickReverse.md)
 Feb. 13 or 14 |                                                     |              | [Lab: Insertion Sort](./LabInsertionSort.md)
 Feb. 17 |
-Feb. 18 | Insertion Sort
+Feb. 18 | Binary Trees
 Feb. 20 | Merge Sort
 Feb. 20 or 21 |                                                     |              | Lab: Binary Tree Search
 Feb. 24 |
