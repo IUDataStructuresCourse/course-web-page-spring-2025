@@ -106,7 +106,7 @@ Jan. 30 | Proving Theorems in Deduce                                | [Proofs in
 Jan. 30 or 31 |                                                     |              | [Lab: Linked Lists in Deduce](./LabDeduceProg)
 Feb. 3  |                                                           |              | Lab Linked Lists in Deduce due
 Feb. 4  | [Proof by Induction on Linked Lists](./lectures/InductionOnLists.md) 
-Feb. 6  | Discovering and Generalizing Lemmas                       |              | [Proof Exercises](./ProofExercises.md)
+Feb. 6  | [Discovering and Generalizing Lemmas](./lectures/RevRev.md)                       |              | [Proof Exercises](./ProofExercises.md)
 Feb. 6 or 7 |                                                       |              | [Lab: List Search](./ListSearch.md)
 Feb. 10 |                                                           |              | Lab due
 Feb. 11 | Insertion Sort

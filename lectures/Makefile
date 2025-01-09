@@ -67,6 +67,11 @@ induction_list:
 	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
 	$(PYTHON) $(DEDUCE_DIR)/deduce.py InductionOnLists.pf --dir $(LIB_DIR)
 
+rev_rev:
+	cat Revrev.md | sed 's/deduce\^/deduce /' > RevRev.en
+	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
+	$(PYTHON) $(DEDUCE_DIR)/deduce.py RevRev.pf --dir $(LIB_DIR)
+
 deduce_programming:
 	cat deduce-programming.md | sed 's/deduce\^/deduce /' > deduce-programming.en
 	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
