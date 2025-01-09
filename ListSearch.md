@@ -1,7 +1,7 @@
-# Linear Search in a Linked List (Variant)
+# Lab: List Search
 
-Prove the following theorem about the variant of `search` that you
-implemented in lab last week.
+Prove the following theorem about the variant of linear `search` that
+you implemented in lab last week.
 
 ```
 theorem search_correct: all y: Nat. all xs: List<Nat>.

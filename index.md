@@ -110,12 +110,12 @@ Feb. 6  | Discovering and Generalizing Lemmas
 Feb. 6 or 7 |                                                       |              | [Lab: List Search](./ListSearch.md)
 Feb. 10 |                                                           |              | Lab due
 Feb. 11 | Binary Trees
-Feb. 13 |                                                           |              | [Proof: reverse of reverse]()
-Feb. 13 or 14 |                                                     |              | [Lab: Binary Tree Search](  )
+Feb. 13 |                                                           |              | Proof: reverse of reverse
+Feb. 13 or 14 |                                                     |              | [Lab: Insertion Sort](./InsertionSort.md)
 Feb. 17 |
 Feb. 18 | Insertion Sort
 Feb. 20 | Merge Sort
-Feb. 20 or 21 |                                                     |              | [Lab: Insertion Sort](  )
+Feb. 20 or 21 |                                                     |              | Lab: Binary Tree Search
 Feb. 24 |
 
 <!--
