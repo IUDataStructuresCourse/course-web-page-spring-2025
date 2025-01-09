@@ -1,0 +1,182 @@
+import Base
+import Nat
+import List
+import MultiSet
+
+function sorted(List<Nat>) -> bool {
+  sorted(empty) = true
+  sorted(node(a, next)) =
+    sorted(next) and all_elements(next, λb{ a ≤ b })
+}
+
+function insert(List<Nat>,Nat) -> List<Nat> {
+  insert(empty, x) = node(x, empty)
+  insert(node(y, next), x) =
+    if x ≤ y then
+      node(x, node(y, next))
+    else
+      node(y, insert(next, x))
+}
+
+theorem less_equal_insert:
+  all xs:List<Nat>. all x:Nat, y:Nat.
+  if y ≤ x and all_elements(xs, λb{y ≤ b})
+  then all_elements(insert(xs,x), λb{y ≤ b})
+proof
+  induction List<Nat>
+  case empty {
+    arbitrary x:Nat, y:Nat
+    suppose prem
+    suffices all_elements(node(x,empty), λb{y ≤ b})
+       by definition insert
+    suffices y ≤ x
+       by definition {all_elements, all_elements}
+    prem
+  }
+  case node(a, xs') suppose IH {
+    arbitrary x:Nat, y:Nat
+    suppose prem
+    have y_le_x: y ≤ x by prem
+    have y_le_a: y ≤ a by definition all_elements in prem
+    have y_le_xs: all_elements(xs', λb{y ≤ b})
+        by definition all_elements in prem
+    cases dichotomy[x,a]
+    case x_le_a: x ≤ a {
+      suffices all_elements(node(x, node(a, xs')), λb{y ≤ b})
+          by definition insert and rewrite apply eq_true to x_le_a
+      suffices y ≤ x and y ≤ a and all_elements(xs', λb{y ≤ b})
+          by definition {all_elements, all_elements}
+      have y_le_a: y ≤ a by apply less_equal_trans to y_le_x, x_le_a
+      have y_le_xs: all_elements(xs',λb{(y ≤ b)})
+          by definition all_elements in prem
+      y_le_x, y_le_a, y_le_xs
+    }
+    case a_l_x: a < x {
+      have not_x_le_a: not (x ≤ a)
+          by apply not_less_equal_iff_greater to a_l_x
+      suffices all_elements(node(a, insert(xs', x)), λb{y ≤ b})
+          by definition insert and rewrite (apply eq_false to not_x_le_a)
+      suffices y ≤ a and all_elements(insert(xs', x), λb{y ≤ b})
+          by definition all_elements
+      have y_le_xsx: all_elements(insert(xs',x),λb{(y ≤ b)})
+	  by apply IH to y_le_x, y_le_xs
+      y_le_a, y_le_xsx
+    }
+  }
+end
+
+theorem insert_sorted: all xs:List<Nat>. all x:Nat.
+  if sorted(xs) then sorted(insert(xs, x))
+proof
+  induction List<Nat>
+  case empty {
+    arbitrary x:Nat
+    suppose _
+    conclude sorted(insert(empty,x))
+        by definition {insert, sorted, sorted, all_elements}
+  }
+  case node(y, next) suppose IH {
+    arbitrary x:Nat
+    suppose s_yn: sorted(node(y,next))
+    have s_n: sorted(next) by definition sorted in s_yn
+    have y_next: all_elements(next,λb{(y ≤ b)}) by definition sorted in s_yn
+    suffices sorted(insert(node(y,next),x)) by .
+    switch x ≤ y for insert {
+      case true  suppose x_le_y_true {
+        have x_le_y: x ≤ y   by rewrite x_le_y_true
+        suffices sorted(next)
+             and all_elements(next, λb{y ≤ b})
+             and x ≤ y
+             and all_elements(next, λb{x ≤ b})
+                            by definition {sorted, sorted, all_elements}
+        have x_le_next: all_elements(next, λb{(x ≤ b)})
+          by apply all_elements_implies<Nat>[next][λb{(y ≤ b)}, λb{(x ≤ b)}]
+             to y_next , (arbitrary z:Nat
+                          suppose y_z: y ≤ z
+                          conclude x ≤ z by apply less_equal_trans
+                                            to x_le_y , y_z)
+        s_n, y_next, x_le_y, x_le_next
+      }
+      case false  suppose x_le_y_false {
+        have not_x_le_y: not (x ≤ y)
+            by suppose x_le_y rewrite x_le_y_false in x_le_y
+        have y_l_x: y < x  by apply not_less_equal_iff_greater to not_x_le_y
+        suffices sorted(insert(next, x)) and all_elements(insert(next, x), λb{y ≤ b})
+            by definition {sorted}
+        have s_next_x: sorted(insert(next,x)) by apply IH[x] to s_n
+        have y_le_x: y ≤ x by apply less_implies_less_equal to y_l_x
+        have y_le_next_x: all_elements(insert(next,x),λb{(y ≤ b)})
+            by apply less_equal_insert to y_le_x, y_next
+        s_next_x, y_le_next_x
+      }
+    }
+  }
+end
+
+theorem insert_contents: all xs:List<Nat>. all y:Nat.
+  mset_of(insert(xs,y)) = m_one(y) ⨄ mset_of(xs)
+proof
+  induction List<Nat>
+  case empty {
+    arbitrary y:Nat
+    conclude mset_of(insert(empty,y)) = m_one(y) ⨄ mset_of(empty)
+        by definition {insert, mset_of, mset_of}
+  }
+  case node(x, xs') suppose IH {
+    arbitrary y:Nat
+    suffices mset_of(insert(node(x, xs'), y))
+           = m_one(y) ⨄ mset_of(node(x, xs'))    by .
+    switch y ≤ x for insert {
+      case true suppose yx_true {
+        definition {mset_of,mset_of}
+      }
+      case false suppose yx_false {
+	equations
+              mset_of(node(x, insert(xs', y)))
+            = m_one(x) ⨄ mset_of(insert(xs', y))          by definition mset_of
+        ... = m_one(x) ⨄ m_one(y) ⨄ mset_of(xs')          by rewrite IH[y]
+        ... = (m_one(x) ⨄ m_one(y)) ⨄ mset_of(xs')
+                by symmetric m_sum_assoc<Nat>[m_one(x), m_one(y), mset_of(xs')]
+        ... = (m_one(y) ⨄ m_one(x)) ⨄ mset_of(xs')
+                by rewrite m_sum_commutes<Nat>[m_one(x), m_one(y)]
+        ... = m_one(y) ⨄ m_one(x) ⨄ mset_of(xs')
+                by m_sum_assoc<Nat>[m_one(y), m_one(x), mset_of(xs')]
+        ... = #m_one(y) ⨄ mset_of(node(x, xs'))#          by definition mset_of
+      }
+    }
+  }
+end
+
+function isort(List<Nat>, List<Nat>) -> List<Nat> {
+  isort([], ys) = ?
+  isort(node(x, xs), ys) = ?
+}
+
+theorem isort_sorted: all xs:List<Nat>. all ys:List<Nat>.
+  if sorted(ys)
+  then sorted( isort(xs, ys) )
+proof
+  sorry
+end
+
+theorem isort_contents: all xs:List<Nat>. all ys:List<Nat>.
+  mset_of( isort(xs, ys) ) = mset_of(xs) ⨄ mset_of(ys)
+proof
+  sorry
+end
+
+define insertion_sort2 : fn List<Nat> -> List<Nat>
+    = λxs{ isort(xs, empty) }
+
+theorem insertion_sort2_sorted: all xs:List<Nat>. 
+  sorted( insertion_sort2(xs) )
+proof
+  sorry
+end
+
+theorem insertion_sort2_contents: all xs:List<Nat>. 
+  mset_of( insertion_sort2(xs) ) = mset_of(xs)
+proof
+  sorry
+end
+

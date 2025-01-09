@@ -62,13 +62,15 @@ function sorted(List<Nat>) -> bool {
 
 You may reuse theorems from the proof of correctness for `insertion_sort`.
 In particular, you will need `less_equal_insert` and `insert_sorted`.
+These theorems and the definitions of `insert`  and `sorted` are
+in the file [InsertionSortStarter.pf](./InsertionSortStarter.pf).
 
 
 ## Extra Credit
 
 Prove that the output includes all of the same elements as in the
 input (the correct number of times).  You may use `insert_contents`
-from the proof for `insertion_sort_contents`.
+from the proof for `insertion_sort_contents` (also in the starter file).
 
 ```
 theorem insertion_sort2_contents: all xs:List<Nat>. 
