@@ -59,7 +59,7 @@ end
 definition of `Odd` and `Even` are in `lib/Nat.pf`.  Hint: use the
 `obtain`, `choose`, and `equations` proof statements.
 
-```{.deduce #addition_of_odds}
+```{.deduce^#addition_of_odds}
 theorem addition_of_odds: all x:Nat, y:Nat. 
   if Odd(x) and Odd(y) then Even(x + y)
 proof
