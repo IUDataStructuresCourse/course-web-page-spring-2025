@@ -95,7 +95,7 @@ Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
 Day     | Lecture Topic                                             | Reading Due  | Assignments and Due Dates | Link
 Jan. 14 | [Introduction](./lectures/introduction.md)                |              |         |
 Jan. 16 | [Arrays, Rotation, Testing](./lectures/array-rotation.md) | Ch. 1        |         |
-Jan. 16 or 17 |                                                     |              | [Lab: Array Search and Testing](./Search) | TBD
+Jan. 16 or 17 |                                                     |              | [Lab: Array Search and Testing](./Search) | [code](https://autograder.luddy.indiana.edu/web/project/1531), [test](https://autograder.luddy.indiana.edu/web/project/1526)
 Jan. 20 |                                                           |              | Lab Array Search due |
 Jan. 21 | [Algorithm Analysis](./lectures/algo-analysis.md)         | Ch. 2        | 
 Jan. 23 | [Algorithm Analysis, continued](./lectures/more-algo-analysis.md) 
