@@ -108,7 +108,7 @@ Feb. 13 or 14 |                                                     |           
 Feb. 17 |                                                           |              | Lab Insertion Sort due
 Feb. 18 | Binary Trees
 Feb. 20 | Merge Sort
-Feb. 20 or 21 |                                                     |              | Lab: Binary Tree Search
+Feb. 20 or 21 |                                                     |              | [Lab: Binary Tree Search](./LabBinarySearchTree.md)
 Feb. 24 |
 
 <!--

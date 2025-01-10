@@ -1,0 +1,83 @@
+import Base
+import Pair
+import Option
+import Nat
+import Maps
+import Set
+
+union Tree<E> {
+  EmptyTree
+  TreeNode(Tree<E>, E, Tree<E>)
+}
+
+function BST_map(Tree<Pair<Nat,Nat>>) -> fn Nat -> Option<Nat> {
+  BST_map(EmptyTree) = @empty_map<Nat,Nat>
+  BST_map(TreeNode(L, kv, R)) =
+    update(combine(BST_map(L), BST_map(R)), first(kv), just(second(kv)))
+}
+
+function BST_keys(Tree<Pair<Nat,Nat>>) -> Set<Nat> {
+  BST_keys(EmptyTree) = ∅
+  BST_keys(TreeNode(L,kv,R)) = single(first(kv)) ∪ BST_keys(L) ∪ BST_keys(R)
+}
+
+function is_BST(Tree<Pair<Nat,Nat>>) -> bool {
+  is_BST(EmptyTree) = true
+  is_BST(TreeNode(L, kv, R)) =
+    (all l:Nat. if l ∈ BST_keys(L) then l < first(kv))
+    and (all r:Nat. if r ∈ BST_keys(R) then first(kv) < r)
+    and is_BST(L) and is_BST(R)
+}
+
+theorem BST_keys_map_none: all T:Tree<Pair<Nat,Nat>>, x:Nat.
+  if not (x ∈ BST_keys(T))
+  then BST_map(T)(x) = none
+proof
+  induction Tree<Pair<Nat,Nat>>
+  case EmptyTree {
+    arbitrary x:Nat
+    assume _
+    definition {BST_map, empty_map}
+  }
+  case TreeNode(L, kv, R) assume IH_L, IH_R {
+    arbitrary x:Nat
+    assume prem
+    have not_xk: not (x = first(kv)) by {
+        assume: x = first(kv)
+        have xinT:  x ∈ BST_keys(TreeNode(L, kv, R)) by {
+           suffices x ∈ single(first(kv)) ∪ (BST_keys(L) ∪ BST_keys(R)) by definition BST_keys
+           suffices x ∈ single(first(kv)) by in_left_union<Nat>
+           suffices x ∈ single(x) by rewrite symmetric (recall x = first(kv))
+           single_member<Nat>
+        }
+        conclude false by apply prem to xinT
+    }
+    have notinL: not (x ∈ BST_keys(L)) by {
+      assume xinL: x ∈ BST_keys(L)
+      have xinT: x ∈ BST_keys(TreeNode(L, kv, R)) by {
+        suffices x ∈ single(first(kv)) ∪ (BST_keys(L) ∪ BST_keys(R)) by definition BST_keys
+        suffices x ∈ (BST_keys(L) ∪ BST_keys(R)) by in_right_union<Nat>
+        suffices x ∈ BST_keys(L) by in_left_union<Nat>
+        xinL
+      }
+      conclude false by apply prem to xinT
+    }
+    have notinR: not (x ∈ BST_keys(R)) by {
+      assume xinR: x ∈ BST_keys(R)
+      have xinT: x ∈ BST_keys(TreeNode(L, kv, R)) by {
+        suffices x ∈ single(first(kv)) ∪ (BST_keys(L) ∪ BST_keys(R)) by definition BST_keys
+        suffices x ∈ (BST_keys(L) ∪ BST_keys(R)) by in_right_union<Nat>
+        suffices x ∈ BST_keys(R) by in_right_union<Nat>
+        xinR
+      }
+      conclude false by apply prem to xinT
+    }
+    have Lx: BST_map(L)(x) = none by apply IH_L[x] to notinL
+    have Rx: BST_map(R)(x) = none by apply IH_R[x] to notinR
+    suffices combine(BST_map(L), BST_map(R))(x) = none
+        by definition {BST_map, update} and rewrite (apply eq_false to not_xk)
+    suffices BST_map(L)(x) = none
+        by rewrite (apply combine_left<Nat,Nat>[BST_map(L), BST_map(R)] to Rx)
+    Lx
+  }
+end
