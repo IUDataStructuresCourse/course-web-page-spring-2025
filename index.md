@@ -101,11 +101,11 @@ Feb. 3  |                                                           |           
 Feb. 4  | [Proof by Induction on Linked Lists](./lectures/InductionOnLists.md) 
 Feb. 6  | [Discovering and Generalizing Lemmas](./lectures/RevRev.md)                       |              | [Proof Exercises](./ProofExercises.md)
 Feb. 6 or 7 |                                                       |              | [Lab: List Search](./ListSearch.md)
-Feb. 10 |                                                           |              | Lab due
+Feb. 10 |                                                           |              | Lab List Search due
 Feb. 11 | Insertion Sort
 Feb. 13 |                                                           |              | [Proof: Quick Reverse Correct](./QuickReverse.md)
 Feb. 13 or 14 |                                                     |              | [Lab: Insertion Sort](./LabInsertionSort.md)
-Feb. 17 |
+Feb. 17 |                                                           |              | Lab Insertion Sort due
 Feb. 18 | Binary Trees
 Feb. 20 | Merge Sort
 Feb. 20 or 21 |                                                     |              | Lab: Binary Tree Search
@@ -195,12 +195,11 @@ Apr. 30 | **<mark>Final Exam</mark>**  10:20am--12:20 pm for 1724 (Jeremy) and 8
 This policy applies to labs, projects, textbook exercises, and
 quizzes.  For quizzes, you can do a make-up quiz during office hours.
 This policy does not apply to the midterm and final exam.  When you
-complete something late, there is a 10% deduction to its grade.
+complete something up to one week late, there is a 10% deduction to its grade.
 
-100% | before 1st deadline
-90%  | before 2nd deadline (one week after 1st)
-0%   | after  2nd deadline
-
+100% | before due date
+90%  | up to one week after due date
+0%   | after one week past the due date 
 
 
 **Bias-Based Incident Reporting.**
