@@ -197,7 +197,7 @@ quizzes.  For quizzes, you can do a make-up quiz during office hours.
 This policy does not apply to the midterm and final exam.  When you
 complete something up to one week late, there is a 10% deduction to its grade.
 
-100% | before due date
+100% | up to the due date
 90%  | up to one week after due date
 0%   | after one week past the due date 
 
