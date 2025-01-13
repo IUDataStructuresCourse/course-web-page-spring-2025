@@ -13,8 +13,16 @@
 
 ## Introduce course AI's
 
-* Aaron Olson (aarolson)
-* Calvin Josenhans (cjosenha)
+* Chavan, Dhruv (dvchavan)
+* Cloteaux, Matei (mcloteau)
+* Donato, Lillie (mdonato)
+* Ghafoor, Javaria (jghafoor)
+* Gonsalves, Shulin (shugons)
+* Josenhans, Calvin (cjosenha)
+* Ishoel, Ashley (aarolson)
+* Shetty, Darshal (dcshetty)
+* Sivakumar, Aniruthan (ansiva)
+
 
 ## Course web page, syllabus, schedule (due dates, etc.)
 
