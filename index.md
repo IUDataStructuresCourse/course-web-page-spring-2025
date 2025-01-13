@@ -139,12 +139,12 @@ April 17 or 18 | | | Project: [Routing Wires](./RoutingWires), cont'd
 April 21 | | | Routing Wires due, [code](https://autograder.luddy.indiana.edu/web/project/1518)
 April 22 | [DNA Alignment](./lectures/DNA-alignment.md)
 April 24 | [More Dynamic Programming](./lectures/more-dynamic-programming.md)
-April 24 or 25 | Lab: [DNA Sequence Alignment](./DnaAlignment.md) | [code](https://autograder.luddy.indiana.edu/web/project/1513), [test](https://autograder.luddy.indiana.edu/web/project/1525)
+April 24 or 25 | | | Lab: [DNA Sequence Alignment](./DnaAlignment.md) | [code](https://autograder.luddy.indiana.edu/web/project/1513), [test](https://autograder.luddy.indiana.edu/web/project/1525)
 April 28 | | | Lab DNA Sequence Alignment due
 April 29 | Code Review (Routing Wires)
 May 1 | Review for Final Exam
 May 1 or 2 | | | Optional lab for exam review
-
+May 8 | **Final Exam** (in class) 10:20am-12:20pm
 <!--
 Jan. 23 | [Linked Lists and Interfaces](./lectures/linked-lists.md) | Ch. 3 sec. 1-5 |
 Jan. 25 | [More Interfaces, Binary Trees](./lectures/binary-trees.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_m7ud77ew)) | Ch. 3 sec. 6-7,<br> Ch. 4 sec. 1-2
