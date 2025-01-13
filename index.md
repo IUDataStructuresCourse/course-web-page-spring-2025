@@ -102,7 +102,7 @@ Feb. 4  | [Proof by Induction on Linked Lists](./lectures/InductionOnLists.md)
 Feb. 6  | [Discovering and Generalizing Lemmas](./lectures/RevRev.md)                       |              | [Proof Exercises](./ProofExercises.md)
 Feb. 6 or 7 |                                                       |              | [Lab: List Search](./ListSearch.md)
 Feb. 10 |                                                           |              | Lab List Search due
-Feb. 11 | Insertion Sort                                            | Ch.2 Sec. 2  |
+Feb. 11 | Insertion Sort                                            | Ch.7 Sec. 2  |
 Feb. 13 | Merge Sort, Quick Sort                                    | Ch.7 Sec. 6,7 | [Proof: Quick Reverse Correct](./QuickReverse.md)
 Feb. 13 or 14 |                                                     |              | [Lab: Insertion Sort](./LabInsertionSort.md)
 Feb. 17 |                                                           |              | Lab Insertion Sort due
