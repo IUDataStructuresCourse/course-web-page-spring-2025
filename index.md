@@ -93,7 +93,7 @@ Jan. 20 |                                                           |           
 Jan. 21 | [Algorithm Analysis](./lectures/algo-analysis.md)         | Ch. 2        | 
 Jan. 23 | [Algorithm Analysis, continued](./lectures/more-algo-analysis.md) 
 Jan. 23 or 24 |                                                     |              | [Project: FloodIt!](./flood-it)
-Jan. 27 |                                                           |              | Project FloodIt! due |
+Jan. 27 |                                                           |              | Project FloodIt! due | [code](https://autograder.luddy.indiana.edu/web/project/1509)
 Jan. 28 | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | [Programming in Deduce](https://jsiek.github.io/deduce/doc/FunctionalProgramming.html)
 Jan. 30 | Proving Theorems in Deduce                                | [Proofs in Deduce](https://jsiek.github.io/deduce/doc/ProofIntro.html)
 Jan. 30 or 31 |                                                     |              | [Lab: Linked Lists in Deduce](./LabDeduceProg)
