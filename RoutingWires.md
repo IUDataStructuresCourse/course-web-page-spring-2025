@@ -71,8 +71,7 @@ Note that a path can have the same source and destination points.
 
 + Student support code is at [link](https://github.com/IUDataStructuresCourse/routing-wires-student-support-code).
   Please make sure to go through existing code before you start.
-+ Submit your code file `Routing.java` and write-up file `README.md` to
-  [link](https://autograder.luddy.indiana.edu/web/project/1311).
++ Submit your code file `Routing.java` and write-up file `README.md` to the autograder.
 
 ## Programming Task
 

@@ -61,7 +61,7 @@ when you click on a tile.
 We need your help! Your task is to implement the `flood()` function in `src/Flood.java`.
 Like prior labs, test your implementation locally by adding test cases in `test/FloodTest.java`.
 
-After completion, submit **three** files to Autograder at [link](https://autograder.luddy.indiana.edu/web/project/1302):
+After completion, submit **three** files to the Autograder:
 + `Flood.java`: your code
 + `result.png`: the execution time graph in [Problem 3](#problem-3-comparing-time-complexity-between-implementations)
 + `README.md`: responses to Question 1 ~ Question 5.
