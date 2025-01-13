@@ -38,10 +38,8 @@ perform the depth-first search.
 
 + Student support code is at [link](https://github.com/IUDataStructuresCourse/connected-components-student-support-code).
   Please make sure to go through existing code before you start.
-+ Submit your code file `ConnectedComponents.java` to
-  [link](https://autograder.luddy.indiana.edu/web/project/1309).
-+ Submit your test file `StudentTest.java` to
-  [link](https://autograder.luddy.indiana.edu/web/project/1312).
++ Submit your code file `ConnectedComponents.java` to the autograder ConnectedComponents project.
++ Submit your test file `StudentTest.java` to the autograder ConnectedComponentsTest project.
 
 ## Example
 

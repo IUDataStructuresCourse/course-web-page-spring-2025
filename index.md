@@ -128,11 +128,11 @@ March 27 or 28 | | | Lab: [Heap (Huffman Coding)](./Heap.md) | [code](https://au
 March 31 | | | Lab Heap Due
 April 1 | [Graphs and Breadth-first Search](./lectures/graphs-bfs.md) | Ch. 9, sec. 1,3 | 
 April 3 | [Depth-first Search](./lectures/dfs.md)                  | Ch. 9 sec. 6
-April 3 or 4 |                                                     |              | Lab: [Connected Components](./ConnectedComponents.md)
+April 3 or 4 |                                                     |              | Lab: [Connected Components](./ConnectedComponents.md) | [code](https://autograder.luddy.indiana.edu/web/project/1516), [test](https://autograder.luddy.indiana.edu/web/project/1519)
 April 7 | | | Lab Connected Components due
 April 8 | [Shortest Paths](./lectures/shortest-paths.md)           | Ch. 9 sec. 3
 April 10 | [Union Find](./lectures/union-find.md)                  | Ch. 8
-April 10 or 11 | | | Project: [Routing Wires](./RoutingWires)
+April 10 or 11 | | | Project: [Routing Wires](./RoutingWires) | [code](https://autograder.luddy.indiana.edu/web/project/1518)
 April 15 | [Minimum Spanning Tree](./lectures/minimum-spanning-tree.md) | Ch. 9 sec. 5
 April 17 | [Dynamic Programming](./lectures/dynamic-programming.md)     | Ch. 10, sec. 3
 April 17 or 18 | | | Project: [Routing Wires](./RoutingWires), cont'd
