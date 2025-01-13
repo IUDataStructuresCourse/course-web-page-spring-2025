@@ -102,14 +102,18 @@ Feb. 4  | [Proof by Induction on Linked Lists](./lectures/InductionOnLists.md)
 Feb. 6  | [Discovering and Generalizing Lemmas](./lectures/RevRev.md)                       |              | [Proof Exercises](./ProofExercises.md)
 Feb. 6 or 7 |                                                       |              | [Lab: List Search](./ListSearch.md)
 Feb. 10 |                                                           |              | Lab List Search due
-Feb. 11 | Insertion Sort, Merge Sort
+Feb. 11 | Insertion Sort, Merge Sort, Quick Sort
 Feb. 13 |                                                           |              | [Proof: Quick Reverse Correct](./QuickReverse.md)
 Feb. 13 or 14 |                                                     |              | [Lab: Insertion Sort](./LabInsertionSort.md)
 Feb. 17 |                                                           |              | Lab Insertion Sort due
-Feb. 18 | Binary Trees
-Feb. 20 | Binary Search Trees
+Feb. 18 | [Binary Trees](./lectures/binary-trees.md)
+Feb. 20 | [Binary Search Trees](./lectures/binary-search-trees.md)
 Feb. 20 or 21 |                                                     |              | [Lab: Binary Tree Search](./LabBinarySearchTree.md)
 Feb. 24 |
+Feb. 25 | [Balanced Search Trees (AVL)](./lectures/balanced-search-trees.md)
+Feb. 27 | [More AVL](./lectures/more-avl-trees.md)
+Feb. 27 or 28 | | | Lab: work on <br> [Project 2: Segment Intersection](./SegmentIntersection.md), <br> | [code](https://autograder.luddy.indiana.edu/web/project/1530), [test](https://autograder.luddy.indiana.edu/web/project/1529)
+March 6 or 7 | Lab: finish <br> [Project 2: Segment Intersection](./SegmentIntersection.md) | [code](https://autograder.luddy.indiana.edu/web/project/1530), [test](https://autograder.luddy.indiana.edu/web/project/1529)
 
 <!--
 Jan. 23 | [Linked Lists and Interfaces](./lectures/linked-lists.md) | Ch. 3 sec. 1-5 |
