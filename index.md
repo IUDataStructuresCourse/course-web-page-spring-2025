@@ -115,7 +115,7 @@ Feb. 27 | [More AVL](./lectures/more-avl-trees.md)
 Feb. 27 or 28 | | | Lab: work on [Project 2: Segment Intersection](./SegmentIntersection.md) | [code](https://autograder.luddy.indiana.edu/web/project/1530), [test](https://autograder.luddy.indiana.edu/web/project/1529)
 March 4 | [Recipes for Time Analysis and Testing](./lectures/analysis-and-testing-recipes.md)
 March 6 | [Hash Tables](./lectures/hash-tables.md) | Ch. 5 sec. 1,2,3,5,6 |
-March 6 or 7 | Lab: finish [Project 2: Segment Intersection](./SegmentIntersection.md) | [code](https://autograder.luddy.indiana.edu/web/project/1530), [test](https://autograder.luddy.indiana.edu/web/project/1529)
+March 6 or 7 | | | Lab: finish [Project 2: Segment Intersection](./SegmentIntersection.md) | [code](https://autograder.luddy.indiana.edu/web/project/1530), [test](https://autograder.luddy.indiana.edu/web/project/1529)
 March 10 |                                           |              | Project Segment Intersection due
 March 11 | Review for Midterm Exam
 March 13 | **Midterm Exam** (in class)
