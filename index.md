@@ -136,7 +136,7 @@ April 10 or 11 | | | Project: [Routing Wires](./RoutingWires)
 April 15 | [Minimum Spanning Tree](./lectures/minimum-spanning-tree.md) | Ch. 9 sec. 5
 April 17 | [Dynamic Programming](./lectures/dynamic-programming.md)     | Ch. 10, sec. 3
 April 17 or 18 | | | Project: [Routing Wires](./RoutingWires), cont'd
-April 21 | | | Routing Wires due, [code](https://autograder.luddy.indiana.edu/web/project/1518)
+April 21 | | | Routing Wires due | [code](https://autograder.luddy.indiana.edu/web/project/1518)
 April 22 | [DNA Alignment](./lectures/DNA-alignment.md)
 April 24 | [More Dynamic Programming](./lectures/more-dynamic-programming.md)
 April 24 or 25 | | | Lab: [DNA Sequence Alignment](./DnaAlignment.md) | [code](https://autograder.luddy.indiana.edu/web/project/1513), [test](https://autograder.luddy.indiana.edu/web/project/1525)
