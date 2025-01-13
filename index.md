@@ -145,6 +145,7 @@ April 29 | Code Review (Routing Wires)
 May 1 | Review for Final Exam
 May 1 or 2 | | | Optional lab for exam review
 May 8 | **Final Exam** (in class) 10:20am-12:20pm
+
 <!--
 Jan. 23 | [Linked Lists and Interfaces](./lectures/linked-lists.md) | Ch. 3 sec. 1-5 |
 Jan. 25 | [More Interfaces, Binary Trees](./lectures/binary-trees.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_m7ud77ew)) | Ch. 3 sec. 6-7,<br> Ch. 4 sec. 1-2
