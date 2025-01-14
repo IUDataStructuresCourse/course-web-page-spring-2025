@@ -80,8 +80,7 @@ Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
 
 **Slack (communicating with instructors and other students)**
 
-[Workspace](https://c343-spring-2025.slack.com)
- ([signup](https://join.slack.com/t/c343-spring-2025/shared_invite/zt-2xcslhwid-y59836A2HqiiwrvtYtbxTA))
+[Signup](https://join.slack.com/t/c343-spring-2025/shared_invite/zt-2xcslhwid-y59836A2HqiiwrvtYtbxTA)
 
 **Schedule**
 
@@ -89,114 +88,50 @@ Day     | Lecture Topic                                             | Reading Du
 Jan. 14 | [Introduction](./lectures/introduction.md)                |              |         |
 Jan. 16 | [Arrays, Rotation, Testing](./lectures/array-rotation.md) | Ch. 1        |         |
 Jan. 16 or 17 |                                                     |              | [Lab: Array Search and Testing](./Search) | [code](https://autograder.luddy.indiana.edu/web/project/1531), [test](https://autograder.luddy.indiana.edu/web/project/1526)
-<!-- Jan. 20 ||| Lab Array Search Due -->
 Jan. 21 | [Algorithm Analysis](./lectures/algo-analysis.md)         | Ch. 2        | Lab Array Search due                      | [code](https://autograder.luddy.indiana.edu/web/project/1531), [test](https://autograder.luddy.indiana.edu/web/project/1526)
 Jan. 23 | [Algorithm Analysis, continued](./lectures/more-algo-analysis.md) 
 Jan. 23 or 24 |                                                     |              | [Project: FloodIt!](./flood-it) | [code](https://autograder.luddy.indiana.edu/web/project/1509)
-<!-- Jan. 27 |                                                           |              | Project FloodIt! due | [code](https://autograder.luddy.indiana.edu/web/project/1509) -->
 Jan. 28 | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | [Programming in Deduce](https://jsiek.github.io/deduce/doc/FunctionalProgramming.html) | Project FloodIt! due | [code](https://autograder.luddy.indiana.edu/web/project/1509)
 Jan. 30 | Proving Theorems in Deduce                                | [Proofs in Deduce](https://jsiek.github.io/deduce/doc/ProofIntro.html)
 Jan. 30 or 31 |                                                     |              | [Lab: Linked Lists in Deduce](./LabDeduceProg)
-<!-- Feb. 3  |                                                           |              | Lab Linked Lists in Deduce due -->
 Feb. 4  | [Proof by Induction on Linked Lists](./lectures/InductionOnLists.md) | | Lab Linked Lists in Deduce due
 Feb. 6  | [Discovering and Generalizing Lemmas](./lectures/RevRev.md)                       |              | [Proof Exercises](./ProofExercises.md)
 Feb. 6 or 7 |                                                       |              | [Lab: List Search](./ListSearch.md)
-<!-- Feb. 10 |                                                           |              | Lab List Search due -->
 Feb. 11 | Insertion Sort                                            | Ch.7 Sec. 2  | | Lab List Search due
 Feb. 13 | Merge Sort, Quick Sort                                    | Ch.7 Sec. 6,7 | [Proof: Quick Reverse Correct](./QuickReverse.md)
 Feb. 13 or 14 |                                                     |              | [Lab: Insertion Sort](./LabInsertionSort.md)
-<!-- Feb. 17 |                                                           |              | Lab Insertion Sort due -->
 Feb. 18 | [Binary Trees](./lectures/binary-trees.md)                | Ch. 4 Sec. 1-2 | Lab Insertion Sort due
 Feb. 20 | [Binary Search Trees](./lectures/binary-search-trees.md)  | Ch. 4 Sec. 3
 Feb. 20 or 21 |                                                     |              | [Lab: Binary Tree Search](./LabBinarySearchTree.md)
-<!-- Feb. 24 |                                                           |              | Lab Binary Tree Search due -->
 Feb. 25 | [Balanced Search Trees (AVL)](./lectures/balanced-search-trees.md) | Ch. 4 Sec. 4 | Lab Binary Tree Search due
 Feb. 27 | [More AVL](./lectures/more-avl-trees.md)
 Feb. 27 or 28 | | | Lab: work on [Project 2: Segment Intersection](./SegmentIntersection.md) | [code](https://autograder.luddy.indiana.edu/web/project/1530), [test](https://autograder.luddy.indiana.edu/web/project/1529)
 March 4 | [Recipes for Time Analysis and Testing](./lectures/analysis-and-testing-recipes.md)
 March 6 | [Hash Tables](./lectures/hash-tables.md) | Ch. 5 sec. 1,2,3,5,6 |
 March 6 or 7 | | | Lab: finish [Project 2: Segment Intersection](./SegmentIntersection.md) | [code](https://autograder.luddy.indiana.edu/web/project/1530), [test](https://autograder.luddy.indiana.edu/web/project/1529)
-<!-- March 10 |                                           |              | Project Segment Intersection due -->
 March 11 | Review for Midterm Exam |  | Project Segment Intersection due
 March 13 | **Midterm Exam** (in class)
 March 13 or 14 | | | Lab: [Hash Table](./LabHashTable.md) | [code](https://autograder.luddy.indiana.edu/web/project/1500), [test](https://autograder.luddy.indiana.edu/web/project/1520)
 March 17-21 | **Spring Break**
-<!-- March 24 | | | Lab Hash Table due -->
 March 25 | Code Review (Segment Intersection) | | Lab Hash Table due
 March 27 | [Heaps and Priority Queues](./lectures/heaps.md) | Ch. 6 sec. 1-4,9
 March 27 or 28 | | | Lab: [Heap (Huffman Coding)](./Heap.md) | [code](https://autograder.luddy.indiana.edu/web/project/1532), [test](https://autograder.luddy.indiana.edu/web/project/1533)
-<!-- March 31 | | | Lab Heap Due -->
 April 1 | [Graphs and Breadth-first Search](./lectures/graphs-bfs.md) | Ch. 9, sec. 1,3 | Lab Heap Due
 April 3 | [Depth-first Search](./lectures/dfs.md)                  | Ch. 9 sec. 6
 April 3 or 4 |                                                     |              | Lab: [Connected Components](./ConnectedComponents.md) | [code](https://autograder.luddy.indiana.edu/web/project/1516), [test](https://autograder.luddy.indiana.edu/web/project/1519)
-<!-- April 7 | | | Lab Connected Components due -->
 April 8 | [Shortest Paths](./lectures/shortest-paths.md)           | Ch. 9 sec. 3 | Lab Connected Components due
 April 10 | [Union Find](./lectures/union-find.md)                  | Ch. 8
 April 10 or 11 | | | Project: [Routing Wires](./RoutingWires) | [code](https://autograder.luddy.indiana.edu/web/project/1518)
 April 15 | [Minimum Spanning Tree](./lectures/minimum-spanning-tree.md) | Ch. 9 sec. 5
 April 17 | [Dynamic Programming](./lectures/dynamic-programming.md)     | Ch. 10, sec. 3
 April 17 or 18 | | | Project: [Routing Wires](./RoutingWires), cont'd
-<!-- April 21 | | | Routing Wires due | [code](https://autograder.luddy.indiana.edu/web/project/1518) -->
 April 22 | [DNA Alignment](./lectures/DNA-alignment.md) | | Routing Wires due 
 April 24 | [More Dynamic Programming](./lectures/more-dynamic-programming.md)
 April 24 or 25 | | | Lab: [DNA Sequence Alignment](./DnaAlignment.md) | [code](https://autograder.luddy.indiana.edu/web/project/1513), [test](https://autograder.luddy.indiana.edu/web/project/1525)
-<!-- April 28 | | | Lab DNA Sequence Alignment due -->
 April 29 | Code Review (Routing Wires) | | Lab DNA Sequence Alignment due
 May 1 | Review for Final Exam
 May 1 or 2 | | | Optional lab for exam review
 May 8 | **Final Exam** (in class) 10:20am-12:20pm
-
-<!--
-Jan. 23 | [Linked Lists and Interfaces](./lectures/linked-lists.md) | Ch. 3 sec. 1-5 |
-Jan. 25 | [More Interfaces, Binary Trees](./lectures/binary-trees.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_m7ud77ew)) | Ch. 3 sec. 6-7,<br> Ch. 4 sec. 1-2
-Jan. 25 or 26 | | | Lab: work on <br> [Project 1: Flood It](./proj1-flood-it), <br> [Quiz 1](https://iu.instructure.com/courses/2201400/quizzes/4164125) | [code](https://autograder.luddy.indiana.edu/web/project/922)
-Jan. 29 | | | Project 1 due |
-Jan. 30 | [Binary Search Trees](./lectures/binary-search-trees.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_vorn49a7))                  | Ch. 4 sec. 3 and 7  |
-Feb. 1  | [Balanced Search Trees (AVL)](./lectures/balanced-search-trees.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_8g6xcmvu)) | Ch. 4 sec. 4 |
-Feb. 1 or 2 | | | [Lab 2: Merge Sort on Linked Lists](./lab2) | [code](https://autograder.luddy.indiana.edu/web/project/936), [test](https://autograder.luddy.indiana.edu/web/project/942)
-Feb. 5 | | | Lab 2 due |
-Feb. 6 | [More AVL](./lectures/more-avl-trees.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_383q33uk))
-Feb. 8 | [Code Review (Flood It!), Hash Tables](./lectures/hash-tables.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_2lijykzx)) | Ch. 5 sec. 1,2,3,5,6
-Feb. 8 or 9 | | | [Lab 3: Next Prev Binary Tree](./lab3) | [code](https://autograder.luddy.indiana.edu/web/project/924), [test](https://autograder.luddy.indiana.edu/web/project/943)
-Feb. 12 | | | Lab 3 due |
-Feb. 13 | [Recipes for Time Analysis and Testing](./lectures/analysis-and-testing-recipes.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_suf7596w))
-Feb. 15 | [Heaps and Priority Queues](./lectures/heaps.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_d98gzzu8)) | Ch. 6 sec. 1-4, 9 |
-Feb. 15 or 16 | | | Lab: work on <br> [Project 2: Segment Intersection](./proj2-seg-int), <br> [Quiz 2](https://iu.instructure.com/courses/2201400/quizzes/4171264) | [code](https://autograder.luddy.indiana.edu/web/project/929), [test](https://autograder.luddy.indiana.edu/web/project/944)
-Feb. 20 | [Priority Queues, Code Review of Binary Trees](./lectures/priority-queue-binary-tree.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_r4998ze6))
-Feb. 22 | [Binomial Queues](./lectures/binomial-queues.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_2u62nvbp)) | Ch. 6 sec. 8 |
-Feb. 22 or 23 | | | Lab: finish <br> [Project 2: Segment Intersection](./proj2-seg-int) | [code](https://autograder.luddy.indiana.edu/web/project/929), [test](https://autograder.luddy.indiana.edu/web/project/944)
-Feb. 26 | | | Project 2 due |
-Feb. 27 | [Quicksort](./lectures/quicksort.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_eaih0uhc)) | Ch. 7, sec. 1-7 | 
-Feb. 29 | [Review for Midterm Exam](./lectures/midterm-review.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_1o6n2wus))
-Feb. 29 and Mar. 1 | | | No Labs
-Mar. 5 | **Midterm Exam** (in class)
-Mar. 7 | [Sorting in Linear Time](./lectures/sort-linear.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_w628460n))| Ch. 7 sec. 11
-Mar. 7 or 8 | | | [Lab 4: Binomial Heaps](./lab4) | [code](https://autograder.luddy.indiana.edu/web/project/930), [test](https://autograder.luddy.indiana.edu/web/project/937)
-Mar. 10 - 17 | **Spring Break**
-Mar. 18 | | | Lab 4 due |
-Mar. 19 | [Graphs and Breadth-first Search](./lectures/graphs-bfs.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_wjlji04p)) | Ch. 9, sec. 1, sec. 3.1
-Mar. 21 | [Depth-first Search](./lectures/dfs.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_m8w7a122)) | Ch. 9 sec. 6
-Mar. 21 or 22 | | | [Lab 5: Generic Quicksort](./lab5) | [code](https://autograder.luddy.indiana.edu/web/project/906), [test](https://autograder.luddy.indiana.edu/web/project/938)
-Mar. 25 | | | Lab 5 due |
-Mar. 26 | [Shortest Paths](./lectures/shortest-paths.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_lkian02b)) | Ch. 9 sec. 3
-Mar. 28 | [Union Find](./lectures/union-find.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_a473zgt3))| Ch. 8
-Mar. 28 or 29 | | | [Lab 6: Connected Components](./lab6), <br> [Quiz 3](https://iu.instructure.com/courses/2201400/quizzes/4185224) | [code](https://autograder.luddy.indiana.edu/web/project/931), [test](https://autograder.luddy.indiana.edu/web/project/934)
-Apr. 1 | | | Lab 6 due |
-Apr. 2 | [Minimum Spanning Tree](./lectures/minimum-spanning-tree.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_lym41urq)) | Ch. 9 sec. 5 | 
-Apr. 4 | [Backtracking](./lectures/backtracking.md) and [Testing Connected Components](./lectures/testing-connected-components.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_qcfpi0ti)) | Ch. 10 sec. 5
-Apr. 4 or 5 | | | Lab: work on <br> [Project 3: Routing Wires](./proj3-routing-wires) | [code](https://autograder.luddy.indiana.edu/web/project/933)
-Apr. 9 | [Dynamic Programming](./lectures/dynamic-programming.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_98zn4w1x)) | Ch. 10, sec. 3
-Apr. 11 | [DNA Alignment](./lectures/DNA-alignment.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_9jx1jjnl))
-Apr. 11 or 12 | | | Lab: finish <br> [Project 3: Routing Wires](./proj3-routing-wires) | [code](https://autograder.luddy.indiana.edu/web/project/933)
-Apr. 15 | | | Project 3 due |
-Apr. 16 | [More Dynamic Programming](./lectures/more-dynamic-programming.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_x7uc3go2))
-Apr. 18 | [Greedy Algorithms](./lectures/greedy.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_f93hqb39))
-Apr. 18 or 19 | | | [Lab: DNA Sequence Alignment](./lab-dna), <br> [Quiz 4](https://iu.instructure.com/courses/2201400/quizzes/4194876) | [code](https://autograder.luddy.indiana.edu/web/project/926), [test](https://autograder.luddy.indiana.edu/web/project/940)
-Apr. 22 | | | Lab DNA due |
-Apr. 23 | [Code Review (Routing Wires)](./lectures/routing-wires.md) ([video](https://iu.mediaspace.kaltura.com/media/t/1_8l5a9mcu))
-Apr. 25 | [Review for Final Exam](./lectures/final-review.md) ([video]())
-Apr. 30 | **<mark>Final Exam</mark>**  10:20am--12:20 pm for 1724 (Jeremy) and 8am--10am for 14377 (Funda).
--->
 
 **Resources**
 
