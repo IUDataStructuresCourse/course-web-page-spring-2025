@@ -26,7 +26,7 @@
 
 ## Course web page, syllabus, schedule (due dates, etc.)
 
-    https://iudatastructurescourse.github.io/course-web-page-fall-2024/
+    https://iudatastructurescourse.github.io/course-web-page-spring-2025/
 
 ## Participation:
 
