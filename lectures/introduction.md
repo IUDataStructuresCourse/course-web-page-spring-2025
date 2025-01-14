@@ -82,7 +82,7 @@
 
 * Autograder for submitting assignments
 
-* [Deduce](https://github.com/jsiek/deduce) proof assistant.
+* [Deduce](https://jsiek.github.io/deduce/) proof checker.
 
 * Optional: learn github for managing group work
 
