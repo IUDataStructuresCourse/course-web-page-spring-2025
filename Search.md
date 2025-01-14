@@ -57,7 +57,7 @@ In this section I will show you how to:
 The code for this demo is available [here](https://github.com/IUDataStructuresCourse/lab-demo-rotation).
 
 Suppose our tasks are to implement, test and debug the "ripple" approach of array rotation
-(recall [lecture](https://iudatastructurescourse.github.io/course-web-page-spring-2024/lectures/array-rotation.html)).
+(recall [lecture](./lectures/array-rotation.md)).
 We first create an IntelliJ project called "Rotation". The file structure looks like:
 
 ![](assets/images/search/mint_proj.png)
@@ -340,15 +340,26 @@ public static int find_first_true_sorted(boolean[] A, int begin, int end) {
 
 In Task 1 we have implemented three search functions. How do we know that
 those functions do what their specifications describe?
+
 In Task 2, you are supposed to create test cases for those three implementations.
+You should write tests for small and typical inputs, tests for particular corner
+cases, and randomized tests in order to find the bugs.
+
+To write randomized tests, think about how you can validate that the algorithm's
+output is correct (Hint: Making sure that the found element is actually the first occurrence). 
+This approach is called
+**property-based testing**. Another possibility is using what is called a test oracle,
+such as the search functions in the Java standard library, or your own alternate implementation
+to compare the main implementation with.
+<!-- 
 You have two options for test oracles: 1) using the Java standard library or
 2) implementing your own. You are only responsible for testing _correctness_,
-not time complexity.
+not time complexity. -->
 
 Think about the following questions before you start:
 
 1. What does it mean for each search algorithm to be correct? Hint: their specifications.
-2. Can some of the three algorithms share the same test oracle? Why?
+2. Can some of the three algorithms share the same properties or test oracle? Why?
 3. What are possible _corner cases_? Hint: arrays with 0 or 1 element, arrays
    with even or odd lengths, start and end positions being equal, ...
 
