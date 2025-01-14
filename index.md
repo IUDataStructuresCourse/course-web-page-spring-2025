@@ -80,8 +80,7 @@ Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
 
 **Slack (communicating with instructors and other students)**
 
-[Workspace](https://c343-spring-2025.slack.com)
- ([signup](https://join.slack.com/t/c343-spring-2025/shared_invite/zt-2xcslhwid-y59836A2HqiiwrvtYtbxTA))
+[Signup](https://join.slack.com/t/c343-spring-2025/shared_invite/zt-2xcslhwid-y59836A2HqiiwrvtYtbxTA)
 
 **Schedule**
 
