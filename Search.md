@@ -96,12 +96,44 @@ and select "Mark Directory As -> Test **Sources** Root". The `test` directory wi
 highlighted in green.
 
 Create a new Java class file in `test` called `RotationTest`. Create `rotate_save_n_shift`
-as a private static member function of `RotationTest`. We use `rotate_save_n_shift`
-as our [test oracle](https://en.wikipedia.org/wiki/Test_oracle).
+as a private static member function of `RotationTest`.
 
->  A test oracle is a mechanism for determining whether a test has passed or failed.
+Our recommended method for testing the output of a function is to
+write Java code that check whether the function satisfies its
+specification. Here is the specification of rotate.
 
-In this case, we are testing `rotate_ripple` against `rotate_save_n_shift`.
+**Specification:** The `rotate(A)` function moves every element of the input array `A`
+to the right by one position, except the last element, which moves to the front.
+(Of course, this implies that if `A` is empty, `A` is unchanged.)
+
+We translate this specification of `rotate` into Java code as
+following, creating the `is_rotated` function. Because the `rotate`
+function changes its input, `is_rotated` requires a copy of the
+original array to compare against. The `if` below checks whether the
+length was `0` and then makes sure the output array `A_new` is
+unchanged, i.e., equal to the input array. The `else` branch checks
+that the last element was moved to the front then iterates through the
+two arrays using a `for` loop, checking that all the other elements
+were moved forward one position.
+
+```
+static boolean is_rotated(int[] A_orig, int[] A_new) {
+	if (A_orig.length == 0) {
+        return Arrays.equals(A_orig, A_new);
+	} else {
+		boolean result = A_new[0] == A_orig[A_orig.length - 1];
+		for (int i = 0; i != A_orig.length - 1; ++i) {
+			result = result && (A_orig[i] == A_new[i + 1]);
+		}
+		return result;
+	}
+}
+```
+
+It may seem like a lot of work to write `is_rotated` instead of just
+comparing to the expected output. However, we will soon introduce
+testing with randomized input, where we won't be able to write down
+the expected output.
 
 Next we import [JUnit](https://junit.org), a Java testing framework. Add the following
 lines to the beginning of `RotationTest`:
@@ -117,7 +149,6 @@ Click on "Add 'JUnit' to classpath" and then "OK". Perform the same action on `j
 
 ![](assets/images/search/add_junit.png)
 
-
 Add the following as a public member function of `RotationTest`:
 
 ```java
@@ -125,11 +156,10 @@ Add the following as a public member function of `RotationTest`:
 public void test_rotation_simple() {
     String test_description = "rotating a small array";
     int[] A = {1, 2, 3, 4, 5};
-    int[] B = {1, 2, 3, 4, 5};
+    int[] A_orig = Arrays.copyOf(A, A.length);
     rotate_save_n_shift(A);
-    Rotation.rotate_ripple(B);
     try {
-        assertArrayEquals(A, B);
+        assertTrue(is_rotated(A_orig, A));
     } catch (Exception e) {
         fail(test_description + e.toString());
     }
@@ -153,7 +183,10 @@ The rotation implementation is correct, so the test case passes:
 ![](assets/images/search/test_success.png)
 
 
-We can also generate random numbers to fill the input array:
+We can also generate random numbers to fill the input array.  Here's
+were the work we did to write `is_rotated` really pays off.  Even
+though we don't know what the output array will look like, we can
+still run `is_rotated` on the output to make sure it is correct.
 
 ```java
 @Test
@@ -164,11 +197,11 @@ public void test_rotation_random() {
     for (int i = 0; i != A.length; ++ i) {
         A[i] = r.nextInt();
     }
-    int[] B = Arrays.copyOf(A, A.length);
+    int[] A_orig = Arrays.copyOf(A, A.length);
     rotate_save_n_shift(A);
-    Rotation.rotate_ripple(B);
+    
     try {
-        assertArrayEquals(A, B);
+        assertTrue(is_rotated(A_orig, A));
     } catch (Exception e) {
         fail(test_description + e.toString());
     }
@@ -180,7 +213,6 @@ using the drop-down menu in the top-right corner:
 
 ![](assets/images/search/choose_config.png)
 
-
 Suppose I made a mistake in the implementation. For example, if I did not assign `tmp2`
 to `tmp1`, it would cause the entire array to be filled with `A[0]` and produce a wrong
 answer. If we remove `tmp1 = tmp2` and rerun the test, it catches the bug by throwing
@@ -188,15 +220,15 @@ an assertion error:
 
 ![](assets/images/search/test_fail.png)
 
-Now suppose we would like to debug the issue. We start by inspecting the two rotated arrays.
-We can add a breakpoint at `assertArrayEquals(A, B)`. We click on the line number and
+Now suppose we would like to debug the issue. We start by inspecting the rotated array.
+We can add a breakpoint at `assertTrue(is_rotated(A_orig, A))`. We click on the line number and
 it turns into a red dot. Then we choose "Debug ..." from the drop-down menu:
 
 ![](assets/images/search/debug.png)
 
-Execution stops at the breakpoint. Both arrays, `A` and `B`, are displayed in the "Debug"
-section of IntelliJ. We can see that the correct implementation produces `{5, 1, 2, 3, 4}` but
-the buggy implementation produces `{1, 1, 1, 1, 1}` instead:
+Execution stops at the breakpoint. The arrays `A` and `A_orig` are
+displayed in the "Debug" section of IntelliJ. We can see that the
+buggy implementation produces `{1, 1, 1, 1, 1}` instead.
 
 ![](assets/images/search/breakpoint.png)
 
