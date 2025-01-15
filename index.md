@@ -72,6 +72,7 @@ Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
 3pm     | Shulin            | Darshal    | Shulin         | Aniruthan   | 
 4pm     | Matei             | Darshal    | Matei          | Aniruthan   |
 5pm     |                   |            |                |             |
+
 \* Begining at 2:10 pm 
 
 
