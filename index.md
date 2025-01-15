@@ -64,14 +64,15 @@ Expect at least one quiz per month during lab time.
 Office hours with TAs are in Luddy Hall Room 0121. (Starting the week of January 20.)
 
 Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
-10am    |                   |            | Lillie         |             |
-11am    |                   | Ashley     |                | Ashley      | Dhruv
+10am    | Ashley            |            | Lillie         |             |
+11am    |                   |            |                |             | Dhruv
 12pm    |                   |            |                |             |
 1pm     | Calvin            | Javaria    | Calvin, Lillie | Javaria     | 
-2pm     | Dhruv             |            |                |             |
+2pm     | Dhruv             | Ashley*    |                |             |
 3pm     | Shulin            | Darshal    | Shulin         | Aniruthan   | 
 4pm     | Matei             | Darshal    | Matei          | Aniruthan   |
 5pm     |                   |            |                |             |
+\* Begining at 2:10 pm 
 
 
 **Textbook**
