@@ -449,12 +449,12 @@ provide instantaneous feedback to your lab submissions. Your grades will be
 decided by the number of test cases that your _best_ submission passes.
 Multiple attempts are allowed.
 
-- Submit `Search.java` to [link](https://autograder.luddy.indiana.edu/web/project/1323)
+- Submit `Search.java` to [link](https://autograder.luddy.indiana.edu/web/project/1531)
   + You may submit your code an unlimited number of times.
   + Autograder will run your submission on 8 test cases that thoroughly
     examine the correctness of all three search functions.
 
-- Submit `StudentTest.java` to [link](https://autograder.luddy.indiana.edu/web/project/1319)
+- Submit `StudentTest.java` to [link](https://autograder.luddy.indiana.edu/web/project/1526)
   + You may submit your tests an unlimited number of times.
   + Autograder will run your submission on 8 problematic `Search` implementations.
     It also runs one correct implementation to rule out false positive.
