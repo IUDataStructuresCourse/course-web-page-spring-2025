@@ -61,7 +61,7 @@ Expect at least one quiz per month during lab time.
 
 **Office Hours**
 
-Office hours with TAs are in Luddy Hall Room 0121.
+Office hours with TAs are in Luddy Hall Room 0121. (Starting the week of January 20.)
 
 Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
 10am    |                   |            | Lillie         |             |
