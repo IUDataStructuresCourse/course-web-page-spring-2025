@@ -66,8 +66,8 @@ Office hours with TAs are in Luddy Hall Room 0121. (Starting the week of January
 Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
 10am    |                   |            | Lillie         |             |
 11am    |                   | Ashley     |                | Ashley      | Dhruv
-12pm    |                   | Javaria    |                |             |
-1pm     | Calvin            | Javaria    | Calvin, Lillie |             | 
+12pm    |                   |            |                |             |
+1pm     | Calvin            | Javaria    | Calvin, Lillie | Javaria     | 
 2pm     | Dhruv             |            |                |             |
 3pm     | Shulin            | Darshal    | Shulin         | Aniruthan   | 
 4pm     | Matei             | Darshal    | Matei          | Aniruthan   |
