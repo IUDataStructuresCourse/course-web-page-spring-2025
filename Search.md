@@ -169,8 +169,8 @@ public void test_rotation_simple() {
 Note that the function is marked with the `@Test` attribute, which indicates
 that it contains a unit test.
 The array `{1, 2, 3, 4, 5}` is the example that we talked about in lecture.
-We call the two implementations of rotation and compare the produced arrays
-using `assertArrayEquals`, which is wrapped in a try-catch block. Should the
+We call `rotate_save_n_shift` and check the produced array
+using `is_rotated`, which is wrapped in a try-catch block. Should the
 assertion fail, the catch clause throws an exception, which contains an error
 message that consists of description of the test case and the exception `e`.
 
@@ -182,28 +182,34 @@ The rotation implementation is correct, so the test case passes:
 
 ![](assets/images/search/test_success.png)
 
-
-We can also generate random numbers to fill the input array.  Here's
-were the work we did to write `is_rotated` really pays off.  Even
-though we don't know what the output array will look like, we can
-still run `is_rotated` on the output to make sure it is correct.
+Instead of writing one test at a time, we can automate testing,
+writing one piece of code that will executing a hundred tests (or
+more). Of course, we want the tests to use different inputs, so we
+pick the size of th array randomly and fill it with randomly generated
+numbers. The next question is how do we check the output of
+`rotate_save_n_shift`?  Here's were the work we did to write
+`is_rotated` really pays off.  Even though we don't know what the
+output array will look like, we can still run `is_rotated` on the
+output to make sure it is correct.
 
 ```java
 @Test
 public void test_rotation_random() {
     String test_description = "rotating an array with random integers";
-    Random r = new Random();
-    int[] A = new int[100];
-    for (int i = 0; i != A.length; ++ i) {
-        A[i] = r.nextInt();
-    }
-    int[] A_orig = Arrays.copyOf(A, A.length);
-    rotate_save_n_shift(A);
-    
-    try {
-        assertTrue(is_rotated(A_orig, A));
-    } catch (Exception e) {
-        fail(test_description + e.toString());
+    for (int t = 0; t != 100; ++t) {
+        Random r = new Random();
+        int[] A = new int[r.nextInt(100)];
+        for (int i = 0; i != A.length; ++ i) {
+            A[i] = r.nextInt();
+        }
+        int[] A_orig = Arrays.copyOf(A, A.length);
+        rotate_save_n_shift(A);
+
+        try {
+            assertTrue(is_rotated(A_orig, A));
+        } catch (Exception e) {
+            fail(test_description + e.toString());
+        }
     }
 }
 ```
