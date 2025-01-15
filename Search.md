@@ -190,7 +190,10 @@ numbers. The next question is how do we check the output of
 `rotate_save_n_shift`?  Here's were the work we did to write
 `is_rotated` really pays off.  Even though we don't know what the
 output array will look like, we can still run `is_rotated` on the
-output to make sure it is correct.
+output to make sure it is correct. This powerful approach using
+randomized input and checking for properties of the output, is called
+[**property based testing**](https://en.wikipedia.org/wiki/Software_testing#Property_testing)
+(or property testing for short).
 
 ```java
 @Test
