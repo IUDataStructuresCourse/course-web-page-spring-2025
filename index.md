@@ -73,7 +73,7 @@ Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
 4pm     | Matei             | Darshal    | Matei          | Aniruthan   |
 5pm     |                   |            |                |             |
 
-\* Begining at 2:10 pm 
+\* Beginning at 2:10 pm 
 
 
 **Textbook**
