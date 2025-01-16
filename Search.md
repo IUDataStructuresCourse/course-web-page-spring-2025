@@ -380,8 +380,8 @@ Think about the following questions before you start:
 ### Problem 4: Testing Three Search Functions
 
 Create file `test/StudentTest.java`, which contains `public class StudentTest`.
-Create your unit tests as methods of `test/StudentTest.java`.
-If you come up with your own test oracles, they should go in
+Create your unit tests as methods of `test/StudentTest.java`. If you come up
+with your own test properties, those functions for test properties should go in
 `test/StudentTest.java` as well.
 
 The `StudentTest` class should contain a member function
