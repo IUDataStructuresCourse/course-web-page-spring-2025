@@ -319,3 +319,7 @@ are more likely to catch a bug!
     }
 ```
 
+This powerful approach using
+randomized input and checking for properties of the output, is called
+[**property based testing**](https://en.wikipedia.org/wiki/Software_testing#Property_testing)
+(or property testing for short).
