@@ -93,10 +93,7 @@ directory and select "New -> Directory". Name the new directory `test`.
 
 Right click on `test` in the file structure. Go to the last item in the pop-up menu
 and select "Mark Directory As -> Test **Sources** Root". The `test` directory will be
-highlighted in green.
-
-Create a new Java class file in `test` called `RotationTest`. Create `rotate_save_n_shift`
-as a private static member function of `RotationTest`.
+highlighted in green. Create a new Java class file in `test` called `RotationTest`. 
 
 Our recommended method for testing the output of a function is to
 write Java code that check whether the function satisfies its
@@ -157,7 +154,7 @@ public void test_rotation_simple() {
     String test_description = "rotating a small array";
     int[] A = {1, 2, 3, 4, 5};
     int[] A_orig = Arrays.copyOf(A, A.length);
-    rotate_save_n_shift(A);
+    Rotation.rotate_ripple(A);
     try {
         assertTrue(is_rotated(A_orig, A));
     } catch (Exception e) {
@@ -169,7 +166,7 @@ public void test_rotation_simple() {
 Note that the function is marked with the `@Test` attribute, which indicates
 that it contains a unit test.
 The array `{1, 2, 3, 4, 5}` is the example that we talked about in lecture.
-We call `rotate_save_n_shift` and check the produced array
+We call `rotate_ripple` and check the produced array
 using `is_rotated`, which is wrapped in a try-catch block. Should the
 assertion fail, the catch clause throws an exception, which contains an error
 message that consists of description of the test case and the exception `e`.
@@ -187,7 +184,7 @@ writing one piece of code that will executing a hundred tests (or
 more). Of course, we want the tests to use different inputs, so we
 pick the size of th array randomly and fill it with randomly generated
 numbers. The next question is how do we check the output of
-`rotate_save_n_shift`?  Here's were the work we did to write
+`rotate_ripple`?  Here's were the work we did to write
 `is_rotated` really pays off.  Even though we don't know what the
 output array will look like, we can still run `is_rotated` on the
 output to make sure it is correct. This powerful approach using
@@ -206,7 +203,7 @@ public void test_rotation_random() {
             A[i] = r.nextInt();
         }
         int[] A_orig = Arrays.copyOf(A, A.length);
-        rotate_save_n_shift(A);
+        Rotation.rotate_ripple(A);
 
         try {
             assertTrue(is_rotated(A_orig, A));
