@@ -155,6 +155,8 @@ May 8 | **Final Exam** (in class) 10:20am-12:20pm
 * Code Editor and Debugger:
   [IntelliJ IDEA](https://www.jetbrains.com/idea/download) (Community Edition)
 
+* Note: Autograder uses JUnit5.7.0, so please stick to this version for JUnit.
+
 **Grade Weighting**
 
 * Assignments (30%)
