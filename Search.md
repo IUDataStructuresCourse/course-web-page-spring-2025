@@ -151,25 +151,17 @@ Add the following as a public member function of `RotationTest`:
 ```java
 @Test
 public void test_rotation_simple() {
-    String test_description = "rotating a small array";
     int[] A = {1, 2, 3, 4, 5};
     int[] A_orig = Arrays.copyOf(A, A.length);
     Rotation.rotate_ripple(A);
-    try {
-        assertTrue(is_rotated(A_orig, A));
-    } catch (Exception e) {
-        fail(test_description + e.toString());
-    }
+    assertTrue(is_rotated(A_orig, A));
 }
 ```
 
-Note that the function is marked with the `@Test` attribute, which indicates
-that it contains a unit test.
-The array `{1, 2, 3, 4, 5}` is the example that we talked about in lecture.
-We call `rotate_ripple` and check the produced array
-using `is_rotated`, which is wrapped in a try-catch block. Should the
-assertion fail, the catch clause throws an exception, which contains an error
-message that consists of description of the test case and the exception `e`.
+Note that the function is marked with the `@Test` attribute, which
+indicates that it contains a unit test.  The array `{1, 2, 3, 4, 5}`
+is the example that we talked about in lecture.  We call
+`rotate_ripple` and check the produced array using `is_rotated`.
 
 We can run this test point by clicking on the green icon:
 
@@ -195,7 +187,6 @@ randomized input and checking for properties of the output, is called
 ```java
 @Test
 public void test_rotation_random() {
-    String test_description = "rotating an array with random integers";
     for (int t = 0; t != 100; ++t) {
         Random r = new Random();
         int[] A = new int[r.nextInt(100)];
@@ -205,11 +196,7 @@ public void test_rotation_random() {
         int[] A_orig = Arrays.copyOf(A, A.length);
         Rotation.rotate_ripple(A);
 
-        try {
-            assertTrue(is_rotated(A_orig, A));
-        } catch (Exception e) {
-            fail(test_description + e.toString());
-        }
+        assertTrue(is_rotated(A_orig, A));
     }
 }
 ```
