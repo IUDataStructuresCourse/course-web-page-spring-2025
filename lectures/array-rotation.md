@@ -46,15 +46,16 @@ for (int y : A) {
 System.out.println(total);
 ```
 
-Def. a *half-open interval*, written [i,k), is a contiguous subarray
-that starts at position i and finishes one place before k.
+Def. a **half-open interval**, written `[i,k)` in mathematics, is a
+contiguous subarray that starts at position i and finishes one place
+before k.
 
-The interval [3, 7) of our example array is
+The interval `[3, 7)` of our example array is
 
     elements: 9, 16, 25, 36
     position: 3,  4,  5,  6
 
-Loop over a half-open interval of the subarray:
+The following `sum` function loops over a half-open interval of the array:
 
 ```
 static int sum(int[] A, int begin, int end) {
@@ -224,9 +225,8 @@ public class RotateTest {
 
 ### Testing Regular Cases
 
-To get your bearings, its good to start with a test that captures the
-common case and that you already know the solution, such as the
-example above.
+It is good to start with a test that captures the common case and that
+you already know the solution, such as the example above.
 
 ```
     @Test
@@ -251,34 +251,22 @@ greater than 1. So let's create tests that take different branches.
     @Test
     public void rotate_corner_cases() {
         // rotate an empty array
-        try {
-            int[] A = {};
-            int[] A_correct = {};
-            Rotate.rotate(A);
-            assertArrayEquals(A, A_correct);
-        } catch (Exception e) {
-            fail(e.toString());
-        }
+        int[] A = {};
+        int[] A_correct = {};
+        Rotate.rotate(A);
+        assertArrayEquals(A, A_correct);
 		
         // rotate a 1-element array
-        try {
-            int[] A = {1};
-            int[] A_correct = {1};
-            Rotate.rotate(A);
-            assertArrayEquals(A, A_correct);
-        } catch (Exception e) {
-            fail(e.toString());
-        }
+        int[] A = {1};
+        int[] A_correct = {1};
+        Rotate.rotate(A);
+        assertArrayEquals(A, A_correct);
 
         // rotate a 2-element array
-        try {
-            int[] A = {1, 2};
-            int[] A_correct = {2, 1};
-            Rotate.rotate(A);
-            assertArrayEquals(A, A_correct);
-        } catch (Exception e) {
-            fail(e.toString());
-        }		
+        int[] A = {1, 2};
+        int[] A_correct = {2, 1};
+        Rotate.rotate(A);
+        assertArrayEquals(A, A_correct);
     }
 ```
 
@@ -308,15 +296,17 @@ Now we're ready to test `rotate` on arbitrary arrays.  We use the
 standard Java random number generator to choose an array length and to
 fill the array `A` with numbers. We then copy the array into `A_orig`,
 apply `rotate` to `A`, and then check the result by calling
-`is_rotated` with `A_orig` and `A`.
+`is_rotated` with `A_orig` and `A`. The `for` loop from `t=0` to `49`
+repeats the randomized test, turning one test into lots of tests that
+are more likely to catch a bug!
 
 
 ```
     @Test
     public void rotate_big() {
-        // rotate a big, randomly generated array
 		Random r = new Random(0);
 		for (int t = 0; t != 50; ++t) {
+            // rotate a big, randomly generated array
 			int n = r.nextInt(1000);
 			int[] A = new int[n];
 			for (int i = 0; i != n; ++i) {
