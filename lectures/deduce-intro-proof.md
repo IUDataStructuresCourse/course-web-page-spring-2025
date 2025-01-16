@@ -26,7 +26,7 @@ Goal:
 Recall that the definition of the `len` function says that
 `len(Empty) = 0`, so we simply need to tell Deduce to
 use the definition of `len`, which we can do using
-the [`definition`](https://jsiek.github.io/deduce/doc/Reference.html#definition-proof-)
+the [`definition`](https://jsiek.github.io/deduce/doc/Reference.html#definition-proof)
 proof statement.
 
 ```{.deduce^#len_empty}
