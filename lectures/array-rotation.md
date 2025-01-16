@@ -29,7 +29,7 @@ Now we have an array that looks like the following
 
     elements: 0, 1, 4, 9, 16, 25, 36, 49, 64, 81
     position: 0, 1, 2, 3,  4,  5,  6,  7,  8,  9
-	
+    
 Get the element at a given position:
 
 ```
@@ -74,8 +74,8 @@ assert total == sum(A, 0, 5) + sum(A, 5, 10);
 ## Rotate the elements of an array by 1 to the right, with wrap around.
 
         [1,2,3,4,5]
-	--> [5,1,2,3,4]
-		
+    --> [5,1,2,3,4]
+        
 Rotation is used in
 * sorting algorithms,
 * text editors, e.g., when you drag-and-drop a chunk of text 
@@ -95,10 +95,10 @@ Rotation is used in
 * Student exercise (5 minutes)
 
     Write down an algorithm for rotation.
-	Apply the algorithm to the array, showing the array after each
+    Apply the algorithm to the array, showing the array after each
     loop iteration.
-	
-	    [1,2,3,4,5]
+    
+        [1,2,3,4,5]
 
 * Go over student solutions to the array rotation. 
   They might look like one of the following. 
@@ -255,7 +255,7 @@ greater than 1. So let's create tests that take different branches.
         int[] A_correct = {};
         Rotate.rotate(A);
         assertArrayEquals(A, A_correct);
-		
+        
         // rotate a 1-element array
         int[] A = {1};
         int[] A_correct = {1};
@@ -280,15 +280,15 @@ It returns `true` if `A_new` is the rotated version of `A_orig`.
 
 ```
 static boolean is_rotated(int[] A_orig, int[] A_new) {
-	if (A_orig.length < 2) {
+    if (A_orig.length < 2) {
         return Arrays.equals(A_orig, A_new);
-	} else {
-		boolean result = A_new[0] == A_orig[A_orig.length - 1];
-		for (int i = 0; i != A_orig.length - 1; ++i) {
-			result = result && (A_orig[i] == A_new[i + 1]);
-		}
-		return result;
-	}
+    } else {
+        boolean result = A_new[0] == A_orig[A_orig.length - 1];
+        for (int i = 0; i != A_orig.length - 1; ++i) {
+            result = result && (A_orig[i] == A_new[i + 1]);
+        }
+        return result;
+    }
 }
 ```
 
@@ -304,18 +304,18 @@ are more likely to catch a bug!
 ```
     @Test
     public void rotate_big() {
-		Random r = new Random(0);
-		for (int t = 0; t != 50; ++t) {
+        Random r = new Random(0);
+        for (int t = 0; t != 50; ++t) {
             // rotate a big, randomly generated array
-			int n = r.nextInt(1000);
-			int[] A = new int[n];
-			for (int i = 0; i != n; ++i) {
-				A[i] = r.nextInt(100);
-			}
-			int[] A_orig = Arrays.copyOf(A, A.length);
-			Rotate.rotate(A);
-			assertTrue(is_rotated(A_orig, A));
-		}
+            int n = r.nextInt(1000);
+            int[] A = new int[n];
+            for (int i = 0; i != n; ++i) {
+                A[i] = r.nextInt(100);
+            }
+            int[] A_orig = Arrays.copyOf(A, A.length);
+            Rotate.rotate(A);
+            assertTrue(is_rotated(A_orig, A));
+        }
     }
 ```
 
