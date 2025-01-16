@@ -270,7 +270,7 @@ greater than 1. So let's create tests that take different branches.
     }
 ```
 
-### Testing Big Inputs using Random Input Generation
+### Test Many Inputs, Some Big, using Random Input Generation
 
 We'll need a way to check whether the `rotate` method did it's job.
 We can do this by taking the specification for `rotate` and coding it
