@@ -62,10 +62,11 @@ Concepts:
 * [If Then](https://jsiek.github.io/deduce/doc/Reference.html#if-then-conditional-formula) formula
 * [`have`](https://jsiek.github.io/deduce/doc/Reference.html#have-proof-statement) proof
 * [apply-to](https://jsiek.github.io/deduce/doc/Reference.html#apply-to-proof-modus-ponens) proof
+* [recall](https://jsiek.github.io/deduce/doc/Reference.html#recall-proof) proof
 
 From `lib/Nat.thm`:
 ```
-max_equal_greater_right: (all x:Nat. (all y:Nat. (if x ≤ y then max(x, y) = y)))
+max_equal_greater_right: (all x:Nat, y:Nat. (if x ≤ y then max(x, y) = y))
 ```
 
 ```{.deduce^#modus_ponens_example}
@@ -77,14 +78,6 @@ proof
 end
 ```
 
-
-
-
-
-Example:
-```{.deduce^#have_example}
-TBD
-```
 
 
 
