@@ -1,41 +1,29 @@
 # Writing Proofs in Deduce
 
-To get started, we write down the theorem we would like to prove.  We
-start with the `theorem` keyword followed by a label, a colon, and the
-formula. The proof of the theorem starts with the keyword `proof`,
-then the actual proof, and ends with the keyword `end`.  In the
-following, instead of writing the proof, we'll simply write `?` to say
-that we're not done yet.
-
-```
-theorem len_empty: len(Empty) = 0
-proof
-  ?
-end
-```
-
-Run Deduce on the file. Deduce will respond with the following message
-to remind us of what is left to prove.
-
-```
-incomplete proof
-Goal:
-	len(Empty) = 0
-```
-
-Recall that the definition of the `len` function says that
-`len(Empty) = 0`, so we simply need to tell Deduce to
-use the definition of `len`, which we can do using
-the [`definition`](https://jsiek.github.io/deduce/doc/Reference.html#definition-proof)
-proof statement.
+* [`theorem`](https://jsiek.github.io/deduce/doc/Reference.html#theorem-statement)
+* [`definition`](https://jsiek.github.io/deduce/doc/Reference.html#definition-proof)
 
 ```{.deduce^#len_empty}
-theorem len_empty: len(Empty) = 0
+theorem len_empty: 0 = len(Empty)
 proof
-  ? //definition len
+  definition len
 end
 ```
 
+* [`all`](https://jsiek.github.io/deduce/doc/Reference.html#all-universal-quantifier) formulas,
+* [`arbitrary`](https://jsiek.github.io/deduce/doc/Reference.html#arbitrary-forall-introduction) statements,
+* [proof instantiation](https://jsiek.github.io/deduce/doc/Reference.html#instantiation-proof),
+* [suffices](https://jsiek.github.io/deduce/doc/Reference.html#suffices-proof-statement), and
+* [evaluate](https://jsiek.github.io/deduce/doc/Reference.html#evaluate).
+
+```{.deduce^#len_one}
+theorem len_one: all x:Nat. 1 = len(Node(x, Empty))
+proof
+  arbitrary x:Nat
+  suffices 1 = 1 + 0 by definition {len, len}
+  evaluate
+end
+```
 
 <!--
 ```{.deduce^file=DeduceIntroProof.pf}
@@ -43,6 +31,7 @@ import Nat
 import DeduceProgramming1
 
 <<len_empty>>
+<<len_one>>
 
 ```
 -->
