@@ -63,6 +63,7 @@ Concepts:
 * [`have`](https://jsiek.github.io/deduce/doc/Reference.html#have-proof-statement) proof
 * [`apply`-`to`](https://jsiek.github.io/deduce/doc/Reference.html#apply-to-proof-modus-ponens) proof
 * [`recall`](https://jsiek.github.io/deduce/doc/Reference.html#recall-proof) proof
+* [`conclude`](https://jsiek.github.io/deduce/doc/Reference.html#conclude-proof) proof
 
 From `lib/Nat.thm`:
 ```
