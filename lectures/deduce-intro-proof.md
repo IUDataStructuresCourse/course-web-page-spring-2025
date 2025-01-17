@@ -67,7 +67,7 @@ Concepts:
 
 From `lib/Nat.thm`:
 ```
-max_equal_greater_right: (all x:Nat, y:Nat. (if x ≤ y then max(x, y) = y))
+max_equal_greater_right: all x:Nat, y:Nat. if x ≤ y then max(x, y) = y
 ```
 
 Example:
