@@ -105,6 +105,107 @@ end
 ```
 
 Concepts:
+* [`true`](https://jsiek.github.io/deduce/doc/Reference.html#true-formula) formula
+* [period](https://jsiek.github.io/deduce/doc/Reference.html#period-proof-of-true)
+* [`false`](https://jsiek.github.io/deduce/doc/Reference.html#false) formula
+
+Example:
+```{.deduce^#prove_true}
+theorem prove_true: true
+proof
+  .
+end
+```
+
+Example:
+```{.deduce^#false_explosion}
+theorem false_explosion: if false then 0 = 1
+proof
+  assume: false
+  conclude 0 = 1 by recall false
+end
+```
+
+Concepts:
+* [`and`](https://jsiek.github.io/deduce/doc/Reference.html#and-logical-conjunction) formula
+* [comma](https://jsiek.github.io/deduce/doc/Reference.html#comma-logical-and-introduction) proof,
+
+Example:
+```{.deduce^#add_to_zero_is_zero}
+theorem add_to_zero_is_zero: all n:Nat, m:Nat.
+  if n + m = 0
+  then n = 0 and m = 0
+proof
+  arbitrary n:Nat, m:Nat
+  switch n {
+    case 0 {
+      assume premise: 0 + m = 0
+      have: m = 0  by definition operator + in premise
+      conclude 0 = 0 and m = 0 by . , recall m = 0
+    }
+    case suc(n') {
+      suppose premise: suc(n') + m = 0
+      have s_z: suc(n' + m) = 0 by definition operator + in premise
+      conclude false by s_z
+    }
+  }
+end
+
+import List
+
+theorem example: all T:type, xs:List<T>, ys:List<T>.
+  if length(xs ++ ys) = 0
+  then length(xs) = 0
+proof
+  arbitrary T:type, xs:List<T>, ys:List<T>
+  assume prem: length(xs ++ ys) = 0
+  have eq1: length(xs ++ ys) = length(xs) + length(ys)  by length_append<T>
+  have eq2: length(xs) + length(ys) = 0
+      by transitive (symmetric eq1) prem
+  have both: length(xs) = 0 and length(ys) = 0 
+      by apply add_to_zero_is_zero to eq2
+  conclude length(xs) = 0 by both
+end
+```
+
+Concepts:
+* [`or`](https://jsiek.github.io/deduce/doc/Reference.html#or--logical-disjunction) formula
+* [`cases`](https://jsiek.github.io/deduce/doc/Reference.html#cases-disjunction-elimination) proof
+
+```{.deduce^#intro_dichotomy}
+theorem intro_dichotomy:  all x:Nat, y:Nat.  x ≤ y  or  y < x
+proof
+  arbitrary x:Nat, y:Nat
+  have tri: x < y or x = y or y < x by trichotomy[x][y]
+  cases tri
+  case: x < y {
+    have: x ≤ y by apply less_implies_less_equal[x][y] to recall x < y
+    conclude x ≤ y or y < x by recall x ≤ y
+  }
+  case: x = y {
+    have: x ≤ y by
+        suffices y ≤ y  by rewrite (recall x = y)
+        less_equal_refl[y]
+    conclude x ≤ y or y < x by recall x ≤ y
+  }
+  case: y < x {
+    conclude x ≤ y or y < x by recall y < x
+  }
+end
+```
+
+Concepts:
+* [`not`](https://jsiek.github.io/deduce/doc/Reference.html#not) formula
+
+```{.deduce^#not_example}
+theorem not_example: not (0 = 1)
+proof
+  assume: 0 = 1
+  conclude false by recall 0 = 1
+end
+```
+
+Concepts:
 * Sets (`lib/Set.pf`)
 ```{.deduce^#member_singleton}
 theorem member_singleton: all x:Nat. x ∈ single(5) ∪ single(x)
@@ -128,6 +229,12 @@ import Set
 <<algebra_example>>
 <<modus_ponens_example>>
 <<assume_example>>
+<<prove_true>>
+<<false_explosion>>
+<<add_to_zero_is_zero>>
+<<intro_dichotomy>>
+<<not_example>>
+
 <<member_singleton>>
 ```
 -->
