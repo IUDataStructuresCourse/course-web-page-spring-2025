@@ -15,8 +15,8 @@ end
 Concepts:
 * [`all`](https://jsiek.github.io/deduce/doc/Reference.html#all-universal-quantifier) formula,
 * [`arbitrary`](https://jsiek.github.io/deduce/doc/Reference.html#arbitrary-forall-introduction) proof,
-* [suffices](https://jsiek.github.io/deduce/doc/Reference.html#suffices-proof-statement) proof, and
-* [evaluate](https://jsiek.github.io/deduce/doc/Reference.html#evaluate) proof.
+* [`suffices`](https://jsiek.github.io/deduce/doc/Reference.html#suffices-proof-statement) proof, and
+* [`evaluate`](https://jsiek.github.io/deduce/doc/Reference.html#evaluate) proof.
 
 Example:
 ```{.deduce^#len_one}
@@ -30,7 +30,7 @@ end
 
 Concepts:
 * [proof instantiation](https://jsiek.github.io/deduce/doc/Reference.html#instantiation-proof)
-* [rewrite](https://jsiek.github.io/deduce/doc/Reference.html#rewrite-proof)
+* [`rewrite`](https://jsiek.github.io/deduce/doc/Reference.html#rewrite-proof)
 
 Example:
 ```{.deduce^#len_42}
@@ -40,6 +40,23 @@ proof
 end
 ```
 
+Concepts:
+* Library of theorems about natural numbers (`lib/Nat.thm`)
+* [`equations`](https://jsiek.github.io/deduce/doc/Reference.html#equations)
+```{.deduce^#algebra}
+theorem algebra: all x:Nat. (1 + x) * x = x * x + x
+proof
+  arbitrary x:Nat
+  equations
+        (1 + x) * x
+      = x * (1 + x)        by mult_commute[1+x,x]
+  ... = x * 1 + x * x      by dist_mult_add[x,1,x]
+  ... = x * x + x * 1      by add_commute[x*1,x*x]
+  ... = x * x + x          by rewrite mult_one[x]
+end
+```
+
+
 <!--
 ```{.deduce^file=DeduceIntroProof.pf}
 import Nat
@@ -48,5 +65,7 @@ import DeduceProgramming1
 <<len_empty>>
 <<len_one>>
 <<len_42>>
+<<algebra>>
 ```
 -->
+
