@@ -30,6 +30,7 @@ end
 
 Concepts:
 * [proof instantiation](https://jsiek.github.io/deduce/doc/Reference.html#instantiation-proof)
+* [rewrite](https://jsiek.github.io/deduce/doc/Reference.html#rewrite-proof)
 
 Example:
 ```{.deduce^#len_42}
