@@ -43,6 +43,8 @@ end
 Concepts:
 * Library of theorems about natural numbers (`lib/Nat.thm`)
 * [`equations`](https://jsiek.github.io/deduce/doc/Reference.html#equations)
+
+Example:
 ```{.deduce^#algebra_example}
 theorem algebra_example: all x:Nat. (1 + x) * x = x * x + x
 proof
@@ -56,6 +58,36 @@ proof
 end
 ```
 
+Concepts:
+* [If Then](https://jsiek.github.io/deduce/doc/Reference.html#if-then-conditional-formula) formula
+* [`have`](https://jsiek.github.io/deduce/doc/Reference.html#have-proof-statement) proof
+* [apply-to](https://jsiek.github.io/deduce/doc/Reference.html#apply-to-proof-modus-ponens) proof
+
+From `lib/Nat.thm`:
+```
+max_equal_greater_right: (all x:Nat. (all y:Nat. (if x ≤ y then max(x, y) = y)))
+```
+
+```{.deduce^#modus_ponens_example}
+theorem modus_ponens_example: all x:Nat. max(x, 1 + x) = 1 + x
+proof
+  arbitrary x:Nat
+  have: x ≤ 1 + x   by less_equal_add_left
+  conclude max(x, 1 + x) = 1 + x  by apply max_equal_greater_right to recall x ≤ 1 + x
+end
+```
+
+
+
+
+
+Example:
+```{.deduce^#have_example}
+TBD
+```
+
+
+
 
 <!--
 ```{.deduce^file=DeduceIntroProof.pf}
@@ -66,6 +98,7 @@ import DeduceProgramming1
 <<len_one>>
 <<len_42>>
 <<algebra_example>>
+<<modus_ponens_example>>
 ```
 -->
 
