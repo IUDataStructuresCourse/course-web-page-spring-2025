@@ -43,8 +43,8 @@ end
 Concepts:
 * Library of theorems about natural numbers (`lib/Nat.thm`)
 * [`equations`](https://jsiek.github.io/deduce/doc/Reference.html#equations)
-```{.deduce^#algebra}
-theorem algebra: all x:Nat. (1 + x) * x = x * x + x
+```{.deduce^#algebra_example}
+theorem algebra_example: all x:Nat. (1 + x) * x = x * x + x
 proof
   arbitrary x:Nat
   equations
@@ -65,7 +65,7 @@ import DeduceProgramming1
 <<len_empty>>
 <<len_one>>
 <<len_42>>
-<<algebra>>
+<<algebra_example>>
 ```
 -->
 
