@@ -1,8 +1,9 @@
 # Writing Proofs in Deduce
 
-* [`theorem`](https://jsiek.github.io/deduce/doc/Reference.html#theorem-statement)
-* [`definition`](https://jsiek.github.io/deduce/doc/Reference.html#definition-proof)
-
+Concepts:
+* [`theorem`](https://jsiek.github.io/deduce/doc/Reference.html#theorem-statement) statement
+* [`definition`](https://jsiek.github.io/deduce/doc/Reference.html#definition-proof) proof
+Example:
 ```{.deduce^#len_empty}
 theorem len_empty: 0 = len(Empty)
 proof
@@ -10,11 +11,12 @@ proof
 end
 ```
 
-* [`all`](https://jsiek.github.io/deduce/doc/Reference.html#all-universal-quantifier) formulas,
-* [`arbitrary`](https://jsiek.github.io/deduce/doc/Reference.html#arbitrary-forall-introduction) statements,
-* [suffices](https://jsiek.github.io/deduce/doc/Reference.html#suffices-proof-statement), and
-* [evaluate](https://jsiek.github.io/deduce/doc/Reference.html#evaluate).
-
+Concepts:
+* [`all`](https://jsiek.github.io/deduce/doc/Reference.html#all-universal-quantifier) formula,
+* [`arbitrary`](https://jsiek.github.io/deduce/doc/Reference.html#arbitrary-forall-introduction) proof,
+* [suffices](https://jsiek.github.io/deduce/doc/Reference.html#suffices-proof-statement) proof, and
+* [evaluate](https://jsiek.github.io/deduce/doc/Reference.html#evaluate) proof.
+Example:
 ```{.deduce^#len_one}
 theorem len_one: all x:Nat. len(Node(x, Empty)) = 1
 proof
@@ -24,7 +26,9 @@ proof
 end
 ```
 
+Concepts:
 * [proof instantiation](https://jsiek.github.io/deduce/doc/Reference.html#instantiation-proof)
+Example:
 ```{.deduce^#len_42}
 theorem len_42:  1 = len(Node(42, Empty))
 proof
