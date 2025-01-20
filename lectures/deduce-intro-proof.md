@@ -145,8 +145,9 @@ proof
     }
     case suc(n') {
       suppose premise: suc(n') + m = 0
-      have s_z: suc(n' + m) = 0 by definition operator + in premise
-      conclude false by s_z
+      have eq: 1 + (n' + m) = 0 
+          by rewrite suc_one_add[n'] | add_assoc[1,n',m] in premise
+      conclude false by apply not_one_add_zero to eq
     }
   }
 end
