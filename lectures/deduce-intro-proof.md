@@ -207,14 +207,43 @@ end
 
 Concepts:
 * Sets (`lib/Set.pf`)
+* `set_of` to convert a list to a set
+* `single(x)` for a set with one element that is `x`
+* `∪` for union
+* `∩` for intersection
+
+Example:
+```{.deduce^#member_set_of}
+theorem member_set_of: 4 ∈ set_of([3,4,5])
+proof
+  evaluate
+end
+```
+
+Example:
 ```{.deduce^#member_singleton}
-theorem member_singleton: all x:Nat. x ∈ single(5) ∪ single(x)
+theorem member_singleton: all x:Nat. x ∈ single(x)
 proof
   arbitrary x:Nat
   evaluate
 end
 ```
 
+Example:
+```{.deduce^#member_union}
+theorem member_union_example: 9 ∈ set_of([2,5]) ∪ set_of([5,9])
+proof
+  evaluate
+end
+```
+
+Example:
+```{.deduce^#member_intersection}
+theorem member_intersection_example: 5 ∈ set_of([2,5]) ∩ set_of([5,9])
+proof
+  evaluate
+end
+```
 
 
 <!--
@@ -235,7 +264,10 @@ import Set
 <<intro_dichotomy>>
 <<not_example>>
 
+<<member_set_of>>
 <<member_singleton>>
+<<member_union>>
+<<member_intersection>>
 ```
 -->
 
