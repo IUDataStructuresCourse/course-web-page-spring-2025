@@ -18,8 +18,44 @@ proof
 end
 ```
 
-```{.deduce^#take_drop_append}
-theorem take_drop_append:  <T> all xs:List<T>, n:Nat.
+```{.deduce^#take_drop_append_1}
+theorem take_drop_append_1:  <T> all n:Nat, xs:List<T>.
+  if n ≤ length(xs)
+  then take(n, xs) ++ drop(n, xs) = xs
+proof
+  arbitrary T:type
+  induction Nat
+  case 0 {
+    arbitrary xs:List<T>
+    assume prem
+    conclude take(0, xs) ++ drop(0, xs) = xs
+        by evaluate
+  }
+  case suc(n') assume IH {
+    arbitrary xs:List<T>
+    switch xs {
+      case [] {
+        assume prem
+        conclude take(suc(n'), @[]<T>) ++ drop(suc(n'), []) = []
+            by evaluate
+      }
+      case node(x, xs') {
+        assume prem: suc(n') ≤ length(node(x, xs'))
+        have eq: 1 + n' ≤ 1 + length(xs') by rewrite suc_one_add[n'] in definition length in prem
+        have: n' ≤ length(xs') by apply less_equal_left_cancel to eq
+        equations
+              take(suc(n'), node(x, xs')) ++ drop(suc(n'), node(x, xs')) 
+            = node(x, take(n', xs')) ++ drop(n', xs')    by definition {take, drop}
+        ... = node(x, take(n', xs') ++ drop(n', xs'))    by definition operator++
+        ... = node(x, xs')                               by rewrite (apply IH[xs'] to recall n' ≤ length(xs'))
+      }
+    }
+  }
+end
+```
+
+```{.deduce^#take_drop_append_2}
+theorem take_drop_append_2:  <T> all xs:List<T>, n:Nat.
   if n ≤ length(xs)
   then take(n, xs) ++ drop(n, xs) = xs
 proof
@@ -62,6 +98,7 @@ import Nat
 import List
 
 <<list_append_empty>>
-<<take_drop_append>>
+<<take_drop_append_1>>
+<<take_drop_append_2>>
 ```
 -->
