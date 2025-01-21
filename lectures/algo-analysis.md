@@ -19,7 +19,9 @@ Functions to think about: n, 10n, log n, n log n, 10 n², n² + n
 ## Big-O: Asymptotic Upper Bound
 
 **Definition** A function f is asympotically less-or-equal function g,
-written f ≲ g, iff ∃ k c. ∀ n ≥ k. f(n) ≤ c g(n).
+written f ≲ g, iff
+
+    ∃ k c. ∀ n ≥ k. f(n) ≤ c g(n).
 
 Alternatively, the asympotic growth of functions can be characterized
 using limits.
