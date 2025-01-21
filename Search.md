@@ -113,7 +113,7 @@ that the last element was moved to the front then iterates through the
 two arrays using a `for` loop, checking that all the other elements
 were moved forward one position.
 
-```
+```java
 static boolean is_rotated(int[] A_orig, int[] A_new) {
 	if (A_orig.length == 0) {
         return Arrays.equals(A_orig, A_new);
@@ -219,9 +219,9 @@ it turns into a red dot. Then we choose "Debug ..." from the drop-down menu:
 
 ![](assets/images/search/debug.png)
 
-Execution stops at the breakpoint. The arrays `A` and `A_orig` are
-displayed in the "Debug" section of IntelliJ. We can see that the
-buggy implementation produces `{1, 1, 1, 1, 1}` instead.
+Execution stops at the breakpoint. The arrays `A` and `A_orig` are displayed in
+the "Debug" section of IntelliJ. We can see that the buggy implementation
+produces `{1, 1, 1, 1, 1}` instead of `{5, 1, 2, 3, 4}`.
 
 ![](assets/images/search/breakpoint.png)
 
@@ -380,8 +380,8 @@ Think about the following questions before you start:
 ### Problem 4: Testing Three Search Functions
 
 Create file `test/StudentTest.java`, which contains `public class StudentTest`.
-Create your unit tests as methods of `test/StudentTest.java`.
-If you come up with your own test oracles, they should go in
+Create your unit tests as methods of `test/StudentTest.java`. If you come up
+with your own test properties, those functions for test properties should go in
 `test/StudentTest.java` as well.
 
 The `StudentTest` class should contain a member function
