@@ -1,12 +1,15 @@
 # Induction on Lists
 
+A simple example proof using induction on a list to prove the
+following fact about the `++` (append) function.
+
 ```{.deduce^#list_append_empty}
 theorem list_append_empty: <U> all xs :List<U>.
   xs ++ [] = xs
 proof
   arbitrary U:type
   induction List<U>
-  case empty {
+  case [] {
     conclude @[]<U> ++ [] = []  by definition operator++
   }
   case node(n, xs') suppose IH: xs' ++ [] = xs' {
@@ -17,6 +20,11 @@ proof
   }
 end
 ```
+
+Here's a more complex theorem about lists that involves an
+`if`-`then` and three functions: `take`, `drop`, and `++`. Looking at
+the definitions of `take` and `drop` in `lib/List.pf`, they recursive
+on the natural number `n`, so we should do induction on `n`.
 
 ```{.deduce^#take_drop_append_1}
 theorem take_drop_append_1:  <T> all n:Nat, xs:List<T>.
@@ -45,14 +53,16 @@ proof
         have: n' ≤ length(xs') by apply less_equal_left_cancel to eq
         equations
               take(suc(n'), node(x, xs')) ++ drop(suc(n'), node(x, xs')) 
-            = node(x, take(n', xs')) ++ drop(n', xs')    by definition {take, drop}
-        ... = node(x, take(n', xs') ++ drop(n', xs'))    by definition operator++
-        ... = node(x, xs')                               by rewrite (apply IH[xs'] to recall n' ≤ length(xs'))
+            = node(x, take(n', xs')) ++ drop(n', xs')  by definition {take, drop}
+        ... = node(x, take(n', xs') ++ drop(n', xs'))  by definition operator++
+        ... = node(x, xs')                             by rewrite (apply IH to recall n' ≤ length(xs'))
       }
     }
   }
 end
 ```
+
+The proof also goes through if we instead do induction on the list `xs`.
 
 ```{.deduce^#take_drop_append_2}
 theorem take_drop_append_2:  <T> all xs:List<T>, n:Nat.
@@ -74,7 +84,7 @@ proof
     arbitrary n:Nat
     switch n for take, drop {
       case 0 assume n_z {
-        assume prem
+        assume prem: 0 ≤ length(node(x, xs))
         conclude @[]<T> ++ node(x, xs) = node(x, xs)   by definition operator++
       }
       case suc(n') {
