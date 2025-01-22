@@ -29,7 +29,7 @@ Now we have an array that looks like the following
 
     elements: 0, 1, 4, 9, 16, 25, 36, 49, 64, 81
     position: 0, 1, 2, 3,  4,  5,  6,  7,  8,  9
-	
+    
 Get the element at a given position:
 
 ```
@@ -46,15 +46,16 @@ for (int y : A) {
 System.out.println(total);
 ```
 
-Def. a *half-open interval*, written [i,k), is a contiguous subarray
-that starts at position i and finishes one place before k.
+Def. a **half-open interval**, written `[i,k)` in mathematics, is a
+contiguous subarray that starts at position i and finishes one place
+before k.
 
-The interval [3, 7) of our example array is
+The interval `[3, 7)` of our example array is
 
     elements: 9, 16, 25, 36
     position: 3,  4,  5,  6
 
-Loop over a half-open interval of the subarray:
+The following `sum` function loops over a half-open interval of the array:
 
 ```
 static int sum(int[] A, int begin, int end) {
@@ -73,8 +74,8 @@ assert total == sum(A, 0, 5) + sum(A, 5, 10);
 ## Rotate the elements of an array by 1 to the right, with wrap around.
 
         [1,2,3,4,5]
-	--> [5,1,2,3,4]
-		
+    --> [5,1,2,3,4]
+        
 Rotation is used in
 * sorting algorithms,
 * text editors, e.g., when you drag-and-drop a chunk of text 
@@ -94,10 +95,10 @@ Rotation is used in
 * Student exercise (5 minutes)
 
     Write down an algorithm for rotation.
-	Apply the algorithm to the array, showing the array after each
+    Apply the algorithm to the array, showing the array after each
     loop iteration.
-	
-	    [1,2,3,4,5]
+    
+        [1,2,3,4,5]
 
 * Go over student solutions to the array rotation. 
   They might look like one of the following. 
@@ -224,9 +225,8 @@ public class RotateTest {
 
 ### Testing Regular Cases
 
-To get your bearings, its good to start with a test that captures the
-common case and that you already know the solution, such as the
-example above.
+It is good to start with a test that captures the common case and that
+you already know the solution, such as the example above.
 
 ```
     @Test
@@ -251,38 +251,26 @@ greater than 1. So let's create tests that take different branches.
     @Test
     public void rotate_corner_cases() {
         // rotate an empty array
-        try {
-            int[] A = {};
-            int[] A_correct = {};
-            Rotate.rotate(A);
-            assertArrayEquals(A, A_correct);
-        } catch (Exception e) {
-            fail(e.toString());
-        }
-		
+        int[] A = {};
+        int[] A_correct = {};
+        Rotate.rotate(A);
+        assertArrayEquals(A, A_correct);
+        
         // rotate a 1-element array
-        try {
-            int[] A = {1};
-            int[] A_correct = {1};
-            Rotate.rotate(A);
-            assertArrayEquals(A, A_correct);
-        } catch (Exception e) {
-            fail(e.toString());
-        }
+        int[] A = {1};
+        int[] A_correct = {1};
+        Rotate.rotate(A);
+        assertArrayEquals(A, A_correct);
 
         // rotate a 2-element array
-        try {
-            int[] A = {1, 2};
-            int[] A_correct = {2, 1};
-            Rotate.rotate(A);
-            assertArrayEquals(A, A_correct);
-        } catch (Exception e) {
-            fail(e.toString());
-        }		
+        int[] A = {1, 2};
+        int[] A_correct = {2, 1};
+        Rotate.rotate(A);
+        assertArrayEquals(A, A_correct);
     }
 ```
 
-### Testing Big Inputs using Random Input Generation
+### Test Many Inputs, Some Big, using Random Input Generation
 
 We'll need a way to check whether the `rotate` method did it's job.
 We can do this by taking the specification for `rotate` and coding it
@@ -292,15 +280,15 @@ It returns `true` if `A_new` is the rotated version of `A_orig`.
 
 ```
 static boolean is_rotated(int[] A_orig, int[] A_new) {
-	if (A_orig.length < 2) {
+    if (A_orig.length < 2) {
         return Arrays.equals(A_orig, A_new);
-	} else {
-		boolean result = A_new[0] == A_orig[A_orig.length - 1];
-		for (int i = 0; i != A_orig.length - 1; ++i) {
-			result = result && (A_orig[i] == A_new[i + 1]);
-		}
-		return result;
-	}
+    } else {
+        boolean result = A_new[0] == A_orig[A_orig.length - 1];
+        for (int i = 0; i != A_orig.length - 1; ++i) {
+            result = result && (A_orig[i] == A_new[i + 1]);
+        }
+        return result;
+    }
 }
 ```
 
@@ -308,24 +296,30 @@ Now we're ready to test `rotate` on arbitrary arrays.  We use the
 standard Java random number generator to choose an array length and to
 fill the array `A` with numbers. We then copy the array into `A_orig`,
 apply `rotate` to `A`, and then check the result by calling
-`is_rotated` with `A_orig` and `A`.
+`is_rotated` with `A_orig` and `A`. The `for` loop from `t=0` to `49`
+repeats the randomized test, turning one test into lots of tests that
+are more likely to catch a bug!
 
 
 ```
     @Test
     public void rotate_big() {
-        // rotate a big, randomly generated array
-		Random r = new Random(0);
-		for (int t = 0; t != 50; ++t) {
-			int n = r.nextInt(1000);
-			int[] A = new int[n];
-			for (int i = 0; i != n; ++i) {
-				A[i] = r.nextInt(100);
-			}
-			int[] A_orig = Arrays.copyOf(A, A.length);
-			Rotate.rotate(A);
-			assertTrue(is_rotated(A_orig, A));
-		}
+        Random r = new Random(0);
+        for (int t = 0; t != 50; ++t) {
+            // rotate a big, randomly generated array
+            int n = r.nextInt(1000);
+            int[] A = new int[n];
+            for (int i = 0; i != n; ++i) {
+                A[i] = r.nextInt(100);
+            }
+            int[] A_orig = Arrays.copyOf(A, A.length);
+            Rotate.rotate(A);
+            assertTrue(is_rotated(A_orig, A));
+        }
     }
 ```
 
+This powerful approach using
+randomized input and checking for properties of the output, is called
+[**property based testing**](https://en.wikipedia.org/wiki/Software_testing#Property_testing)
+(or property testing for short).

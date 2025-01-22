@@ -77,3 +77,9 @@ deduce_programming:
 	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
 	$(PYTHON) $(DEDUCE) DeduceProgramming1.pf --dir $(LIB_DIR)
 	$(PYTHON) $(DEDUCE) DeduceProgramming2.pf --dir $(LIB_DIR)
+
+deduce_intro_proof:
+	cat deduce-intro-proof.md | sed 's/deduce\^/deduce /' > deduce-intro-proof.en
+	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
+	$(PYTHON) $(DEDUCE) DeduceIntroProof.pf --dir $(LIB_DIR)
+

@@ -14,24 +14,27 @@ ignoring details that don't matter.
 
 Functions to think about: n, 10n, log n, n log n, 10 n², n² + n
 
-https://www.desmos.com/calculator
+[https://www.desmos.com/calculator](https://www.desmos.com/calculator)
 
 ## Big-O: Asymptotic Upper Bound
 
-**Definition** (Big-O) For a given function g, we define **O(g)** as the
-the set of functions that grow similarly or slower than g. More
-precisely, f ∈ O(g) iff ∃ k c. ∀ n ≥ k. f(n) ≤ c g(n).
+**Definition** A function f is asympotically less-or-equal function g,
+written f ≲ g, iff
 
-We say that g(n) is an *asymptotic upper bound* of all the functions
-in the set O(g).
-
-**Notation** We write f ≲ g iff f ∈ O(g), and say that f is
-asymptotically less-or-equal to g.
+    ∃ k c. ∀ n ≥ k. f(n) ≤ c g(n).
 
 Alternatively, the asympotic growth of functions can be characterized
 using limits.
 
-f ∈ O(g) iff lim{n→∞} f(n)/g(n) is greater or equal zero and not infinity.
+f ≲ g iff lim{n→∞} f(n)/g(n) is greater or equal zero and not infinity.
+
+**Definition** (Big-O) For a given function g, we define **O(g)** as the
+the set of functions that as asympotically less-or-equal to g. 
+
+    O(g) = { f | f ≲ g}
+
+We say that g(n) is an *asymptotic upper bound* of all the functions
+in the set O(g).
 
 Demonstrate the main idea and the role of k and c.
 

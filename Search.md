@@ -93,10 +93,7 @@ directory and select "New -> Directory". Name the new directory `test`.
 
 Right click on `test` in the file structure. Go to the last item in the pop-up menu
 and select "Mark Directory As -> Test **Sources** Root". The `test` directory will be
-highlighted in green.
-
-Create a new Java class file in `test` called `RotationTest`. Create `rotate_save_n_shift`
-as a private static member function of `RotationTest`.
+highlighted in green. Create a new Java class file in `test` called `RotationTest`. 
 
 Our recommended method for testing the output of a function is to
 write Java code that check whether the function satisfies its
@@ -116,7 +113,7 @@ that the last element was moved to the front then iterates through the
 two arrays using a `for` loop, checking that all the other elements
 were moved forward one position.
 
-```
+```java
 static boolean is_rotated(int[] A_orig, int[] A_new) {
 	if (A_orig.length == 0) {
         return Arrays.equals(A_orig, A_new);
@@ -154,25 +151,17 @@ Add the following as a public member function of `RotationTest`:
 ```java
 @Test
 public void test_rotation_simple() {
-    String test_description = "rotating a small array";
     int[] A = {1, 2, 3, 4, 5};
     int[] A_orig = Arrays.copyOf(A, A.length);
-    rotate_save_n_shift(A);
-    try {
-        assertTrue(is_rotated(A_orig, A));
-    } catch (Exception e) {
-        fail(test_description + e.toString());
-    }
+    Rotation.rotate_ripple(A);
+    assertTrue(is_rotated(A_orig, A));
 }
 ```
 
-Note that the function is marked with the `@Test` attribute, which indicates
-that it contains a unit test.
-The array `{1, 2, 3, 4, 5}` is the example that we talked about in lecture.
-We call `rotate_save_n_shift` and check the produced array
-using `is_rotated`, which is wrapped in a try-catch block. Should the
-assertion fail, the catch clause throws an exception, which contains an error
-message that consists of description of the test case and the exception `e`.
+Note that the function is marked with the `@Test` attribute, which
+indicates that it contains a unit test.  The array `{1, 2, 3, 4, 5}`
+is the example that we talked about in lecture.  We call
+`rotate_ripple` and check the produced array using `is_rotated`.
 
 We can run this test point by clicking on the green icon:
 
@@ -187,7 +176,7 @@ writing one piece of code that will executing a hundred tests (or
 more). Of course, we want the tests to use different inputs, so we
 pick the size of th array randomly and fill it with randomly generated
 numbers. The next question is how do we check the output of
-`rotate_save_n_shift`?  Here's were the work we did to write
+`rotate_ripple`?  Here's were the work we did to write
 `is_rotated` really pays off.  Even though we don't know what the
 output array will look like, we can still run `is_rotated` on the
 output to make sure it is correct. This powerful approach using
@@ -198,7 +187,6 @@ randomized input and checking for properties of the output, is called
 ```java
 @Test
 public void test_rotation_random() {
-    String test_description = "rotating an array with random integers";
     for (int t = 0; t != 100; ++t) {
         Random r = new Random();
         int[] A = new int[r.nextInt(100)];
@@ -206,13 +194,9 @@ public void test_rotation_random() {
             A[i] = r.nextInt();
         }
         int[] A_orig = Arrays.copyOf(A, A.length);
-        rotate_save_n_shift(A);
+        Rotation.rotate_ripple(A);
 
-        try {
-            assertTrue(is_rotated(A_orig, A));
-        } catch (Exception e) {
-            fail(test_description + e.toString());
-        }
+        assertTrue(is_rotated(A_orig, A));
     }
 }
 ```
@@ -235,9 +219,9 @@ it turns into a red dot. Then we choose "Debug ..." from the drop-down menu:
 
 ![](assets/images/search/debug.png)
 
-Execution stops at the breakpoint. The arrays `A` and `A_orig` are
-displayed in the "Debug" section of IntelliJ. We can see that the
-buggy implementation produces `{1, 1, 1, 1, 1}` instead.
+Execution stops at the breakpoint. The arrays `A` and `A_orig` are displayed in
+the "Debug" section of IntelliJ. We can see that the buggy implementation
+produces `{1, 1, 1, 1, 1}` instead of `{5, 1, 2, 3, 4}`.
 
 ![](assets/images/search/breakpoint.png)
 
@@ -396,8 +380,8 @@ Think about the following questions before you start:
 ### Problem 4: Testing Three Search Functions
 
 Create file `test/StudentTest.java`, which contains `public class StudentTest`.
-Create your unit tests as methods of `test/StudentTest.java`.
-If you come up with your own test oracles, they should go in
+Create your unit tests as methods of `test/StudentTest.java`. If you come up
+with your own test properties, those functions for test properties should go in
 `test/StudentTest.java` as well.
 
 The `StudentTest` class should contain a member function
@@ -449,12 +433,12 @@ provide instantaneous feedback to your lab submissions. Your grades will be
 decided by the number of test cases that your _best_ submission passes.
 Multiple attempts are allowed.
 
-- Submit `Search.java` to [link](https://autograder.luddy.indiana.edu/web/project/1531)
+- Submit `Search.java` to the Search project on the autograder.
   + You may submit your code an unlimited number of times.
   + Autograder will run your submission on 8 test cases that thoroughly
     examine the correctness of all three search functions.
 
-- Submit `StudentTest.java` to [link](https://autograder.luddy.indiana.edu/web/project/1526)
+- Submit `StudentTest.java` to the SearchTest project on the autograder.
   + You may submit your tests an unlimited number of times.
   + Autograder will run your submission on 8 problematic `Search` implementations.
     It also runs one correct implementation to rule out false positive.

@@ -45,7 +45,7 @@ Expect at least one quiz per month during lab time.
 
 **Instructors**
 
-* Jeremy Siek (jsiek), office hours TBD, Luddy Room 3014, [make a reservation](https://outlook.office.com/bookwithme/user/7e2eaedb9dbb43868ba3f4dbe81e2972@iu.edu/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&ep=mlink)
+* Jeremy Siek (jsiek), office hours Mondays 3-4pm and Tuesdays 2-3pm, Luddy Room 3014, [make a reservation](https://outlook.office.com/bookwithme/user/7e2eaedb9dbb43868ba3f4dbe81e2972@iu.edu/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&ep=mlink)
 
 **Teaching Assistants**
 
@@ -66,14 +66,15 @@ Office hours with TAs are in Luddy Hall Room 0121. (Starting the week of January
 Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
 10am    | Ashley            |            | Lillie         |             |
 11am    |                   |            |                |             | Dhruv
-12pm    |                   |            |                |             |
-1pm     | Calvin            | Javaria    | Calvin, Lillie | Javaria     | 
-2pm     | Dhruv             | Ashley*    |                |             |
+12pm    |                   | Javaria*   |                |             |
+1pm     | Calvin            | Javaria    | Calvin, Lillie |             | 
+2pm     | Dhruv             | Ashley**   |                |             |
 3pm     | Shulin            | Darshal    | Shulin         | Aniruthan   | 
 4pm     | Matei             | Darshal    | Matei          | Aniruthan   |
 5pm     |                   |            |                |             |
 
-\* Beginning at 2:10 pm 
+\* Beginning at 12:40 pm
+\*\* Beginning at 2:10 pm 
 
 
 **Textbook**
@@ -94,7 +95,7 @@ Jan. 21 | [Algorithm Analysis](./lectures/algo-analysis.md)         | Ch. 2     
 Jan. 23 | [Algorithm Analysis, continued](./lectures/more-algo-analysis.md) 
 Jan. 23 or 24 |                                                     |              | [Project: FloodIt!](./flood-it) | [code](https://autograder.luddy.indiana.edu/web/project/1509)
 Jan. 28 | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | [Programming in Deduce](https://jsiek.github.io/deduce/pages/deduce-programming.html) | Project FloodIt! due | [code](https://autograder.luddy.indiana.edu/web/project/1509)
-Jan. 30 | Proving Theorems in Deduce                                | [Proofs in Deduce](https://jsiek.github.io/deduce/pages/deduce-proofs.html)
+Jan. 30 | [Writing Proofs in Deduce](./lectures/deduce-intro-proof.md)                                | [Proofs in Deduce](https://jsiek.github.io/deduce/doc/ProofIntro.html)
 Jan. 30 or 31 |                                                     |              | [Lab: Linked Lists in Deduce](./LabDeduceProg)
 Feb. 4  | [Proof by Induction on Linked Lists](./lectures/InductionOnLists.md) | | Lab Linked Lists in Deduce due
 Feb. 6  | [Discovering and Generalizing Lemmas](./lectures/RevRev.md)                       |              | [Proof Exercises](./ProofExercises.md)
@@ -154,6 +155,8 @@ May 8 | **Final Exam** (in class) 10:20am-12:20pm
 
 * Code Editor and Debugger:
   [IntelliJ IDEA](https://www.jetbrains.com/idea/download) (Community Edition)
+
+* Note: Autograder uses JUnit5.7.0, so please stick to this version for JUnit.
 
 **Grade Weighting**
 
