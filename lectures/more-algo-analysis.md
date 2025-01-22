@@ -98,20 +98,18 @@ Show that 2 log n ≲ n / 2.
 
 We need to choose k and c.
 
-k=1, c=2
-k=4, c=2
-k=16, c=1
+(k=1, c=2)  or  (k=4, c=2)  or (k=16, c=1)
 
-n    log n   2 log n   n / 2
-1     0        0       1/2
-2     1        2       1
-4     2        4       2
-8     3        6       4
+n  | log n | 2 log n |  n / 2
+-- | ----- | ------- | ------
+1  |  0    |   0     |  1/2
+2  |  1    |   2     |  1
+4  |  2    |   4     |  2
+8  |  3    |   6     |  4
+16 |  4    |   8     |  8
+32 |  5    |  10     | 16
 
-16    4        8       8
-32    5       10      16
-
-∀ n ≥ 16. 2 log n ≤ n / 2
+    ∀ n ≥ 16. 2 log n ≤ n / 2
 
 To make it easy to compute log n, let's look at powers of 2.
 (Recall that log(2ˣ) = x.)
@@ -218,15 +216,18 @@ the set of functions that grow at least as fast a g(n):
 
 # Tight bounds
 
+**Definition** f and g are asymptotically equivalent, written f ≈ g,
+iff
+
+    ∃ k c₁ c₂, ∀ n ≥ k, 0 ≤ c₁ g(n) ≤ f(n) ≤ c₂ g(n).
+
 **Definition** (Theta) For a given function g(n), **Θ(g)** is the set
 of functions that grow at the same rate as g(n):
 
-    f ∈ Θ(g) iff ∃ k c₁ c₂, ∀ n ≥ k, 0 ≤ c₁ g(n) ≤ f(n) ≤ c₂ g(n).
+    Θ(g) { f | f ≈ g }
 
-We say that g is an *asymptotically tight bound* for each function
-in Θ(g).
-
-**Notation** f ≈ g means f ∈ Θ(g). We say f and g are asymptotically equivalent.
+We say that g is an *asymptotically tight bound* for each function in
+Θ(g).
 
 
 # Reasoning about bounds.
@@ -277,24 +278,24 @@ Merge the two halves.
        } else {
            return A;
        }
-    }    
+    }
 
 What's the time complexity?
 
 Recursion tree:
 
-               c*n                    = c*n
+                n                    = n
              /     \
             /       \
-       c*n/2        c*n/2             = c*n
+        n/2          n/2             = n
        /  \         /   \
-      /    \       /     \     
-    c*n/4  c*n/4  c*n/4  c*n/4        = c*n
+      /    \       /     \ 
+    n/4    n/4   n/4    n/4          = n
     ...
 
 Height of the recursion tree is log(n).
 
-So the total work is c n log(n).
+So the total work is n log(n).
 
 Time complexity is O(n log(n)).
 
