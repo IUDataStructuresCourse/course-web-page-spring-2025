@@ -35,9 +35,9 @@ proof
     arbitrary xs:List<T>
     switch xs {
       case [] {
-        assume prem
-        conclude take(suc(n'), @[]<T>) ++ drop(suc(n'), []) = []
-            by evaluate
+        assume premise: suc(n') ≤ length(@[]<T>)
+        have eq: suc(n') ≤ 0 by definition length in premise
+        conclude false by definition operator≤ in eq
       }
       case node(x, xs') {
         assume prem: suc(n') ≤ length(node(x, xs'))
