@@ -36,7 +36,7 @@ Example:
 ```{.deduce^#len_42}
 theorem len_42:  1 = len(Node(42, Empty))
 proof
-  rewrite len_one[42]
+  rewrite len_one
 end
 ```
 
@@ -51,10 +51,10 @@ proof
   arbitrary x:Nat
   equations
         (1 + x) * x
-      = x * (1 + x)        by mult_commute[1+x,x]
-  ... = x * 1 + x * x      by dist_mult_add[x,1,x]
-  ... = x * x + x * 1      by add_commute[x*1,x*x]
-  ... = x * x + x          by rewrite mult_one[x]
+      = x * (1 + x)        by mult_commute
+  ... = x * 1 + x * x      by dist_mult_add
+  ... = x * x + x * 1      by add_commute
+  ... = x * x + x          by rewrite mult_one
 end
 ```
 
@@ -146,7 +146,7 @@ proof
     case suc(n') {
       suppose premise: suc(n') + m = 0
       have eq: 1 + (n' + m) = 0 
-          by rewrite suc_one_add[n'] | add_assoc[1,n',m] in premise
+          by rewrite suc_one_add | add_assoc in premise
       conclude false by apply not_one_add_zero to eq
     }
   }
