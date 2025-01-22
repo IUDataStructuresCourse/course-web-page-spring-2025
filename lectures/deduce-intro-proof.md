@@ -1,8 +1,8 @@
 # Writing Proofs in Deduce
 
 Concepts:
-* [`theorem`](https://jsiek.github.io/deduce/doc/Reference.html#theorem-statement) statement
-* [`definition`](https://jsiek.github.io/deduce/doc/Reference.html#definition-proof) proof
+* [`theorem`](https://jsiek.github.io/deduce/pages/reference.html#theorem-statement) statement
+* [`definition`](https://jsiek.github.io/deduce/pages/reference.html#definition-proof) proof
 
 Example:
 ```{.deduce^#len_empty}
@@ -13,10 +13,10 @@ end
 ```
 
 Concepts:
-* [`all`](https://jsiek.github.io/deduce/doc/Reference.html#all-universal-quantifier) formula,
-* [`arbitrary`](https://jsiek.github.io/deduce/doc/Reference.html#arbitrary-forall-introduction) proof,
-* [`suffices`](https://jsiek.github.io/deduce/doc/Reference.html#suffices-proof-statement) proof, and
-* [`evaluate`](https://jsiek.github.io/deduce/doc/Reference.html#evaluate) proof.
+* [`all`](https://jsiek.github.io/deduce/pages/reference.html#all-universal-quantifier) formula,
+* [`arbitrary`](https://jsiek.github.io/deduce/pages/reference.html#arbitrary-forall-introduction) proof,
+* [`suffices`](https://jsiek.github.io/deduce/pages/reference.html#suffices-proof-statement) proof, and
+* [`evaluate`](https://jsiek.github.io/deduce/pages/reference.html#evaluate-proof) proof.
 
 Example:
 ```{.deduce^#len_one}
@@ -29,8 +29,8 @@ end
 ```
 
 Concepts:
-* [proof instantiation](https://jsiek.github.io/deduce/doc/Reference.html#instantiation-proof)
-* [`rewrite`](https://jsiek.github.io/deduce/doc/Reference.html#rewrite-proof)
+* [proof instantiation](https://jsiek.github.io/deduce/pages/reference.html#instantiation-proof)
+* [`rewrite`](https://jsiek.github.io/deduce/pages/reference.html#rewrite-proof)
 
 Example:
 ```{.deduce^#len_42}
@@ -42,7 +42,7 @@ end
 
 Concepts:
 * Library of theorems about natural numbers (`lib/Nat.thm`)
-* [`equations`](https://jsiek.github.io/deduce/doc/Reference.html#equations)
+* [`equations`](https://jsiek.github.io/deduce/pages/reference.html#equations)
 
 Example:
 ```{.deduce^#algebra_example}
@@ -59,11 +59,11 @@ end
 ```
 
 Concepts:
-* [`if`-`then`](https://jsiek.github.io/deduce/doc/Reference.html#if-then-conditional-formula) formula
-* [`have`](https://jsiek.github.io/deduce/doc/Reference.html#have-proof-statement) proof
-* [`apply`-`to`](https://jsiek.github.io/deduce/doc/Reference.html#apply-to-proof-modus-ponens) proof
-* [`recall`](https://jsiek.github.io/deduce/doc/Reference.html#recall-proof) proof
-* [`conclude`](https://jsiek.github.io/deduce/doc/Reference.html#conclude-proof) proof
+* [`if`-`then`](https://jsiek.github.io/deduce/pages/reference.html#if-then-conditional-formula) formula
+* [`have`](https://jsiek.github.io/deduce/pages/reference.html#have-proof-statement) proof
+* [`apply`-`to`](https://jsiek.github.io/deduce/pages/reference.html#apply-to-proof-modus-ponens) proof
+* [`recall`](https://jsiek.github.io/deduce/pages/reference.html#recall-proof) proof
+* [`conclude`](https://jsiek.github.io/deduce/pages/reference.html#conclude-proof) proof
 
 From `lib/Nat.thm`:
 ```
@@ -81,10 +81,10 @@ end
 ```
 
 Concepts:
-* [`assume`](https://jsiek.github.io/deduce/doc/Reference.html#assume) proof
-* [`switch`](https://jsiek.github.io/deduce/doc/Reference.html#switch-proof) proof
-* [`rewrite`-`in`](https://jsiek.github.io/deduce/doc/Reference.html#rewrite-in-proof)
-* [`definition`-`in`](https://jsiek.github.io/deduce/doc/Reference.html#definition-in-proof)
+* [`assume`](https://jsiek.github.io/deduce/pages/reference.html#assume) proof
+* [`switch`](https://jsiek.github.io/deduce/pages/reference.html#switch-proof) proof
+* [`rewrite`-`in`](https://jsiek.github.io/deduce/pages/reference.html#rewrite-in-proof)
+* [`definition`-`in`](https://jsiek.github.io/deduce/pages/reference.html#definition-in-proof)
 
 Example:
 ```{.deduce^#assume_example}
@@ -105,9 +105,9 @@ end
 ```
 
 Concepts:
-* [`true`](https://jsiek.github.io/deduce/doc/Reference.html#true-formula) formula
-* [period](https://jsiek.github.io/deduce/doc/Reference.html#period-proof-of-true)
-* [`false`](https://jsiek.github.io/deduce/doc/Reference.html#false) formula
+* [`true`](https://jsiek.github.io/deduce/pages/reference.html#true-formula) formula
+* [period](https://jsiek.github.io/deduce/pages/reference.html#period-proof-of-true)
+* [`false`](https://jsiek.github.io/deduce/pages/reference.html#false) formula
 
 Example:
 ```{.deduce^#prove_true}
@@ -127,8 +127,8 @@ end
 ```
 
 Concepts:
-* [`and`](https://jsiek.github.io/deduce/doc/Reference.html#and-logical-conjunction) formula
-* [comma](https://jsiek.github.io/deduce/doc/Reference.html#comma-logical-and-introduction) proof,
+* [`and`](https://jsiek.github.io/deduce/pages/reference.html#and-logical-conjunction) formula
+* [comma](https://jsiek.github.io/deduce/pages/reference.html#comma-logical-and-introduction) proof,
 
 Example:
 ```{.deduce^#add_to_zero_is_zero}
@@ -170,8 +170,8 @@ end
 ```
 
 Concepts:
-* [`or`](https://jsiek.github.io/deduce/doc/Reference.html#or--logical-disjunction) formula
-* [`cases`](https://jsiek.github.io/deduce/doc/Reference.html#cases-disjunction-elimination) proof
+* [`or`](https://jsiek.github.io/deduce/pages/reference.html#or-logical-disjunction) formula
+* [`cases`](https://jsiek.github.io/deduce/pages/reference.html#cases-disjunction-elimination) proof
 
 ```{.deduce^#intro_dichotomy}
 theorem intro_dichotomy:  all x:Nat, y:Nat.  x ≤ y  or  y < x
@@ -196,7 +196,7 @@ end
 ```
 
 Concepts:
-* [`not`](https://jsiek.github.io/deduce/doc/Reference.html#not) formula
+* [`not`](https://jsiek.github.io/deduce/pages/reference.html#not) formula
 
 ```{.deduce^#not_example}
 theorem not_example: not (0 = 1)
