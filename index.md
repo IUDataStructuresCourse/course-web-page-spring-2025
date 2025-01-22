@@ -93,8 +93,8 @@ Jan. 16 or 17 |                                                     |           
 Jan. 21 | [Algorithm Analysis](./lectures/algo-analysis.md)         | Ch. 2        | Lab Array Search due                      | [code](https://autograder.luddy.indiana.edu/web/project/1531), [test](https://autograder.luddy.indiana.edu/web/project/1526)
 Jan. 23 | [Algorithm Analysis, continued](./lectures/more-algo-analysis.md) 
 Jan. 23 or 24 |                                                     |              | [Project: FloodIt!](./flood-it) | [code](https://autograder.luddy.indiana.edu/web/project/1509)
-Jan. 28 | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | [Programming in Deduce](https://jsiek.github.io/deduce/doc/FunctionalProgramming.html) | Project FloodIt! due | [code](https://autograder.luddy.indiana.edu/web/project/1509)
-Jan. 30 | Proving Theorems in Deduce                                | [Proofs in Deduce](https://jsiek.github.io/deduce/doc/ProofIntro.html)
+Jan. 28 | [Programming in Deduce with Linked Lists](./lectures/deduce-programming.md) | [Programming in Deduce](https://jsiek.github.io/deduce/pages/deduce-programming.html) | Project FloodIt! due | [code](https://autograder.luddy.indiana.edu/web/project/1509)
+Jan. 30 | Proving Theorems in Deduce                                | [Proofs in Deduce](https://jsiek.github.io/deduce/pages/deduce-proofs.html)
 Jan. 30 or 31 |                                                     |              | [Lab: Linked Lists in Deduce](./LabDeduceProg)
 Feb. 4  | [Proof by Induction on Linked Lists](./lectures/InductionOnLists.md) | | Lab Linked Lists in Deduce due
 Feb. 6  | [Discovering and Generalizing Lemmas](./lectures/RevRev.md)                       |              | [Proof Exercises](./ProofExercises.md)
