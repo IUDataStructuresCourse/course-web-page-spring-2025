@@ -36,7 +36,7 @@ Example:
 ```{.deduce^#len_42}
 theorem len_42:  1 = len(Node(42, Empty))
 proof
-  rewrite len_one
+  rewrite len_one[42]
 end
 ```
 
