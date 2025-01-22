@@ -123,7 +123,7 @@ proof
     suffices set_of(ys) = ∅ ∪ set_of(ys)   by definition {operator++, set_of}
     rewrite empty_union<T>
   }
-  case node(x, xs') assume IH {
+  case node(x, xs') assume IH: all ys:List<T>. set_of(xs' ++ ys) = set_of(xs') ∪ set_of(ys) {
     arbitrary ys:List<T>
     equations
           set_of(node(x, xs') ++ ys) 
