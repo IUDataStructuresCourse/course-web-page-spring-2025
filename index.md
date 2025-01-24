@@ -33,7 +33,7 @@ doing better on job interview questions.
     - Dhruv Chavan
     - Ashley Ishoel
 
-* Friday 12:55pm-2:40pm, Myles Brand Hall (I) Room E150
+* Friday 12:45pm-2:40pm, Myles Brand Hall (I) Room E150
 
     - Lillie Donato
     - Darshal Shetty
