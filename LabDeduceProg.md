@@ -65,19 +65,27 @@ hello.pf is valid
 
 ### Sum the elements of a List
 
-Define a function named `sum` that adds up the elements of a list.
-In particular, the elements are natural numbers, so they have type
-`Nat`. The `sum` function should have the following type.
-
-```
-sum : fn List<Nat> -> Nat
-```
-
+Create a function named `sum` that adds up the elements of a list.  In
+particular, the elements are natural numbers, so they have type `Nat`.
 You will need to import the type `Nat` and operations, such as
 `operator +`, from `Nat.pf`, with the following `import` statement.
 
 ```
 import Nat
+```
+
+You'll also need to import the `List` library.
+
+```
+import List
+```
+
+Here's the skeleton for your `sum` function.
+
+```
+function sum(List<Nat>) -> Nat {
+  FILL IN
+}
 ```
 
 The following shows an example use of the `sum` function.
@@ -88,7 +96,7 @@ assert sum([1,2,3,4]) = 10
 
 ### Concatenating a List of Lists
 
-Define a function named `concat` that turns a list-of-lists into a
+Create a function named `concat` that turns a list-of-lists into a
 list. The `concat` function should have the following type.
 
 ```
@@ -109,7 +117,7 @@ your `concat` function behaves as expected.
 ### Quick Reverse, Accumulator-Passing Style
 
 The `reverse` function in `List.pf` is `O(n²)` time because it invokes
-append (`operator ++`) `n` times and append is `O(n)`. Define a
+append (`operator ++`) `n` times and append is `O(n)`. Create a
 function named `quick_rev` that reverses the input list and that is
 `O(n)` time. The `quick_rev` function should be generic and have the
 following type.
@@ -121,7 +129,7 @@ quick_rev : < E > fn List<E> -> List<E>
 Use `assert` statements to test whether your `quick_rev` function
 really reverses the input.
 
-Hint: we recommend that you define an auxilliary function that is
+Hint: we recommend that you create an auxilliary function that is
 written in accumulator-passing style.
 
 Consider the `sum` function that you created above.  We can change
@@ -157,7 +165,7 @@ the output list is
 n0, n0+n1, n0+n1+n2, ...
 ```
 
-Define a function named `cumulative_sum` that performs this operation.
+Create a function named `cumulative_sum` that performs this operation.
 The `cumulative_sum` function should have the following type.
 
 ```
@@ -180,7 +188,8 @@ This `search` function separates the input list into two lists, the
 first list does not contain the given number, and the second list
 starts with the given number. If the given number is not in the input
 list, then the first list is the entire input list and the second list
-is empty.
+is empty. To return two lists, use the `Pair` type which you can
+import from the `Pair` library.
 
 ```
 function search(List<Nat>, Nat) -> Pair<List<Nat>, List<Nat> > {

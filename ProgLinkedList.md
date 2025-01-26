@@ -45,7 +45,14 @@ hello.pf is valid
 ### 1. Concatenating a List of Lists
 
 Define a function named `concat` that turns a list-of-lists into a
-list. The `concat` function should have the following type.
+list. You'll need to import the `List` library.
+
+```
+import List
+```
+
+
+The `concat` function should have the following type.
 
 ```
 concat : < E > fn List<List<E>> -> List<E>
