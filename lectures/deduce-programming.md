@@ -119,7 +119,7 @@ define L = Node(7, Node(4, Node(5, Empty)))
 
 ## Recursive Functions: List Length
 
-The `length` function, defined below returns the number of elements in
+The `len` function, defined below returns the number of elements in
 a linked list. The length of an empty list is `0` and the length of a
 list that starts with a node is one more than the length of the list
 starting at the next node.
