@@ -239,6 +239,10 @@ contents of `lib/Nat.pf` as follows
 import Nat
 ```
 
+If you need to import a file from some other directory, use
+the `--dir directory-name` flag with `deduce.py` to specify
+that other directory.
+
 ## Printing Values
 
 You can ask Deduce to print a value to standard output using the
