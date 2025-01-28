@@ -65,6 +65,12 @@ an instructor can help you get things working.
 
 ## Problem Set
 
+Complete the following exercises in a file named `LabDeduceProgramming.pf`. 
+Then submit the file to the 
+[autograder](https://autograder.luddy.indiana.edu/web/project/1614). 
+Before submitting, you can also write your own tests using `assert` statements
+for each of the functions you write.
+
 ### Sum the elements of a List
 
 Create a function named `sum` that adds up the elements of a list.  In
