@@ -19,47 +19,49 @@ lists in the Deduce programming language.
 
 ### Installation
 
-You can find the code for deduce
-[here](https://github.com/jsiek/deduce), as well as instructions on
-running your code.
+> The following instructions are how we recommend setting up deduce
+development for the class, you can find more detailed information
+on the [deduce website](https://jsiek.github.io/deduce/pages/getting-started.html).
 
-You also need to install [python](https://www.python.org/), if you
-haven't already. Here are some
-[instructions](https://wiki.python.org/moin/BeginnersGuide/Download)
-and links to the download for various systems.
+1. The first thing you should do is install deduce itself.
+Download and extract the zip file from 
+[github](https://github.com/jsiek/deduce/releases).
+2. Open the resulting folder in visual studio code, which you can
+install [here](https://code.visualstudio.com/). 
+3. Navigate to the extensions menu, and search for and install
+the **deduce-mode** extension. This makes it easier to run deduce files
+and gives you syntax highlighting, as well as some basic autocomplete options.
+    ![](assets/deduce-demo/extension.png)
 
-To install the requisite packages for deduce, run the following
-command in the same directory as `deduce.py`.
+4. Create a new folder called `343` in the deduce directory, where you
+can keep your work for this class. 
+5. In the 343 folder, create a file named `hello.pf`. This is your first deduce script!
+6.  Paste the following code block into the newly created file.
+    ```
+    import Nat
+    define hello = 42
+    print hello
+    ```
+7. Now you should be able to click the deduce icon at the top right of your window
+and run the file!
+![](assets/deduce-demo/run.gif)
+8. You will probably see some error in the terminal that falls into one of 
+two categories.
+  - If you see `ModuleNotFoundError: No module named 'lark.tree'`, you
+  need to install a missing Python package that deduce relies on. Try running
+  `python -m pip install lark` in the terminal. If this works, great! If not, an instructor
+  can help.
+  - Otherwise, you likely don't have Python installed. Download and run the 
+  installer from [python.org](https://www.python.org/). Then add the **Python**
+  extension to vscode, much as you did for deduce-mode.
+9. If you encounter another error or these steps don't work,
+an instructor can help you get things working.
+10. If everything went correctly, you should see this in the terminal
 
-```bash
-python -m pip install lark
-```
-
-### Running a proof file
-
-Create a file in the same directory as `deduce.py` called `hello.pf`,
-and paste the following into it.
-
-```
-import Nat
-
-define hello = 42
-
-print hello
-```
-
-Then run the command
-
-```bash
-python ./deduce.py ./hello.pf
-```
-
-and you should see the following output.
-
-```
-42
-hello.pf is valid
-```
+    ```
+    42
+    hello.pf is valid
+    ```
 
 ## Problem Set
 
