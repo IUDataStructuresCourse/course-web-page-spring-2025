@@ -158,6 +158,8 @@ May 8 | **Final Exam** (in class) 10:20am-12:20pm
 
 * Note: Autograder uses JUnit5.7.0, so please stick to this version for JUnit.
 
+* [Deduce](https://jsiek.github.io/deduce/index.html) Proof Checker
+
 **Grade Weighting**
 
 * Assignments (30%)
