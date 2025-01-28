@@ -7,11 +7,6 @@ language about the correctness of their funnctions. The Deduce system
 checks that the proofs are correct.
 
 In this lecture we introduce the Deduce programming language.
-After this lecture, we recommend that you work through the tutorial at
-the following URL, and complete the exercises at the bottom of that
-web page.
-
-[https://jsiek.github.io/deduce/pages/deduce-programming.html](https://jsiek.github.io/deduce/pages/deduce-programming.html)
 
 # Programming in Deduce
 
