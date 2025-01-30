@@ -191,7 +191,7 @@ boolean. For example, the following if-then-else term is evaluates to
 `42`.
 
 ```{.deduce^#assertIfTrue}
-print if first(pair(3,7)) = 3 then 42 else 0
+print if length([1,2,3]) = 3 then 42 else 0
 ```
 
 ## Linear Search
