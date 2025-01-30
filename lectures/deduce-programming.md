@@ -177,6 +177,8 @@ define list_of_list = [list_123, list_456]
 
 ## Generic Functions
 
+From `lib/List.pf`:
+
 ```{.deduce^#length}
 function length<E>(List<E>) -> Nat {
   length(empty) = 0
