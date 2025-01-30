@@ -180,7 +180,7 @@ define list_of_list = [list_123, list_456]
 From `lib/List.pf`:
 
 ```{.deduce^#length}
-function length<T>(List<T>) -> Nat {
+function length<E>(List<E>) -> Nat {
   length(empty) = 0
   length(node(n, next)) = 1 + length(next)
 }
