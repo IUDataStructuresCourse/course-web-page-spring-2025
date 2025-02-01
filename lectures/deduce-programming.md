@@ -175,7 +175,7 @@ Because `List` is generic, we can create a list that contains lists.
 define list_of_list = [list_123, list_456]
 ```
 
-## Generic Functions
+## Generic Recursive Functions
 
 From `lib/List.pf`:
 
@@ -252,7 +252,7 @@ print 5
 The output is `5`.
 
 
-## Functions (`fun`)
+## Functions (`fun`) (non-recursive)
 
 Functions are created with an term that starts with the `fun`
 keyword, followed by parameter names and their types, then the body of
@@ -269,6 +269,21 @@ arguments.
 ```{.deduce^#area12}
 assert area(3, 4) = 12
 ```
+
+## Generic Functions (`generic`) (non-recursive)
+
+Generic functions are created with a combination of `generic` and
+`fun`.  Start with the `generic` keyword, followed by the list of type
+parameters, then an open brace, then the function (see `fun` above),
+and finally a close brace.
+
+```{.deduce^#swap}
+define swap = generic T, U { fun p:Pair<T,U> { pair(second(p), first(p)) } }
+
+assert first(swap(pair(1,2))) = 2
+assert second(swap(pair(1,2))) = 1
+```
+
 
 ## Pairs
 
@@ -374,5 +389,6 @@ work with functions of the type `fn Nat -> T`.
 <<Pair>>
 <<firstSecond>>
 <<firstPair>>
+<<swap>>
 ```
 -->
