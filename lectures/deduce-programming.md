@@ -270,21 +270,6 @@ arguments.
 assert area(3, 4) = 12
 ```
 
-## Generic Functions (`generic`) (non-recursive)
-
-Generic functions are created with a combination of `generic` and
-`fun`.  Start with the `generic` keyword, followed by the list of type
-parameters, then an open brace, then the function (see `fun` above),
-and finally a close brace.
-
-```{.deduce^#swap}
-define swap = generic T, U { fun p:Pair<T,U> { pair(second(p), first(p)) } }
-
-assert first(swap(pair(1,2))) = 2
-assert second(swap(pair(1,2))) = 1
-```
-
-
 ## Pairs
 
 The `Pair` type is define in `lib/Pair.pf` as a generic union:
@@ -316,6 +301,19 @@ assert first(pair(3,7)) = 3
 assert second(pair(3,7)) = 7
 ```
 
+## Generic Functions (`generic`) (non-recursive)
+
+Generic functions are created with a combination of `generic` and
+`fun`.  Start with the `generic` keyword, followed by the list of type
+parameters, then an open brace, then the function (see `fun` above),
+and finally a close brace.
+
+```{.deduce^#swap}
+define swap = generic T, U { fun p:Pair<T,U> { pair(second(p), first(p)) } }
+
+assert first(swap(pair(1,2))) = 2
+assert second(swap(pair(1,2))) = 1
+```
 
 
 <!--
