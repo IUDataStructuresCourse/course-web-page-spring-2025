@@ -29,11 +29,33 @@ end
 ```
 
 Concepts:
+* [`true`](https://jsiek.github.io/deduce/pages/reference.html#true-formula) formula
+* [period](https://jsiek.github.io/deduce/pages/reference.html#period-proof-of-true)
+* [`false`](https://jsiek.github.io/deduce/pages/reference.html#false) formula
+* [`conclude`](https://jsiek.github.io/deduce/pages/reference.html#conclude-proof) proof
+
+Example:
+```{.deduce^#prove_true}
+theorem prove_true: true
+proof
+  .
+end
+```
+
+Example:
+```{.deduce^#false_explosion}
+theorem false_explosion: if false then 0 = 1
+proof
+  assume: false
+  conclude 0 = 1 by recall false
+end
+```
+
+Concepts:
 * [`if`-`then`](https://jsiek.github.io/deduce/pages/reference.html#if-then-conditional-formula) formula
 * [`have`](https://jsiek.github.io/deduce/pages/reference.html#have-proof-statement) proof
 * [`apply`-`to`](https://jsiek.github.io/deduce/pages/reference.html#apply-to-proof-modus-ponens) proof
 * [`recall`](https://jsiek.github.io/deduce/pages/reference.html#recall-proof) proof
-* [`conclude`](https://jsiek.github.io/deduce/pages/reference.html#conclude-proof) proof
 
 From `lib/Nat.thm`:
 ```
@@ -75,144 +97,24 @@ end
 ```
 
 Concepts:
-* [`true`](https://jsiek.github.io/deduce/pages/reference.html#true-formula) formula
-* [period](https://jsiek.github.io/deduce/pages/reference.html#period-proof-of-true)
-* [`false`](https://jsiek.github.io/deduce/pages/reference.html#false) formula
+* `induction` on lists
 
 Example:
-```{.deduce^#prove_true}
-theorem prove_true: true
+```{.deduce^#list_append_empty}
+theorem list_append_empty: <U> all xs :List<U>.
+  xs ++ [] = xs
 proof
-  .
-end
-```
-
-Example:
-```{.deduce^#false_explosion}
-theorem false_explosion: if false then 0 = 1
-proof
-  assume: false
-  conclude 0 = 1 by recall false
-end
-```
-
-Concepts:
-* [`and`](https://jsiek.github.io/deduce/pages/reference.html#and-logical-conjunction) formula
-* [comma](https://jsiek.github.io/deduce/pages/reference.html#comma-logical-and-introduction) proof,
-
-Example:
-```{.deduce^#add_to_zero_is_zero}
-theorem add_to_zero_is_zero: all n:Nat, m:Nat.
-  if n + m = 0
-  then n = 0 and m = 0
-proof
-  arbitrary n:Nat, m:Nat
-  switch n {
-    case 0 {
-      assume premise: 0 + m = 0
-      have: m = 0  by definition operator + in premise
-      conclude 0 = 0 and m = 0 by . , recall m = 0
-    }
-    case suc(n') {
-      suppose premise: suc(n') + m = 0
-      have eq: 1 + (n' + m) = 0 
-          by rewrite suc_one_add | add_assoc in premise
-      conclude false by apply not_one_add_zero to eq
-    }
+  arbitrary U:type
+  induction List<U>
+  case [] {
+    conclude @[]<U> ++ [] = []  by definition operator++
   }
-end
-
-import List
-
-theorem example: all T:type, xs:List<T>, ys:List<T>.
-  if length(xs ++ ys) = 0
-  then length(xs) = 0
-proof
-  arbitrary T:type, xs:List<T>, ys:List<T>
-  assume prem: length(xs ++ ys) = 0
-  have eq1: length(xs ++ ys) = length(xs) + length(ys)  by length_append<T>
-  have eq2: length(xs) + length(ys) = 0
-      by transitive (symmetric eq1) prem
-  have both: length(xs) = 0 and length(ys) = 0 
-      by apply add_to_zero_is_zero to eq2
-  conclude length(xs) = 0 by both
-end
-```
-
-Concepts:
-* [`or`](https://jsiek.github.io/deduce/pages/reference.html#or-logical-disjunction) formula
-* [`cases`](https://jsiek.github.io/deduce/pages/reference.html#cases-disjunction-elimination) proof
-
-```{.deduce^#intro_dichotomy}
-theorem intro_dichotomy:  all x:Nat, y:Nat.  x ≤ y  or  y < x
-proof
-  arbitrary x:Nat, y:Nat
-  have tri: x < y or x = y or y < x by trichotomy[x][y]
-  cases tri
-  case: x < y {
-    have: x ≤ y by apply less_implies_less_equal[x][y] to recall x < y
-    conclude x ≤ y or y < x by recall x ≤ y
+  case node(n, xs') assume IH: xs' ++ [] = xs' {
+    equations
+          node(n, xs') ++ []
+        = node(n, xs' ++ [])    by definition operator++
+    ... = node(n, xs')          by rewrite IH
   }
-  case: x = y {
-    have: x ≤ y by
-        suffices y ≤ y  by rewrite (recall x = y)
-        less_equal_refl[y]
-    conclude x ≤ y or y < x by recall x ≤ y
-  }
-  case: y < x {
-    conclude x ≤ y or y < x by recall y < x
-  }
-end
-```
-
-Concepts:
-* [`not`](https://jsiek.github.io/deduce/pages/reference.html#not) formula
-
-```{.deduce^#not_example}
-theorem not_example: not (0 = 1)
-proof
-  assume: 0 = 1
-  conclude false by recall 0 = 1
-end
-```
-
-Concepts:
-* Sets (`lib/Set.pf`)
-* `set_of` to convert a list to a set
-* `single(x)` for a set with one element that is `x`
-* `∪` for union
-* `∩` for intersection
-
-Example:
-```{.deduce^#member_set_of}
-theorem member_set_of: 4 ∈ set_of([3,4,5])
-proof
-  evaluate
-end
-```
-
-Example:
-```{.deduce^#member_singleton}
-theorem member_singleton: all x:Nat. x ∈ single(x)
-proof
-  arbitrary x:Nat
-  evaluate
-end
-```
-
-Example:
-```{.deduce^#member_union}
-theorem member_union_example: 9 ∈ set_of([2,5]) ∪ set_of([5,9])
-proof
-  evaluate
-end
-```
-
-Example:
-```{.deduce^#member_intersection}
-theorem member_intersection_example: 5 ∈ set_of([2,5]) ∩ set_of([5,9])
-proof
-  evaluate
 end
 ```
 
@@ -222,6 +124,7 @@ import Nat
 import DeduceProgramming1
 import DeduceIntroProof
 import Set
+import List
 
 <<len_42>>
 <<algebra_example>>
@@ -229,14 +132,7 @@ import Set
 <<assume_example>>
 <<prove_true>>
 <<false_explosion>>
-<<add_to_zero_is_zero>>
-<<intro_dichotomy>>
-<<not_example>>
-
-<<member_set_of>>
-<<member_singleton>>
-<<member_union>>
-<<member_intersection>>
+<<list_append_empty>>
 ```
 -->
 
