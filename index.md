@@ -100,7 +100,7 @@ Jan. 30 or 31 |                                                     |           
 Feb. 4  | [Writing Proofs, Continued](./lectures/deduce-more-proof.md), [Proof by Induction](./lectures/InductionOnLists.md) | | Lab Linked Lists in Deduce due
 Feb. 6  | [Discovering and Generalizing Lemmas](./lectures/RevRev.md)                       |              |   | 
 Feb. 6 or 7 |                                                       |              | [Lab: Proof Exercises](./ProofExercises.md) 
-Feb. 11 | Insertion Sort                                            | Ch.7 Sec. 2  | | [submit](https://autograder.luddy.indiana.edu/web/project/1623)
+Feb. 11 | Insertion Sort                                            | Ch.7 Sec. 2  | Lab Proof Exercises due | [submit](https://autograder.luddy.indiana.edu/web/project/1623)
 Feb. 13 | Merge Sort, Quick Sort                                    | Ch.7 Sec. 6,7 | [Proof: Quick Reverse Correct](./QuickReverse.md) due
 Feb. 13 or 14 |                                                     |              | [Lab: List Search](./ListSearch.md) 
 Feb. 18 | [Binary Trees](./lectures/binary-trees.md)                | Ch. 4 Sec. 1-2 | Lab List Search due
