@@ -80,6 +80,8 @@ deduce_programming:
 
 deduce_intro_proof:
 	cat deduce-intro-proof.md | sed 's/deduce\^/deduce /' > deduce-intro-proof.en
+	cat deduce-more-proof.md | sed 's/deduce\^/deduce /' > deduce-more-proof.en
 	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
 	$(PYTHON) $(DEDUCE) DeduceIntroProof.pf --dir $(LIB_DIR)
+	$(PYTHON) $(DEDUCE) DeduceIntroProof2.pf --dir $(LIB_DIR)
 

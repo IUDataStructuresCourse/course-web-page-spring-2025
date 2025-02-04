@@ -303,10 +303,10 @@ assert second(pair(3,7)) = 7
 
 ## Generic Functions (`generic`) (non-recursive)
 
-Generic functions are created with a combination of `generic` and
-`fun`.  Start with the `generic` keyword, followed by the list of type
-parameters, then an open brace, then the function (see `fun` above),
-and finally a close brace.
+Generic non-recursive functions are created with a combination of
+`generic` and `fun`.  Start with the `generic` keyword, followed by
+the list of type parameters, then an open brace, then the function
+(`fun`), and finally a close brace.
 
 ```{.deduce^#swap}
 define swap = generic T, U { fun p:Pair<T,U> { pair(second(p), first(p)) } }
