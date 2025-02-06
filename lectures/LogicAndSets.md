@@ -74,24 +74,88 @@ end
 Concepts:
 * [`not`](https://jsiek.github.io/deduce/pages/reference.html#not) formula
 
-```{.deduce^#not_example}
-theorem not_example: not (0 = 1)
+```{.deduce^#prove_not_example}
+theorem prove_not_example: not (0 = 1)
 proof
   assume: 0 = 1
   conclude false by recall 0 = 1
 end
 ```
 
+```{.deduce^#use_not_example}
+theorem use_not_example: all P:bool. if P and not P then false
+proof
+  arbitrary P:bool
+  assume pnp: P and not P
+  have np: not P by pnp
+  have p: P by pnp
+  conclude false by apply np to p
+end
+```
 
-## Reasoning about Sets
+## Exercise
+
+Prove the following direction of De Morgan's law.
+
+```
+theorem exercise_demorgan: all A:bool, B:bool.
+  if (not A) or (not B) then not (A and B)
+proof
+  ?
+end
+```
+
+
+## Reasoning about Some (aka. Exists)
+
+Concepts:
+* [`some`](https://jsiek.github.io/deduce/pages/reference.html#some-formula)
+* [`obtain`](https://jsiek.github.io/deduce/pages/reference.html#obtain-proof)
+* [`choose`](https://jsiek.github.io/deduce/pages/reference.html#choose-proof)
+
+Example:
+```{.deduce^#even_odd_example}
+define isEven : fn Nat -> bool = fun n { some m:Nat. n = 2 * m }
+define isOdd : fn Nat -> bool = fun n { some m:Nat. n = suc (2 * m) }
+
+theorem addition_of_evens_example:
+  all x:Nat, y:Nat.
+  if isEven(x) and isEven(y) then isEven(x + y)
+proof
+  arbitrary x:Nat, y:Nat
+  suppose even_xy: isEven(x) and isEven(y)
+  have even_x: some m:Nat. x = 2 * m by definition isEven in even_xy
+  have even_y: some m:Nat. y = 2 * m by definition isEven in even_xy
+  obtain a where x_2a: x = 2*a from even_x
+  obtain b where y_2b: y = 2*b from even_y
+  suffices some m:Nat. x + y = 2 * m  by definition isEven
+  choose a + b
+  suffices 2 * a + 2 * b = 2 * (a + b)  by rewrite x_2a | y_2b
+  symmetric dist_mult_add[2][a,b]
+end
+```
+
+## Exercise
+
+Prove the following theorem about `all`, `some`, and `not`.
+
+```
+theorem exercise_all_not: all P : fn Nat -> bool.
+  if (all x:Nat. not P(x)) then not (some y:Nat. P(y))
+proof
+  ?
+end
+```
+
+## Working with Sets
 
 Concepts:
 * Set library (`lib/Set.pf`)
 * The type of a mathematical set: `Set<T>`
 * `set_of` to convert a list to a set
 * `single(x)` for a set with one element that is `x`
-* `∪` for union
-* `∩` for intersection
+* `∪` or `|` for union
+* `∩` or `&` for intersection
 
 Example:
 ```{.deduce^#member_set_of}
@@ -164,7 +228,36 @@ import Set
 
 <<add_to_zero_is_zero>>
 <<intro_dichotomy>>
-<<not_example>>
+<<prove_not_example>>
+<<use_not_example>>
+
+theorem exercise_demorgan: all A:bool, B:bool.
+  if (not A) or (not B) then not (A and B)
+proof
+  arbitrary A:bool, B:bool
+  assume premise: (not A) or (not B)
+  assume opposite: A and B
+  cases premise
+  case: not A {
+    conclude false by apply (recall not A) to opposite
+  }
+  case: not B {
+    conclude false by apply (recall not B) to opposite
+  }
+end
+
+<<even_odd_example>>
+
+theorem exercise_all_not: all P : fn Nat -> bool.
+  if (all x:Nat. not P(x)) then not (some y:Nat. P(y))
+proof
+  arbitrary P : fn Nat -> bool
+  assume premise: all x:Nat. not P(x)
+  assume opposite: some y:Nat. P(y)
+  obtain y where py: P(y) from opposite
+  conclude false by apply premise to py
+end
+
 <<member_set_of>>
 <<member_singleton>>
 <<member_union>>
