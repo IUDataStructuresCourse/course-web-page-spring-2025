@@ -99,8 +99,8 @@ proof
 end
 ```
 
-With the `reverse_append` lemma is hand, it is now straightforward to
-prove the `reverse_reverse` theorem.
+With the `reverse_append` lemma in hand, we can complete the
+proof of the `reverse_reverse` theorem.
 
 ```{.deduce^#reverse_reverse}
 theorem reverse_reverse: all U :type. all ls :List<U>.
