@@ -11,3 +11,8 @@ proof
 end
 ```
 
+The file you submit to the autograder must be named `QuickRevCorrect.pf`
+and it should include the above theorem and the definition of `quick_rev`
+and any helper functions that you created to use in `quick_rev`.
+Your `QuickRevCorrect.pf` should only import files from the Deduce
+`lib` directory.
