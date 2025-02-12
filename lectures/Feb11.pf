@@ -1,0 +1,44 @@
+import Nat
+import List
+
+
+lemma reverse_helper: <U> all x:U, ls:List<U>, xs:List<U>.
+  reverse(ls ++ xs) = reverse(xs) ++ reverse(ls)
+proof
+  arbitrary U:type
+  arbitrary x:U
+  induction List<U>
+  case [] {
+    arbitrary xs:List<U>
+    suffices reverse(xs) = reverse(xs) ++ [] by evaluate
+    rewrite append_empty<U>
+  }
+  case node(y, ls') assume IH {
+    arbitrary xs:List<U>
+    equations
+          reverse(node(y, ls') ++ xs)
+        = reverse(node(y, ls' ++ xs)) by definition operator++
+    ... = reverse(ls' ++ xs) ++ [y]   by definition reverse
+    ... = (reverse(xs) ++ reverse(ls')) ++ [y] by rewrite IH
+    ... = reverse(xs) ++ (reverse(ls') ++ [y]) by rewrite append_assoc<U>
+    ... = reverse(xs) ++ #reverse(node(y, ls'))# by definition reverse
+  }
+end
+
+theorem reverse_reverse: all U :type. all ls :List<U>.
+  reverse(reverse(ls)) = ls
+proof
+  arbitrary U:type
+  induction List<U>
+  case [] {
+    definition reverse
+  }
+  case node(x, ls') assume IH: reverse(reverse(ls')) = ls' {
+    suffices reverse(reverse(ls') ++ [x]) = node(x, ls') by evaluate
+    equations
+          reverse(reverse(ls') ++ [x])
+        = reverse([x]) ++ reverse(reverse(ls'))   by reverse_helper<U>
+    ... = reverse([x]) ++ ls'   by rewrite IH
+    ... = node(x, ls')  by evaluate
+  }
+end

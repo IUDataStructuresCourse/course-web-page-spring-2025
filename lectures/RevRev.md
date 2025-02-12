@@ -28,7 +28,7 @@ proof
   case node(n, ls') suppose IH: reverse(reverse(ls')) = ls' {
     equations
           reverse(reverse(node(n,ls')))
-        = reverse(reverse(ls') ++ [n])         by definition {reverse,operator++}
+        = reverse(reverse(ls') ++ [n])         by definition reverse
     ... = node(n,ls')                          by sorry
   }
 end
@@ -45,32 +45,55 @@ and if it were, then we could complete the proof as follows
 ```
     equations
           reverse(reverse(node(n,ls')))
-        = reverse(reverse(ls') ++ [n])         by definition {reverse,operator++}
+        = reverse(reverse(ls') ++ [n])         by definition reverse
     ... = [n] ++ reverse(reverse(ls'))         by ?
     ... = [n] ++ ls'                           by IH
-    ... = node(n,ls')                          by definition {operator++}
+    ... = node(n,ls')                          by definition operator++
 ```
 
 So would could try to prove the following lemma.
 ```
-lemma first_lemma: all U:type. all ls':List<U>, all n:U.
-  reverse(reverse(ls') ++ [n]) = [n] ++ reverse(reverse(ls'))
+lemma first_lemma: all U:type, ls:List<U>, n:U.
+  reverse(reverse(ls) ++ [n]) = [n] ++ reverse(reverse(ls))
 ```
-However, proving this lemma would be difficult or impossible. The first
-problem is that this lemma is overly complicated because it include two uses of
-`reverse` on the left-hand side, but the inner one is just along for
-the ride.  So we can generalize the lemma a little bit but replacing
-`reverse(ls')` with `ls'`.
 
-```
-lemma second_lemma: all U:type. all ls':List<U>, all n:U.
+However, this lemma is overly complicated because it includes two uses
+of `reverse` on the left-hand side, but the inner one is just along
+for the ride.  So we can generalize the lemma a little bit but
+replacing `reverse(ls')` with `ls'`.
+
+```{.deduce^#second_lemma}
+lemma second_lemma: all U:type, ls':List<U>, n:U.
   reverse(ls' ++ [n]) = [n] ++ reverse(ls')
+proof
+  arbitrary U:type
+  induction List<U>
+  case [] {
+    arbitrary n:U
+    conclude reverse(@[]<U> ++ [n]) = [n] ++ reverse(@[]<U>)
+      by evaluate
+  }
+  case node(x, ls') 
+    assume IH: (all n:U. reverse(ls' ++ [n]) = [n] ++ reverse(ls')) {
+    arbitrary n:U
+    equations
+          reverse(node(x, ls') ++ [n]) 
+        = reverse(node(x, ls' ++ [n]))     by definition operator++
+    ... = reverse(ls' ++ [n]) ++ [x]       by definition reverse
+    ... = ([n] ++ reverse(ls')) ++ [x]     by rewrite IH[n]
+    ... = [n] ++ reverse(ls') ++ [x]       by append_assoc<U>
+    ... = [n] ++ #reverse(node(x, ls'))#   by definition reverse
+  }
+end
 ```
 
-The next problem is that the `[n]` is overly specific, which will give
-us problems with the induction hypothesis. Again, we can generalize,
-this time replacing `[n]` with a new list variable. This brings us to
-the following formulation of the lemma.
+The above `second_lemma` gets the job done, but it is slightly
+inelegant because the `[n]` is not as general as it could be.  We can
+replace `[n]` with an arbitrary list `ys`. However, when we do so, we
+need to reverse it on the other side of the equality. Now we have a
+beautiful lemma that says if you append two lists then reverse the
+result, that's the same as reversing the two lists and then appending
+the two results.
 
 ```{.deduce^#reverse_append}
 lemma reverse_append: all U :type. all xs :List<U>. all ys :List<U>.
@@ -114,7 +137,7 @@ proof
   case node(n, ls') suppose IH: reverse(reverse(ls')) = ls' {
     equations
       reverse(reverse(node(n,ls')))
-          = reverse(reverse(ls') ++ [n])           by definition {reverse,operator++}
+          = reverse(reverse(ls') ++ [n])           by definition reverse
       ... = reverse([n]) ++ reverse(reverse(ls'))  by reverse_append<U>[reverse(ls')][[n]]
       ... = reverse([n]) ++ ls'                    by rewrite IH
       ... = node(n,ls')                            by definition {reverse,reverse,operator++, operator++}
@@ -129,6 +152,7 @@ import List
 import Nat
 
 <<reverse_reverse_first_attempt>>
+<<second_lemma>>
 <<reverse_append>>
 <<reverse_reverse>>
 ```

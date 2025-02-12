@@ -1,0 +1,70 @@
+import Nat
+import List
+import Pair
+import Jan28
+import Jan30
+
+theorem len_42: 1 = len(Node(42, Empty)) and len(Node(25, Empty)) = 1
+proof
+  rewrite len_one
+  /*have eq1: len(Node(42, Empty)) = 1  by len_one[42]
+  have eq3: len(Node(25, Empty)) = 1  by len_one[25]
+  rewrite eq1 | eq3 //suffices len(Node(25, Empty)) = 1 by rewrite eq1
+  */
+  //symmetric len_one[42]
+  //have eq: len(Node(42, Empty)) = 1  by len_one[42]
+  //rewrite eq
+  // goal: 1 = len(Node(42, Empty))
+  // rewrite: 1 = 1
+  // true
+end
+
+theorem algebra_example: all x:Nat. (1 + x) * x = x * x + x
+proof
+  arbitrary x:Nat
+  equations
+        (1 + x) * x
+      = 1 * x + x * x   by dist_mult_add_right[1,x,x]
+  ... = x + x * x       by rewrite one_mult[x]
+  ... = x * x + x       by add_commute[x,x*x]
+end
+
+theorem modus_ponens_example: all x:Nat. max(x, 1 + x) = 1 + x
+proof
+  arbitrary x:Nat
+  have lt: x ≤ 1 + x by less_equal_add_left
+  apply max_equal_greater_right[x, 1+x] to lt
+end
+
+theorem assume_example: all xs:NatList. if len(xs) = 0 then xs = Empty
+proof
+  arbitrary xs:NatList
+  assume lenz: len(xs) = 0
+  // Goal: xs = Empty
+  switch xs {
+    case Empty {
+      .  // Goal: Empty = Empty
+    }
+    case Node(x, xs2) assume eq {
+      have eq2: len(Node(x,xs2)) = 0 by rewrite eq in lenz
+      have eq3: 1 + len(xs2) = 0 by definition len in eq2
+      have eq4: suc(0 + len(xs2)) = 0 by definition operator+ in eq3
+      conclude false by eq4
+    }
+  }
+end
+
+theorem list_append_empty: <U> all xs :List<U>.
+  xs ++ [] = xs
+proof
+  arbitrary U:type
+  induction List<U>
+  case empty {
+    definition operator++
+  }
+  case node(T1, L2) assume IH: L2 ++ [] = L2 {
+    suffices node(T1, L2 ++ @[]<U>) = node(T1, L2)
+      by definition operator++
+    rewrite IH
+  }
+end
