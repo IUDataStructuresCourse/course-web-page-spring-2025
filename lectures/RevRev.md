@@ -59,7 +59,7 @@ lemma first_lemma: all U:type, ls:List<U>, n:U.
 
 However, this lemma is overly complicated because it includes two uses
 of `reverse` on the left-hand side, but the inner one is just along
-for the ride.  So we can generalize the lemma a little bit but
+for the ride.  So we can generalize the lemma a little bit by
 replacing `reverse(ls')` with `ls'`.
 
 ```{.deduce^#second_lemma}
