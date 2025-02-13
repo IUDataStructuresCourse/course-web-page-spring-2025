@@ -1,5 +1,17 @@
 # Lecture: Sorting
 
+
+## Wrap up on proofs of program correctness
+
+Take away points:
+* a proof of correctness (e.g. in Deduce) is the only way to guarantee 100% correctness
+* proofs of correctness take a lot of time (but less as you gain experience)
+* testing takes much less time, but no guarantees
+* a deeper understand of logic and proofs of correctness gives you a different
+  perspective when writing code and tests that can help prevent bugs
+
+## Sorting
+
 ```
 [2,8,7,1,3,5,6,4]
 =>
