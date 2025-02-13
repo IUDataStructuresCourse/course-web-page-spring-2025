@@ -20,8 +20,9 @@ boolean is_sorted(int[] A, int begin, int end) {
 }
 ```
 
+So to do property-based testing, we'd write:
 ```
-assert is_sorted(sort(A, 0, A.length));
+assertTrue(is_sorted(sort(A, 0, A.length)));
 ```
 
 Does this output make sense?
@@ -30,6 +31,22 @@ Does this output make sense?
 [2,8,7,1,3,5,6,4]
 =>
 [1,2,3,5,6,8]
+```
+
+How about this output?
+
+```
+[2,8,7,1,3,5,6,4]
+=>
+[1,2,3,4,5,6,7,8,9,10]
+```
+
+Or this output?
+
+```
+[2,8,7,1,3,5,6,4]
+=>
+[1,2,3,3,4,5,6,6,7,8]
 ```
 
 What to do with duplicates?
