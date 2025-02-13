@@ -101,7 +101,7 @@ Feb. 4  | [Writing Proofs and Induction](./lectures/deduce-more-proof.md) | | La
 Feb. 6  | [Logical And, Or, Not, and Sets](./lectures/LogicAndSets.md)                        |              |   | 
 Feb. 6 or 7 |                                                       |              | [Lab: Proof Exercises](./ProofExercises.md) 
 Feb. 11 | [Discovering and Generalizing Lemmas](./lectures/RevRev.md)                                            |  | Lab Proof Exercises due | [submit](https://autograder.luddy.indiana.edu/web/project/1623)
-Feb. 13 | Insertion Sort, Merge Sort, Quick Sort                    | Ch.7 Sec. 2,6,7 | 
+Feb. 13 | [Insertion Sort, Merge Sort, Quick Sort](./lectures/sorting.md)                    | Ch.7 Sec. 2,6,7 | 
 Feb. 13 or 14 |                                                     |              | [Lab: Quick Reverse Correct](./QuickReverse.md)
 Feb. 14 |                                                           |              | 
 Feb. 18 | [Binary Trees](./lectures/binary-trees.md)                | Ch. 4 Sec. 1-2 | [Lab: Quick Reverse Correct](./QuickReverse.md) due | [submit](https://autograder.luddy.indiana.edu/web/project/1632)
