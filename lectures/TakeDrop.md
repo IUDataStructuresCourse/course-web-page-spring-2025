@@ -1,27 +1,3 @@
-# Proof by Induction
-
-Concepts:
-* `induction` on lists
-
-Example:
-```{.deduce^#list_append_empty}
-theorem list_append_empty: <U> all xs :List<U>.
-  xs ++ [] = xs
-proof
-  arbitrary U:type
-  induction List<U>
-  case [] {
-    conclude @[]<U> ++ [] = []  by definition operator++
-  }
-  case node(n, xs') assume IH: xs' ++ [] = xs' {
-    equations
-          node(n, xs') ++ []
-        = node(n, xs' ++ [])    by definition operator++
-    ... = node(n, xs')          by rewrite IH
-  }
-end
-```
-
 Concepts:
 * `induction` on natural numbers
 
@@ -103,47 +79,3 @@ proof
 end
 ```
 
-Concepts:
-* The types of mathematical sets: `Set`
-* `set_of` converts a list to a set
-* `single(x)` creates a set with one element
-* `∪` is set union
-* There are many theorems about sets in `lib/Set.pf`, such as
-  `empty_union` and `union_assoc`.
-
-Example:
-```{.deduce^#setof_append}
-theorem setof_append: <T> all xs:List<T>, ys:List<T>.
-  set_of(xs ++ ys) = set_of(xs) ∪ set_of(ys)
-proof
-  arbitrary T:type
-  induction List<T>
-  case [] {
-    arbitrary ys:List<T>
-    suffices set_of(ys) = ∅ ∪ set_of(ys)   by definition {operator++, set_of}
-    rewrite empty_union<T>
-  }
-  case node(x, xs') assume IH: all ys:List<T>. set_of(xs' ++ ys) = set_of(xs') ∪ set_of(ys) {
-    arbitrary ys:List<T>
-    equations
-          set_of(node(x, xs') ++ ys) 
-        = single(x) ∪ set_of(xs' ++ ys)           by definition {operator++, set_of}
-    ... = single(x) ∪ (set_of(xs') ∪ set_of(ys))  by rewrite IH
-    ... = (single(x) ∪ set_of(xs')) ∪ set_of(ys)  by symmetric union_assoc<T>
-    ... = #set_of(node(x, xs'))# ∪ set_of(ys)     by definition set_of
-  }
-end
-```
-
-<!--
-```{.deduce^file=InductionOnLists.pf}
-import Nat
-import List
-import Set
-
-<<list_append_empty>>
-<<take_drop_append_1>>
-<<take_drop_append_2>>
-<<setof_append>>
-```
--->

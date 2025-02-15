@@ -62,11 +62,6 @@ BellmanFord:
 	javac src/BellmanFord.java
 	cd src ; java -ea -cp . BellmanFord
 
-induction_list:
-	cat InductionOnLists.md | sed 's/deduce\^/deduce /' > InductionOnLists.en
-	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
-	$(PYTHON) $(DEDUCE_DIR)/deduce.py InductionOnLists.pf --dir $(LIB_DIR)
-
 rev_rev:
 	cat Revrev.md | sed 's/deduce\^/deduce /' > RevRev.en
 	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
@@ -80,6 +75,13 @@ deduce_programming:
 
 deduce_intro_proof:
 	cat deduce-intro-proof.md | sed 's/deduce\^/deduce /' > deduce-intro-proof.en
+	cat deduce-more-proof.md | sed 's/deduce\^/deduce /' > deduce-more-proof.en
 	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
 	$(PYTHON) $(DEDUCE) DeduceIntroProof.pf --dir $(LIB_DIR)
+	$(PYTHON) $(DEDUCE) DeduceIntroProof2.pf --dir $(LIB_DIR)
+
+logic_and_sets:
+	cat LogicAndSets.md | sed 's/deduce\^/deduce /' > LogicAndSets.en
+	/Users/jsiek/Library/Python/3.11/bin/entangled tangle 
+	$(PYTHON) $(DEDUCE_DIR)/deduce.py LogicAndSets.pf --dir $(LIB_DIR)
 

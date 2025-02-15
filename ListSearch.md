@@ -1,7 +1,7 @@
 # Lab: List Search
 
 Prove the following theorem about the variant of linear `search` that
-you implemented in lab last week.
+you implemented in lab.
 
 ```
 theorem search_correct: all y: Nat. all xs: List<Nat>.
