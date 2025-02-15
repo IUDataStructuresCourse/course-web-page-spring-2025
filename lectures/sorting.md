@@ -4,11 +4,19 @@
 ## Wrap up on proofs of program correctness
 
 Take away points:
-* a proof of correctness (e.g. in Deduce) is the only way to guarantee 100% correctness
-* proofs of correctness take a lot of time (but less as you gain experience)
+* a computer-checked proof of correctness is the only way to guarantee 100% correctness
+* proofs of correctness take a lot of time
 * testing takes much less time, but no guarantees
 * a deeper understand of logic and proofs of correctness gives you a different
   perspective when writing code and tests that can help prevent bugs
+
+Historical and Industry Perspective:
+* Proof assistant technology is relatively new (first mature tools in early 2000's)
+  and most of the tools are "expert only" tools.
+* New technologies take time to transfer into industry and even longer
+  to transfer into education.
+* Many large companies (Intel, Facebook, Microsoft) have small teams that
+  prove correctness, but formal methods are not widely used.
 
 ## Sorting
 
@@ -24,7 +32,7 @@ Of course, the output should be increasing:
 boolean is_sorted(int[] A, int begin, int end) {
     for (int i = begin; i != end; ++i) {
         if (i + 1 != end) {
-            if (A[i] <= A[i + 1])
+            if (A[i] > A[i + 1])
                 return false;
         }
     }
@@ -45,6 +53,14 @@ Does this output make sense?
 [1,2,3,5,6,8]
 ```
 
+Another property: don't drop values
+
+
+
+
+
+
+
 How about this output?
 
 ```
@@ -53,6 +69,13 @@ How about this output?
 [1,2,3,4,5,6,7,8,9,10]
 ```
 
+Another property: don't add extra values.
+
+
+
+
+
+
 Or this output?
 
 ```
@@ -60,6 +83,25 @@ Or this output?
 =>
 [1,2,3,3,4,5,6,6,7,8]
 ```
+
+Another property: don't add duplicates
+
+
+```
+[1,2,3,3,4,5,6,6,7,8]
+=>
+[1,2,3,4,5,6,7,8]
+```
+
+Another property: the number of occurences of each input element should
+stay the same in the output.
+
+
+multi_set(sort(A)) = multi_set(A)
+ 
+
+
+
 
 What to do with duplicates?
 
@@ -75,6 +117,7 @@ What to do with duplicates?
 [ { Susan, Baker }, { Linda, Carlisle }, { John, Smith }, {Jane, Smith}, { Mike, Summers }]
 ```
 
+
 A sorting algorithm is *stable* if the order of duplicates in the
 output is the same as order of those duplicates in the input with
 respect to eachother.
@@ -85,12 +128,12 @@ respect to eachother.
 Input is an array:
 ```
 static void insertion_sort(int[] A) {
-    for (int j = 1; j != A.length; ++j) {
-        int key = A[j];
-        int i = j - 1;
-        while (i >= 0 && A[i] > key) {
-            A[i+1] = A[i];
-            i -= 1;
+    for (int j = 1; j != A.length; ++j) { // n iterations, O(n)*n = O(n^2)
+        int key = A[j];  // O(1)
+        int i = j - 1;  // O(1)
+        while (i >= 0 && A[i] > key) { // n iterations, O(1)*n = O(n)
+            A[i+1] = A[i];  // O(1)
+            i -= 1;// O(1)
         }
         A[i+1] = key;
     }
@@ -130,7 +173,7 @@ Time complexity: O(n²)
 
 Input is a linked list:
 ```
-static Node merge(Node A, Node B) {
+static Node merge(Node A, Node B) { //O(n)
     if (A == null) { return B; }
     else if (B == null) { return A; }
     else if (A.data < B.data) {
@@ -140,7 +183,7 @@ static Node merge(Node A, Node B) {
     }
 }
 
-static Node sort(Node N) {
+static Node merge_sort(Node N) {
     int length = Utils.length(N);
     if (length <= 1) {
         return N;
@@ -148,8 +191,8 @@ static Node sort(Node N) {
       int middle = length / 2;
       Node left_side = Utils.take(N, middle);
       Node right_side = Utils.drop(N, middle);
-      Node leftSorted = sort(left_side);
-      Node rightSorted = sort(right_side);
+      Node leftSorted = merge_sort(left_side);
+      Node rightSorted = merge_sort(right_side);
       return merge(leftSorted, rightSorted);
     }
 }
@@ -179,8 +222,12 @@ void quicksort(int[] A, int begin, int end) {
       return; // do nothing
     } else {
         int pivot_pos = partition(A, begin, end);
+        // left of pivot <= pivot < right of pivot
         quicksort(A, begin, pivot_pos);
+        // left side sorted
         quicksort(A, pivot_pos+1, end);
+        // right side sorted
+        // whole thing sorted? yes, transitivity through the pivot
     }
 }
 ```
@@ -208,7 +255,7 @@ Simple implementation:
       ArrayList<Integer> R = new ArrayList<Integer>();
       int pivot = A[end - 1];
       for (int i = begin; i != end - 1; ++i) {
-         if (A[i] ≤ pivot) { L.add(A[i]); }     // O(1)
+         if (A[i] ≤ pivot) { L.add(A[i]); }     // O(1)*
          else { R.add(A[i]);  }
       }
       int pivot_loc = copy(L, A, begin);

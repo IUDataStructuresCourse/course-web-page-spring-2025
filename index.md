@@ -106,10 +106,11 @@ Feb. 13 or 14 |                                                     |           
 Feb. 14 |                                                           |              | 
 Feb. 18 | [Binary Trees](./lectures/binary-trees.md)                | Ch. 4 Sec. 1-2 | [Lab: Quick Reverse Correct](./QuickReverse.md) due | [submit](https://autograder.luddy.indiana.edu/web/project/1632)
 Feb. 20 | [Binary Search Trees](./lectures/binary-search-trees.md)  | Ch. 4 Sec. 3
-Feb. 20 or 21 |                                                     |              |  [Lab: List Search](./ListSearch.md)
-Feb. 25 | [Balanced Search Trees (AVL)](./lectures/balanced-search-trees.md) | Ch. 4 Sec. 4 | Lab List Search due
+Feb. 20 or 21 |                                                     |              |  [Lab: Merge Sort](./MergeSort.md) 
+Feb. 25 | [Balanced Search Trees (AVL)](./lectures/balanced-search-trees.md) | Ch. 4 Sec. 4 | Lab MergeSort due | [submit](https://autograder.luddy.indiana.edu/web/project/1498)
 Feb. 27 | [More AVL](./lectures/more-avl-trees.md)
 Feb. 27 or 28 | | | Lab: work on [Project 2: Segment Intersection](./SegmentIntersection.md) | [code](https://autograder.luddy.indiana.edu/web/project/1530), [test](https://autograder.luddy.indiana.edu/web/project/1529)
+Feb. 28 | | | [Extra Credit: List Search](./ListSearch.md)
 March 4 | [Recipes for Time Analysis and Testing](./lectures/analysis-and-testing-recipes.md)
 March 6 | [Hash Tables](./lectures/hash-tables.md) | Ch. 5 sec. 1,2,3,5,6 |
 March 6 or 7 | | | Lab: finish [Project 2: Segment Intersection](./SegmentIntersection.md) | [code](https://autograder.luddy.indiana.edu/web/project/1530), [test](https://autograder.luddy.indiana.edu/web/project/1529)
