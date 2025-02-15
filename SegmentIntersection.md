@@ -5,7 +5,9 @@
 
 ## Before We Start (Optional)
 
-+ Read Textbook Ch. 4.4 carefully, especially the code listings
++ Review [lecture notes](./lectures/binary-search-trees.md) for binary search trees.
+  (**HINT:** this will make writing `BinarySearchTree` really easy)
++ Read Textbook Ch. 4.4 carefully, ***especially*** the code listings
   from Fig. 4.37 to Fig. 4.44.
 + Read [CLRS](http://mitpress.mit.edu/9780262046305/introduction-to-algorithms/)
   Ch. 33.1 and 33.2 for an introduction to segment intersection.
@@ -67,11 +69,23 @@ in $O(log(n))$ time.
 As usual, this project contains a programming part and a testing part.
 You are expected to test your code locally as you develop the program.
 
-+ Submit your code `AVLTree.java` and `BinarySearchTree.java` to the autograder SegmentIntersection project.
-+ Submit your test cases `StudentTest.java` to the autograder SegmentIntersectionTest project.
+<!-- TODO: Link AG -->
++ Submit your code `AVLTree.java` and `BinarySearchTree.java` to the autograder SegmentIntersection project [here](https://autograder.luddy.indiana.edu/web/project/1530)
++ Submit your test cases `StudentTest.java` to the autograder SegmentIntersectionTest project [here](https://autograder.luddy.indiana.edu/web/project/1529)
   * We have included a small test case in the support code to get you started.
 
 ## Student Support Code and Task Description
+
+Your task is to complete the implementation of the
+`BinarySearchTree` and `AVLTree` class.
+⚠️**You are NOT supposed to modify any code outside the two classes**
+(marked as "read-only" in the project structure below).
+Implement all of the methods marked `TODO` according to their descriptions
+in the comments. **DO NOT** change their function signatures.
+
+
+
+### Student Support Code [[🔗 link](https://github.com/IUDataStructuresCourse/segment-intersection-student-support-code)]
 
 ```
 .
@@ -83,6 +97,7 @@ You are expected to test your code locally as you develop the program.
 │   ├── Driver.java
 │   ├── GUI.java
 │   ├── LineSegment.java
+│   ├── Node.java
 │   ├── OrderedSet.java
 │   └── Sweeper.java
 └── test
@@ -93,18 +108,12 @@ Implementations of the GUI and the Line Sweep Algorithm are provided
 to you in full in the
 [student support code](https://github.com/IUDataStructuresCourse/segment-intersection-student-support-code).
 
-Your task is to complete the implementation of the
-`BinarySearchTree` and `AVLTree` class.
-⚠️**You are NOT supposed to modify any code outside the two classes**
-(marked as "read-only" in the project structure below).
-Implement all of the methods marked `TODO` according to their descriptions
-in the comments. **DO NOT** change their function signatures.
 
 The `BinarySearchTree` class is an elaboration of the class described in
 lecture and that you used in the [NextPrevTree Lab](./NextPrevTree.html).
 The `AVLTree` class is a subclass of `BinarySeachTree` and
 overrides the `insert()` and `remove()` methods to ensure that the tree remains
-balanced at all times (which gives us the $O(log(n)$) time bound we crave).
+balanced at all times (which gives us the $O(log(n))$ time bound we crave).
 
 Below is a summary of the components in the code base.
 However, before you begin writing any code, you need to understand the
@@ -121,16 +130,18 @@ you should look.
   are used by the Line Sweep Algorithm to determine the line segments
   that are immediately above or below the current segment.
 
-* `BinarySearchTree` **[YOUR TASK]** is a generic class corresponding
-  to a binary search tree. The ordering for the data in the tree
-  is specified by a function of type `BiPredicate` and provided at
-  construction time. Nodes in the tree are represented by the inner
-  `Node` class. So that we can use `Node` as a return value from
-  `search()`, `Node` implements the `Location` interface. A `Node`
-  contains the usual fields: `key`, `left`, and `right`. You will add
+* `Node` [read-only] is a class implementing the `Location` interface.
+  A `Node` contains the usual fields: `key`, `left`, and `right`, as well as
   two more fields: `parent` (which points to the node's parent in the
   tree) and `height` (which is the height of the subtree rooted at
   this node).
+
+* `BinarySearchTree` **[YOUR TASK]** is a generic class corresponding
+  to a binary search tree. The ordering for the data in the tree
+  is specified by a function of type `BiPredicate` and provided at
+  construction time. Nodes in the tree are represented by the
+  `Node` class. So that we can use `Node` as a return value from
+  `search()`, `Node` implements the `Location` interface. 
 
 * `AVLTree` **[YOUR TASK]** is a class representing a height-balanced tree. Since
   `AVLTree` is a subclass of `BinarySearchTree`, you will need a fully
@@ -139,7 +150,7 @@ you should look.
   important part of this entire project, so make sure you allow
   yourself enough time to work on it.
 
-We can maintain the height information in the tree nodes so that it is
+We maintain the height information in the tree nodes so that it is
 immediately available to us whenever we need it.
 This means that when a new node is inserted or removed from the tree,
 we may have to adjust the heights of the nodes along the path up to the root.
@@ -167,6 +178,14 @@ The root has no parent so its parent is `null`.
   Algorithm. Be sure to read through this code to help you understand
   how the algorithm works.
 
+### Troubleshooting
+
+Here are a few common issues and things to rememer as you complete the project 🙂
+- Remember that you need to update `parent` pointers for nodes, as well as `left` and `right` as you normally would
+- Remember to call `updateHeight` on nodes whenever their children change.
+- Both `BinarySearchTree` and `AVLTree` are responsible for maintaining the `numNodes` variable to track the size of the tree.
+
+
 -----------------
 
-* You have finally reached the end of the Project. Congratulations!
+* You have finally reached the end of the project. Congratulations!
