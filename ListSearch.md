@@ -1,7 +1,10 @@
 # Lab: List Search
 
-Prove the following theorem about the variant of linear `search` that
-you implemented in lab.
+Prove the following theorem about the `search` provided in the
+following file that you should `import`.
+
+[Search.pf](./Search.pf)
+
 
 ```
 theorem search_correct: all y: Nat. all xs: List<Nat>.

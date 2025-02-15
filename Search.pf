@@ -1,0 +1,17 @@
+import Nat
+import List
+import Pair
+
+function search(List<Nat>, Nat) -> Pair<List<Nat>, List<Nat> > {
+  search([], y) = pair([], [])
+  search(node(x, xs), y) = 
+    if x = y then
+      pair([], node(x, xs))
+    else
+      define S = search(xs, y);
+      pair(node(x, first(S)), second(S))
+}
+
+assert search([5,2,3,4,1], 3) = pair([5,2], [3,4,1])
+assert search([5,2,3,4,1], 5) = pair([], [5,2,3,4,1])
+assert search([5,2,3,4,1], 7) = pair([5,2,3,4,1], [])
