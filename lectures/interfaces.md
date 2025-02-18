@@ -11,21 +11,23 @@ Example: the `Sequence` and `Iterator` interfaces
 Enables visiting all the elements in order.
 
     interface Sequence<T> {
-        Iter<T> begin();
-        Iter<T> end();
+        Iterator<T> begin();
+        Iterator<T> end();
     }
 
-    interface Iter<T> {
+    interface Iterator<T> {
         T get();
+        void set(T e);
         void advance();
-        boolean equals(Iter<T> other);
-        Iter<T> clone();
+        void advance(int n);
+        boolean equals(Iterator<T> other);
+        Iterator<T> clone();
     }
 
 Example: Linear Search using the Sequence and Iterator Interfaces
 
-    static <T> Iter<T> find_first_equal(Sequence<T> S, T x) {
-       for (Iter<T> i = S.begin(); ! i.equals(S.end()); i.advance()) { // i != S.end()
+    static <T> Iterator<T> find_first_equal(Sequence<T> S, T x) {
+       for (Iterator<T> i = S.begin(); ! i.equals(S.end()); i.advance()) { // i != S.end()
           if (i.get() == x) {
              return i;
           }
@@ -38,23 +40,23 @@ List implementation of Sequence
     class LinkedList<T> implements Sequence<T> {
        Node<T> head;
        ...
-       public class ListIter implements Iter<T> {
+       public class ListIter implements Iterator<T> {
 	     Node<T> position;
 		 ListIter(Node<T> pos) { position = pos; }
 		 T get() { return position.data; }
 		 void advance() { 
 		    position = position.next;
 		 }
-		 boolean equals(Iter<T> other) {
+		 boolean equals(Iterator<T> other) {
 		    return this.position == other.position;
 		 }
-		 Iter<T> clone() { ... }
+		 Iterator<T> clone() { ... }
 	   }
        ...
-       Iter<T> begin() {
+       Iterator<T> begin() {
 	     return new ListIter(this.head);
 	   }
-       Iter<T> end() {
+       Iterator<T> end() {
 	     return new ListIter(null);
 	   }
 	   
@@ -118,8 +120,8 @@ of `equals` that does the same job as all 9 specific versions! (And
 many more!)
 
     public static <T, U> boolean equals(Sequence<T> s1, Sequence<U> s2, BiPredicate<T,U> eq) {
-        Iter<T> j = s2.begin();
-        for (Iter<T> i = s1.begin(); ! i.equals(s1.end()); i.advance()) {
+        Iterator<T> j = s2.begin();
+        for (Iterator<T> i = s1.begin(); ! i.equals(s1.end()); i.advance()) {
             if (j.equals(s2.end()) || ! eq.test(i.get(), j.get()))
                     return false;
             j.advance();
@@ -153,10 +155,10 @@ also be used with Array!
     for (int i = 0; i != 20; ++i) {
       B[i] = i;
     }
-    Iter<Integer> i = find_first_equal(B, 10);
+    Iterator<Integer> i = find_first_equal(B, 10);
     assert i.get() == 10;
 
-    Iter<Integer> i = find_first_equal(B, 30);
+    Iterator<Integer> i = find_first_equal(B, 30);
     assert i == B.end();
 
 The solutions to the in-class exercises are [here](./interfaces-solutions.md).
@@ -217,14 +219,14 @@ Like a set in mathematics. A collection of elements where the ordering
 of the elements is not important, only membership matters.
 `Set` ignores duplicates.
 
-	interface Set {
-	   void insert(int e);
+	interface Set<E> {
+	   void insert(E e);
 	   void remove();
-	   boolean member(int e);
+	   boolean member(E e);
 	   boolean empty();
-	   Set union(Set other);
-	   Set intersect(Set other);
-	   Set difference(Set other);
+	   Set<E> union(Set<E> other);
+	   Set<E> intersect(Set<E> other);
+	   Set<E> difference(Set<E> other);
 	}
 
 Implementations of `Set` are the topic of several future lectures.
