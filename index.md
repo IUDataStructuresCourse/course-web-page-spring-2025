@@ -99,7 +99,7 @@ Jan. 30 | [Writing Proofs in Deduce](./lectures/deduce-intro-proof.md)          
 Jan. 30 or 31 |                                                     |              | [Lab: Linked Lists in Deduce](./LabDeduceProg) | [code](https://autograder.luddy.indiana.edu/web/project/1614)
 Feb. 4  | [Writing Proofs and Induction](./lectures/deduce-more-proof.md) | | Lab Linked Lists in Deduce due
 Feb. 6  | [Logical And, Or, Not, and Sets](./lectures/LogicAndSets.md)                        |              |   | 
-Feb. 6 or 7 |                                                       |              | [Lab: Proof Exercises](./ProofExercises.md) 
+Feb. 6 or 7 |                                                       |              | [Lab: Proof Exercises](./ProofExercises.md) (Quiz)
 Feb. 11 | [Discovering and Generalizing Lemmas](./lectures/RevRev.md)                                            |  | Lab Proof Exercises due | [submit](https://autograder.luddy.indiana.edu/web/project/1623)
 Feb. 13 | [Insertion Sort, Merge Sort, Quick Sort](./lectures/sorting.md)                    | Ch.7 Sec. 2,6,7 | 
 Feb. 13 or 14 |                                                     |              | [Lab: Quick Reverse Correct](./QuickReverse.md)
