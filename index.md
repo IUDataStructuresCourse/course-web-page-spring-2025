@@ -104,7 +104,7 @@ Feb. 11 | [Discovering and Generalizing Lemmas](./lectures/RevRev.md)           
 Feb. 13 | [Insertion Sort, Merge Sort, Quick Sort](./lectures/sorting.md)                    | Ch.7 Sec. 2,6,7 | 
 Feb. 13 or 14 |                                                     |              | [Lab: Quick Reverse Correct](./QuickReverse.md)
 Feb. 14 |                                                           |              | 
-Feb. 18 | [Binary Trees](./lectures/binary-trees.md)                | Ch. 4 Sec. 1-2 | [Lab: Quick Reverse Correct](./QuickReverse.md) due | [submit](https://autograder.luddy.indiana.edu/web/project/1632)
+Feb. 18 | [Interfaces](./lectures/interfaces.md) and [Binary Trees](./lectures/binary-trees.md)                | Ch. 4 Sec. 1-2 | [Lab: Quick Reverse Correct](./QuickReverse.md) due | [submit](https://autograder.luddy.indiana.edu/web/project/1632)
 Feb. 20 | [Binary Search Trees](./lectures/binary-search-trees.md)  | Ch. 4 Sec. 3
 Feb. 20 or 21 |                                                     |              |  [Lab: Merge Sort](./MergeSort.md) 
 Feb. 25 | [Balanced Search Trees (AVL)](./lectures/balanced-search-trees.md) | Ch. 4 Sec. 4 | Lab MergeSort due | [submit](https://autograder.luddy.indiana.edu/web/project/1498)
