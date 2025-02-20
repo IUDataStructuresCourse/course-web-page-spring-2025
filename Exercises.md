@@ -40,3 +40,22 @@ proof
   ?
 end
 ```
+
+## Closed form for the sum of numbers up to n
+
+```
+recursive sum_upto(Nat) -> Nat {
+  sum_upto(0) = 0
+  sum_upto(suc(n)) = suc(n) + sum_upto(n)
+}
+
+lemma sum_upto_helper: all n:Nat. sum_upto(n) + sum_upto(n) = n * (1 + n)
+proof
+  ?
+end
+
+theorem sum_upto_closed_form: all n:Nat. sum_upto(n) = div2(n * (1 + n))
+proof
+  ?
+end
+```

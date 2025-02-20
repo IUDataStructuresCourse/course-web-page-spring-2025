@@ -115,7 +115,7 @@ Similarly we can perform insertions on BSTs. The `insert()` method
 adds the given key to the tree.
 
 ```java
-public void insert_rec(K key) {
+public void insert(K key) {
 	root = insert_helper(key, root);
 }
 
@@ -144,18 +144,20 @@ What is the time complexity? O(h), where h is the height of the tree.
 
 Book 4.3.4.
 
-* Case 1: no left child
+* Case 1: no left child: grandparent adopts the child
 
 ```
+          o              o
           |              |
         z=o              A
            \       ==>
             A
 ```
 
-* Case 2: no right child
+* Case 2: no right child: grandparent adopts the child
 
 ```
+            o            o
             |            |
           z=o            A
            /       ==>
