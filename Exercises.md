@@ -26,7 +26,7 @@ end
 ## Flat Mirrors
 
 Prove that mirroring and then flattening a tree is the same as
-flattening and then reversing the tree.
+flattening the tree and then reversing the resulting list.
 
 ```
 recursive flatten(Tree) -> List<Nat> {
