@@ -27,7 +27,7 @@ Enables visiting all the elements in order.
 Example: Linear Search using the Sequence and Iterator Interfaces
 
     static <T> Iterator<T> find_first_equal(Sequence<T> S, T x) {
-       for (Iterator<T> i = S.begin(); ! i.equals(S.end()); i.advance()) { // i != S.end()
+       for (Iterator<T> i = S.begin(); ! i.equals(S.end()); i.advance()) {
           if (i.get() == x) {
              return i;
           }
@@ -137,7 +137,15 @@ many more!)
 Student in-class exercise: implement a `max` algorithm that returns the maximum
 element of a `Sequence`.
 
-    public static <T> T max(Sequence<T> s, T zero, BiPredicate<T, T> less);
+    public static <T> T max(Sequence<T> s, T zero, BiPredicate<T, T> less) {
+      T biggest = zero;
+      for (Iterator<T> i = S.begin(); ! i.equals(S.end()); i.advance()) {
+         if (less.test(biggest, i.get())) {
+           biggest = i.get();
+         }
+      }
+      return biggest;
+    }
 
 Here's what you need to know about `BiPredicate`:
 

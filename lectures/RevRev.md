@@ -96,7 +96,7 @@ result, that's the same as reversing the two lists and then appending
 the two results.
 
 ```{.deduce^#reverse_append}
-lemma reverse_append: all U :type. all xs :List<U>. all ys :List<U>.
+lemma rev_append: all U :type. all xs :List<U>. all ys :List<U>.
   reverse(xs ++ ys) = reverse(ys) ++ reverse(xs)
 proof
   arbitrary U :type
@@ -122,7 +122,7 @@ proof
 end
 ```
 
-With the `reverse_append` lemma in hand, we can complete the
+With the `rev_append` lemma in hand, we can complete the
 proof of the `reverse_reverse` theorem.
 
 ```{.deduce^#reverse_reverse}
@@ -138,9 +138,9 @@ proof
     equations
       reverse(reverse(node(n,ls')))
           = reverse(reverse(ls') ++ [n])           by definition reverse
-      ... = reverse([n]) ++ reverse(reverse(ls'))  by reverse_append<U>[reverse(ls')][[n]]
+      ... = reverse([n]) ++ reverse(reverse(ls'))  by rev_append<U>[reverse(ls')][[n]]
       ... = reverse([n]) ++ ls'                    by rewrite IH
-      ... = node(n,ls')                            by definition {reverse,reverse,operator++, operator++}
+      ... = node(n,ls')                            by definition {reverse,reverse,operator++}
   }
 end
 ```

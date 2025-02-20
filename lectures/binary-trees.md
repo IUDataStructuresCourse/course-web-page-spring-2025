@@ -7,7 +7,7 @@ Taking stock with respect to Flood-it! and the Set interface
 |                  |  array | linked list | sorted array |
 | ---------------- |:------:|:-----------:|:------------:|
 | membership test  | O(n)   | O(n)        | O(log(n))    |
-| insertion        | O(1)   | O(1)        | O(n)         |
+| insertion        | O(1)*  | O(1)        | O(n)         |
 
 * How do we keep the array sorted when inserting more elements?
 
