@@ -1,4 +1,4 @@
-# Binary Search Trees
+# Binary Search Trees (BST)
 
 Idea: use binary trees to implement the Set interface, such that doing
 a search for an element is like doing binary search.
@@ -14,8 +14,7 @@ interface Set<T> {
 
 The **Binary-Search-Tree Property**:
 For every node x in the tree,
-1. if node y is in the left subtree of x, then `y.data < x.data`
-   (or `y.data <= x.data` for MultiSet, that is, allow duplicates), and
+1. if node y is in the left subtree of x, then `y.data < x.data`, and
 2. if node z is in the right subtree of x, then `x.data < z.data`.
 
 We can also use BSTs to implement the Map interface (aka. "dictionary").
@@ -33,19 +32,15 @@ interface Map<K,V> {
 
 `BinarySearchTree` is like `BinaryTree` (has a `root`) but also
 has a `lessThan` predicate for comparing elements.
-We define `Node` as a class nested inside `BinarySearchTree` for
-convenience:
-
 
 ``` java
-public class BinarySearchTree<K> implements Set<K> {
+class Node<K> {
+    K data;
+    Node<K> left, right;
+    // ...
+}
 
-    static class Node<K> {
-        K data;
-        Node<K> left, right;
-        // ...
-    }
-
+class BinarySearchTree<K> implements Set<K> {
     Node<K> root;
     protected BiPredicate<K, K> lessThan;
 	BinarySearchTree(BiPredicate<K, K> less) { lessThan = less; }
@@ -140,38 +135,9 @@ protected static Node<K> insert_helper(K key, Node<K> curr) {
 }
 ```
 
+(There is an alternative implementation of `insert` that uses `find`.)
+
 What is the time complexity? O(h), where h is the height of the tree.
-
-## In-class Exercise: insert and return the inserted node
-
-Insert into a binary search tree, returning the inserted node, or null
-if the key is already in the tree.
-
-This can be accomplished using the `find` method to do most of the
-work of finding the location for the insert.
-
-Fill in the blanks:
-
-```java
-public Node<K> insert(K key) {
-	Node<K> n = find(key, root, null);
-	if (n == null){
-		
-		
-	} else if (lessThan.test(key, n.data)) {
-		
-		
-	}  else if (lessThan.test(n.data, key)) {
-		
-		
-	} else {
-		
-        
-    }
-}
-```
-
-[Solution](./insert-find-solution.md)
 
 
 ## `remove`  method of `BinarySearchTree`
@@ -206,13 +172,55 @@ Book 4.3.4.
 ```
 
 The main idea is to replace z with the node after z, which is the
-first node y in subtree B. We then recursively delete y from B.
+first node y in subtree B wrt. inorder traveral. We then recursively
+delete y from B.
 
-What is the time complexity? 
-Let h be the height of the tree.
-The time complexity is O(h).
+Here is the `first` method of the `Node` class. The idea is to keep going
+left until you find a leaf node.
 
-Solution for `remove()` (similar to book Figure 4.25):
+```
+Node<K> first() {
+    if (this.left == null)
+        return this;
+    return this.left.first();
+}
+```
+
+
+## Example of `remove`
+
+Remove node 8 from the following tree
+
+```
+             8
+           /   \
+          5     10
+         / \   / \
+        2   6 9   11
+       / \   \      \
+      1   3   7      12
+           \
+            4
+```
+
+8 has two children, so we replace 8 with the first node in the subtree of 10,
+which is node 9.
+
+```
+             9
+           /   \
+          5     10
+         / \     \
+        2   6     11
+       / \   \      \
+      1   3   7      12
+           \
+            4
+```
+
+## Implementation of `remove`
+
+Implementation of `remove` (similar to book Figure 4.25):
 
 ```java
 public void remove(K key) {
@@ -242,3 +250,11 @@ private Node remove_helper(Node<K> curr, K key) {
 	}
 }
 ```
+
+## Time complexity of `remove`
+
+What is the time complexity? 
+Let h be the height of the tree.
+The time complexity is O(h).
+
+
