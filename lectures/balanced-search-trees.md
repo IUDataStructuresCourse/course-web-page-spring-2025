@@ -127,42 +127,6 @@ Red-black trees are an alternative:
 AVL is faster on lookup than red-black trees but slower on
 insertion and removal because AVL is more rigidly balanced.
 
-## Does the AVL invariant ensure that the tree is balanced?
-
-Let N(h) represent the minimum number of nodes in an AVL tree of
-height h. (The least-balanced possible scenario.)
-
-    N(h) = N(h-1) + N(h-2) + 1
-
-We want to show that
-
-    h ≲ log₂ N(h)
-
-To simplify, we have
-    
-    N(h-2) + N(h-2) + 1 < N(h-1) + N(h-2) + 1 = N(h)
-    2·N(h-2) + 1  < N(h)
-    2·N(h-2)      < N(h)
-    2·2·N(h-4)    < N(h)
-    2·2·2·N(h-6)  < N(h)
-    ...
-    2^(h/2)       < N(h)
-
-Take the log of both sides
-
-    log₂ 2^(h/2) < log₂ N(h)
-                                  (log₂ Aᴮ = B log₂ A)
-    h/2 · log₂ 2 < log₂ N(h)
-                                  (log₂ 2 = 1, i.e. 2¹ = 2)
-    h/2 · 1      < log₂ N(h)
-                                  (multiply both side by 2) 
-    h            < 2 · log₂ N(h)
-
-so we have
-
-    h ≲ log₂ N(h)
-
-
 ## How can we maintain the AVL invariant during insert? (remove is similar)
 
 1. Do the normal BST insert.
@@ -444,14 +408,6 @@ Solution:
 
 ## Algorithm for fixing AVL property
 
-add or remove using the BST algorithm: O(log n)
-
-number of iterations of the below "repeat"? O(log n)
-how much time per iteration (fix step): O(1)
-O(log n) * O(1) = O(log n)
-
-total for add/remove and rebalance: O(log n) +  O(log n) = O(log n)
-
 Starting from the lowest changed node, repeat the following up to the root of
 the tree (because there can be several AVL violations).
 * check whether node x is AVL, if not do the following. O(1) (assuming we store the height of node)
@@ -506,7 +462,14 @@ the tree (because there can be several AVL violations).
 
 ## Time Complexity of Insert and Remove for AVL Tree
 
-O(h) = O(log n)
+
+add or remove using the BST algorithm: O(log n)
+
+number of iterations of the below "repeat"? O(log n)
+how much time per iteration (fix step): O(1)
+O(log n) * O(1) = O(log n)
+
+total for add/remove and rebalance: O(log n) +  O(log n) = O(log n)
 
 ## Using AVL Trees for sorting
 
@@ -519,10 +482,46 @@ O(h) = O(log n)
 
 ## ADT's that can be implemented by AVL Trees
 
-* priority queue:
+* Priority Queue:
   insert, delete, min
   
-* ordered set:
+* Ordered Set:
   insert, delete, min, max, next, previous
   
+
+## Does the AVL invariant ensure that the tree is balanced?
+
+Let N(h) represent the minimum number of nodes in an AVL tree of
+height h. (The least-balanced possible scenario.)
+
+    N(h) = N(h-1) + N(h-2) + 1
+
+We want to show that
+
+    h ≲ log₂ N(h)
+
+To simplify, we have
+    
+    N(h-2) + N(h-2) + 1 < N(h-1) + N(h-2) + 1 = N(h)
+    2·N(h-2) + 1  < N(h)
+    2·N(h-2)      < N(h)
+    2·2·N(h-4)    < N(h)
+    2·2·2·N(h-6)  < N(h)
+    ...
+    2^(h/2)       < N(h)
+
+Take the log of both sides
+
+    log₂ 2^(h/2) < log₂ N(h)
+                                  (log₂ Aᴮ = B log₂ A)
+    h/2 · log₂ 2 < log₂ N(h)
+                                  (log₂ 2 = 1, i.e. 2¹ = 2)
+    h/2 · 1      < log₂ N(h)
+                                  (multiply both side by 2) 
+    h            < 2 · log₂ N(h)
+
+so we have
+
+    h ≲ log₂ N(h)
+
 
