@@ -116,7 +116,7 @@ Recall that `log₂(x)` is how many times you need to multiply by 2 to get to `x
 
     log₂ x = a    iff   2ᵃ = x
 
-To simplify, we have
+Ok, let's use the equation for `N(h)` and see if we can relate it to `h`.
 
     N(h) = N(h-1) + N(h-2) + 1
          > N(h-2) + N(h-2) + 1
