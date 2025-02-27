@@ -112,10 +112,6 @@ We want to show that
 
     h ≲ log₂(N(h))
 
-Recall that `log₂(x)` is how many times you need to multiply by 2 to get to `x` (starting at 1).
-
-    log₂ x = a    iff   2ᵃ = x
-
 Ok, let's use the equation for `N(h)` and see if we can relate it to `h`.
 
     N(h) = N(h-1) + N(h-2) + 1
@@ -136,7 +132,7 @@ Take the log of both sides
           log₂(N(h)) > log₂(2^(h/2))
                                   (log₂(Aᴮ) = B log₂(A))
                      = h/2 · log₂(2)
-                                  (log₂(2) = 1, i.e. 2¹ = 2)
+                                  (log₂(2) = 1, because 2¹ = 2)
                      = h/2 · 1
                                   (multiply both side by 2) 
     2 · log₂(N(h)) > h
