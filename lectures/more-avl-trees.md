@@ -122,10 +122,10 @@ Ok, let's use the equation for `N(h)` and see if we can relate it to `h`.
          > N(h-2) + N(h-2) + 1
          = 2·N(h-2) + 1
          > 2·N(h-2)
-         = 2·2·N(h-4)
-         = 2·2·2·N(h-6)
+         > 2·2·N(h-4)
+         > 2·2·2·N(h-6)
            ...
-         = 2^(h/2)
+         > 2^(h/2)
 
 so
 
