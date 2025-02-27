@@ -22,8 +22,8 @@ Rotations preserve the BST property and the in-order ordering.
 
 Starting from the lowest changed node, repeat the following up to the root of
 the tree (because there can be several AVL violations).
-* check whether node x is AVL, if not do the following. O(1) (assuming we store the height of node)
-* if height(x.left) ≤ height(x.right)    O(1)
+* check whether node x is AVL, if not do the following.
+* if height(x.left) ≤ height(x.right)
 
     1. if height(x.right.left) ≤ height(x.right.right)
 
