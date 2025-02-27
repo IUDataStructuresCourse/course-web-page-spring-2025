@@ -30,7 +30,7 @@ the tree (because there can be several AVL violations).
         let k = height(x.right.right)
 
                     x k+2                                y ≤k+2
-                   / \          left_rotate(x)          / \
+                   / \                L(x)              / \
                ≤k A   y k+1     ===============>  ≤k+1 x   C k
                      / \                              / \
                  ≤k B   C k                       ≤k A   B ≤k
@@ -66,7 +66,7 @@ the tree (because there can be several AVL violations).
         let k = height(l.left.left)
 
                   x k+2                                  y k+1
-                 / \         right_rotate(x)            / \
+                 / \               R(x)                 / \
             k+1 y   C k-1    ===============>        k A   x k+1
                / \                                        / \
             k A   B ≤k                                ≤k B   C k-1
