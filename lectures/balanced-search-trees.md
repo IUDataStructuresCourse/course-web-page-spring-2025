@@ -60,7 +60,7 @@ Example tree with heights in brackets:
                    /       \
                 20[2]       65[1]
                /    \        /
-             11[0]  29[1] 50[0]
+             11[1]  29[0] 50[0]
               /
             26[0]
 
@@ -250,6 +250,7 @@ Insert 11:
 starting with an empty AVL tree, insert 
 
     14, 17, 11, 7, 4, 53, 13, 12, 8
+    
         
 Solution:
 

@@ -5,40 +5,7 @@ Recall the definition of the AVL invariant
 **Definition** The AVL Invariant: the height of two child subtrees may
 only differ by 1, for every node in the tree.
 
-## How can we maintain the AVL invariant during insert? (remove is similar)
-
-1. Do the normal BST insert.
-
-2. Fix the AVL property if needed.
-
-    We may need to fix problems along the entire path
-    from the point of insertion on up to the root.
-
-Example insertion and rebalancing:
-
-                 41
-               /    \
-             20      \
-           /    \     65
-          11     29  /
-                /   50
-              26
-
-          insert(23) ==>
-
-                 41
-               /    \
-             20      \
-           /    \     65
-          11     29  /
-                /   50
-              26
-             /
-           23
-
-Node 29 breaks the AVL invariant.
-
-### Tree Rotation
+## Tree Rotation
 
                     y                         x
                    / \    right_rotate(y)    / \
@@ -50,249 +17,8 @@ Rotations preserve the BST property and the in-order ordering.
 
     A x B y C  =  A x B y C
 
-Insert example: let's use rotation to fix up our insert(23) example:
-
-                       29
-                      /    right_rotate(29)
-                    26     ---------------->    26
-                   /                           /  \
-                 23                          23    29
-
-However, in different situations, the way in which we use tree
-rotation is different. So let's look at more situations.
-
-### Insert example: insert(55)
-
-                  41
-                /    \
-              20      65
-             /  \     /
-            11   29  50
-                 /
-               26
-
-So 65 breaks the AVL invariant, and we have a zig-zag:
-
-               65
-              /
-            50
-              \
-               55
-
-A right rotation at 65 gives us a zag-zig, we're not making progress!
-
-              65(y)                        50(x)
-             /        right_rotate(65)       \
-            50(x)     ---------------->      65(y)
-              \                              /
-               55(B)                       55(B)
-
-Instead, let's try a left rotate at 50:
-
-              65                           65
-             /        left_rotate(50)     /
-            50(x)     --------------->  55(y)
-              \                         /
-               55(y)                 50(x)
-
-This looks familiar, now we can rotate right. 
-
-                  65(y)                        55(x)
-                 /      right_rotate(65)       /  \
-               55(x)    --------------->    50(A)  65(y)
-              /
-            50(A)
-
-
-### Another Insert Example
-
-      _6[2]_
-     /      \
-    3[0]     8[1]
-             /  \
-          7[0]   10[0]
-    
-Insert 11:
-
-      _6[3]_
-     /      \
-    3[0]     8[2]
-             /  \
-          7[0]   10[1]
-         			 \
-		         	  11[0]
-
-
-### Student question
-
-starting with an empty AVL tree, insert 
-
-    14, 17, 11, 7, 4, 53, 13, 12, 8
-        
-Solution:
-
-after insert 14, 17, 11, 7:
-
-                       14
-                      /  \
-                    11    17
-                   /
-                  7
-
-insert 4:
-
-                       14
-                      /  \
-                    11    17
-                   /
-                  7
-                 /
-                4
-
-Node 11 doesn't satisfy AVL.
-
-rotate_right(11)
-
-                    14
-                   /  \
-                  7    17
-                 / \
-                4   11
-
-insert 54, 13, 12:
-
-                       14
-                      /  \
-                     7    17
-                    / \     \
-                   4   11    54
-                        \
-                         13
-                        /
-                      12
-
-Node 11 doesn't satisfy AVL.
-
-        rotate_right(13)
-
-                   11
-                    \
-                     12
-                       \
-                       13
-
-        rotate_left(11)
-
-                       14
-                      /  \
-                     7    17
-                    / \    \
-                   4   12   54
-                      /  \
-                     11   13
-
-insert 8:
-
-                           14
-                          /  \
-                         7    17
-                        / \    \
-                       4   12   54
-                          /  \
-                         11   13
-                        /
-                       8
-
-Node 7 doesn't satisfy AVL. There's a zig-zag. 
-
-        rotate_right(12)
-
-                           14
-                          /  \
-                         7    17
-                        / \    \
-                       4   11   54
-                          /  \
-                         8    12
-                               \
-                               13
-
-        left_rotate(7)
-
-                           14
-                          /  \
-                         11   17
-                        /  \    \
-                       7   12   54
-                      / \    \
-                     4   8   13
-
-
-
-## Example: Remove Node and fix AVL
-
-Given the following AVL Tree, delete the node with key 8.
-(This example has two nodes that end up violating the AVL
-property.)
-
-             8
-           /   \
-          5     10
-         / \   / \
-        2   6 9   11
-       / \   \      \
-      1   3   7      12
-           \
-            4
-    
-Solution: 
-* Step 1: replace node 8 with node 9
-
-               9
-             /   \
-            5     10
-           / \     \
-          2   6     11
-         / \   \      \
-        1   3   7      12
-             \
-              4
-
-* Step 2: find lowest node that breaks the AVL property: node 10
-* Step 3: rotate 10 left
-
-               9
-             /   \
-            5      11
-           / \    /  \
-          2   6  10   12
-         / \   \
-        1   3   7
-             \
-              4
-
-* Step 4: find lowest node that breaks the AVL property: node 9
-* Step 5: rotate 9 right
-
-              5
-            /   \
-           /     \
-          2        9
-         / \     /   \
-        1   3   6     11
-             \   \   /  \
-              4   7 10   12
-
 
 ## Algorithm for fixing AVL property
-
-add or remove using the BST algorithm: O(log n)
-
-number of iterations of the below "repeat"? O(log n)
-how much time per iteration (fix step): O(1)
-O(log n) * O(1) = O(log n)
-
-total for add/remove and rebalance: O(log n) +  O(log n) = O(log n)
 
 Starting from the lowest changed node, repeat the following up to the root of
 the tree (because there can be several AVL violations).
@@ -348,15 +74,22 @@ the tree (because there can be several AVL violations).
 
 ## Time Complexity of Insert and Remove for AVL Tree
 
-O(h) = O(log n)
+1. Add or remove using the BST algorithm: O(log n)
+
+2. Number of iterations of the fixing AVL: O(log n)
+   How much time per fix: O(1)
+   O(log n) * O(1) = O(log n)
+
+Taotal for add/remove and rebalance: O(log n) +  O(log n) = O(log n)
+
 
 ## Using AVL Trees for sorting
 
-* insert n items: O(n log(n))
+1. Insert n items: O(n log(n))
 
-* in-order traversal: O(n)
+2. In-order traversal: O(n)
 
-* overall time complexity: O(n log(n))
+Overall time complexity: O(n log(n))
 
 
 ## ADT's that can be implemented by AVL Trees
@@ -367,4 +100,48 @@ O(h) = O(log n)
 * ordered set:
   insert, delete, min, max, next, previous
   
+
+## Does the AVL invariant ensure that the tree is balanced?
+
+Let N(h) represent the minimum number of nodes in an AVL tree of
+height h. (The least-balanced possible scenario.)
+
+    N(h) = N(h-1) + N(h-2) + 1
+
+We want to show that
+
+    h ≲ log₂(N(h))
+
+Recall that `log₂(x)` is how many times you need to multiply by 2 to get to `x` (starting at 1).
+
+    log₂ x = a    iff   2ᵃ = x
+
+To simplify, we have
+
+    N(h) = N(h-1) + N(h-2) + 1
+         > N(h-2) + N(h-2) + 1
+         = 2·N(h-2) + 1
+         > 2·N(h-2)
+         = 2·2·N(h-4)
+         = 2·2·2·N(h-6)
+           ...
+         = 2^(h/2)
+
+so
+
+    N(h) > 2^(h/2)
+    
+Take the log of both sides
+
+          log₂(N(h)) > log₂(2^(h/2))
+                                  (log₂(Aᴮ) = B log₂(A))
+                     = h/2 · log₂(2)
+                                  (log₂(2) = 1, i.e. 2¹ = 2)
+                     = h/2 · 1
+                                  (multiply both side by 2) 
+    2 · log₂(N(h)) > h
+
+so we have
+
+    h ≲ log₂ N(h)
 
