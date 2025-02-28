@@ -1,0 +1,89 @@
+/* ~/~ begin <<deduce-programming.en#DeduceProgramming2.pf>>[init] */
+/* ~/~ begin <<deduce-programming.en#importNat>>[init] */
+import Nat
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#Fruit2>>[init] */
+union Fruit {
+  apple
+  orange
+  banana(bool)
+}
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#banana>>[init] */
+define f3 : Fruit = banana(false)
+define f4 : Fruit = banana(true)
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#switchFruit>>[init] */
+define r4 : bool = 
+    switch f4 {
+      case apple { false }
+      case orange { false }
+      case banana(r) { r }
+    }
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#assertR4>>[init] */
+assert r4
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#List>>[init] */
+union List<T> {
+  empty
+  node(T, List<T>)
+}
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#List123>>[init] */
+define list_123 : List<Nat> = node(1, node(2, node(3, empty)))
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#List456>>[init] */
+define list_456 = [4,5,6]
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#List123456>>[init] */
+define list_of_list = [list_123, list_456]
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#length>>[init] */
+function length<E>(List<E>) -> Nat {
+  length(empty) = 0
+  length(node(n, next)) = 1 + length(next)
+}
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#assertIfTrue>>[init] */
+print if length([1,2,3]) = 3 then 42 else 0
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#search>>[init] */
+function search(List<Nat>, Nat) -> Nat {
+  search(empty, y) = 0
+  search(node(x, xs), y) =
+    if x = y then 0
+    else 1 + search(xs, y)
+}
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#searchExamples>>[init] */
+assert search(list_123, 1) = 0
+assert search(list_123, 2) = 1
+assert search(list_123, 3) = 2
+assert search(list_123, 4) = 3
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#Pair>>[init] */
+union Pair<T,U> {
+  pair(T,U)
+}
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#firstSecond>>[init] */
+function first<T,U>(Pair<T,U>) -> T {
+  first(pair(x,y)) = x
+}
+
+function second<T,U>(Pair<T,U>) -> U {
+  second(pair(x,y)) = y
+}
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#firstPair>>[init] */
+assert first(pair(3,7)) = 3
+assert second(pair(3,7)) = 7
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#swap>>[init] */
+define swap = generic T, U { fun p:Pair<T,U> { pair(second(p), first(p)) } }
+
+assert first(swap(pair(1,2))) = 2
+assert second(swap(pair(1,2))) = 1
+/* ~/~ end */
+/* ~/~ end */

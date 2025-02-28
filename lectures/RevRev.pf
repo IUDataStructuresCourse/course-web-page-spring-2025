@@ -1,0 +1,93 @@
+/* ~/~ begin <<RevRev.en#Revrev.pf>>[init] */
+import List
+import Nat
+
+/* ~/~ begin <<RevRev.en#reverse_reverse_first_attempt>>[init] */
+theorem reverse_reverse_first_attempt: all U :type. all ls :List<U>.
+  reverse(reverse(ls)) = ls
+proof
+  arbitrary U :type
+  induction List<U>
+  case [] {
+    conclude reverse(reverse(@[]<U>)) = [] by definition reverse
+  }
+  case node(n, ls') suppose IH: reverse(reverse(ls')) = ls' {
+    equations
+          reverse(reverse(node(n,ls')))
+        = reverse(reverse(ls') ++ [n])         by definition reverse
+    ... = node(n,ls')                          by sorry
+  }
+end
+/* ~/~ end */
+/* ~/~ begin <<RevRev.en#second_lemma>>[init] */
+lemma second_lemma: all U:type, ls':List<U>, n:U.
+  reverse(ls' ++ [n]) = [n] ++ reverse(ls')
+proof
+  arbitrary U:type
+  induction List<U>
+  case [] {
+    arbitrary n:U
+    conclude reverse(@[]<U> ++ [n]) = [n] ++ reverse(@[]<U>)
+      by evaluate
+  }
+  case node(x, ls') 
+    assume IH: (all n:U. reverse(ls' ++ [n]) = [n] ++ reverse(ls')) {
+    arbitrary n:U
+    equations
+          reverse(node(x, ls') ++ [n]) 
+        = reverse(node(x, ls' ++ [n]))     by definition operator++
+    ... = reverse(ls' ++ [n]) ++ [x]       by definition reverse
+    ... = ([n] ++ reverse(ls')) ++ [x]     by rewrite IH[n]
+    ... = [n] ++ reverse(ls') ++ [x]       by append_assoc<U>
+    ... = [n] ++ #reverse(node(x, ls'))#   by definition reverse
+  }
+end
+/* ~/~ end */
+/* ~/~ begin <<RevRev.en#reverse_append>>[init] */
+lemma rev_append: all U :type. all xs :List<U>. all ys :List<U>.
+  reverse(xs ++ ys) = reverse(ys) ++ reverse(xs)
+proof
+  arbitrary U :type
+  induction List<U>
+  case [] {
+    arbitrary ys :List<U>
+    equations
+          reverse(@[]<U> ++ ys)
+        = reverse(ys)                     by definition operator++
+    ... = # reverse(ys) ++ [] #           by rewrite append_empty<U>[reverse(ys)]
+    ... = # reverse(ys) ++ reverse([]) #  by definition reverse
+  }
+  case node(n, xs') suppose IH {
+    arbitrary ys :List<U>
+    equations
+          reverse(node(n,xs') ++ ys)
+        = reverse(node(n, xs' ++ ys))                by definition operator++
+    ... = reverse(xs' ++ ys) ++ [n]                  by definition reverse
+    ... = (reverse(ys) ++ reverse(xs')) ++ [n]       by rewrite IH[ys]
+    ... = reverse(ys) ++ (reverse(xs') ++ [n])       by append_assoc<U>[reverse(ys)][reverse(xs'), [n]]
+    ... = # reverse(ys) ++ reverse(node(n,xs')) #    by definition reverse
+  }
+end
+/* ~/~ end */
+/* ~/~ begin <<RevRev.en#reverse_reverse>>[init] */
+theorem reverse_reverse: all U :type. all ls :List<U>.
+  reverse(reverse(ls)) = ls
+proof
+  arbitrary U :type
+  induction List<U>
+  case [] {
+    conclude reverse(reverse(@[]<U>)) = []   by definition reverse
+  }
+  case node(n, ls') suppose IH: reverse(reverse(ls')) = ls' {
+    equations
+      reverse(reverse(node(n,ls')))
+          = reverse(reverse(ls') ++ [n])           by definition reverse
+      ... = reverse([n]) ++ reverse(reverse(ls'))  by rev_append<U>[reverse(ls')][[n]]
+      ... = reverse([n]) ++ ls'                    by rewrite IH
+    // 	@[]<U> ++ [n] ++ ls' = node(n, ls')
+    // [n]
+      ... = node(n,ls')                            by evaluate //definition {reverse,reverse,operator++}
+  }
+end
+/* ~/~ end */
+/* ~/~ end */

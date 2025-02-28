@@ -1,0 +1,43 @@
+/* ~/~ begin <<deduce-programming.en#DeduceProgramming1.pf>>[init] */
+/* ~/~ begin <<deduce-programming.en#importNat>>[init] */
+import Nat
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#Fruit>>[init] */
+union Fruit {
+  apple
+  orange
+  banana
+}
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#apple>>[init] */
+define f1 : Fruit = apple
+define f2 : Fruit = banana
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#NatList>>[init] */
+union NatList {
+  Empty
+  Node(Nat, NatList)
+}
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#NatListL>>[init] */
+define L = Node(7, Node(4, Node(5, Empty)))
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#len>>[init] */
+function len(NatList) -> Nat {
+  len(Empty) = 0
+  len(Node(n, next)) = 1 + len(next)
+}
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#lenL3>>[init] */
+assert len(L) = 3
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#printFive>>[init] */
+print 5
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#area>>[init] */
+define area = fun h : Nat, w : Nat { h * w }
+/* ~/~ end */
+/* ~/~ begin <<deduce-programming.en#area12>>[init] */
+assert area(3, 4) = 12
+/* ~/~ end */
+/* ~/~ end */

@@ -1,0 +1,20 @@
+/* ~/~ begin <<deduce-intro-proof.en#DeduceIntroProof.pf>>[init] */
+import Nat
+import DeduceProgramming1
+import Set
+
+/* ~/~ begin <<deduce-intro-proof.en#len_empty>>[init] */
+theorem len_empty: 0 = len(Empty)
+proof
+  definition len
+end
+/* ~/~ end */
+/* ~/~ begin <<deduce-intro-proof.en#len_one>>[init] */
+theorem len_one: all x:Nat. len(Node(x, Empty)) = 1
+proof
+  arbitrary x:Nat
+  suffices 1 + 0 = 1 by definition {len, len}
+  evaluate
+end
+/* ~/~ end */
+/* ~/~ end */

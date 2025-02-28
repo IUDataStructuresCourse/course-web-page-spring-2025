@@ -23,21 +23,21 @@ Rotations preserve the BST property and the in-order ordering.
 Starting from the lowest changed node, repeat the following up to the root of
 the tree (because there can be several AVL violations).
 * check whether node x is AVL, if not do the following.
-* if height(x.left) ≤ height(x.right)
+* if x.left.height < x.right.height
 
-    1. if height(x.right.left) ≤ height(x.right.right)
+    1. if x.right.left.height ≤ x.right.right.height
 
-        let k = height(x.right.right)
+        let k = x.right.right.height
 
-                    x k+2                                y ≤k+2
+                    x k+2                                y k+1
                    / \                L(x)              / \
-               ≤k A   y k+1     ===============>  ≤k+1 x   C k
+              k-1 A   y k+1     ===============>     k x   C k
                      / \                              / \
-                 ≤k B   C k                       ≤k A   B ≤k
+                k-1 B   C k                      k-1 A   B k-1
 
-    2. if height(x.right.left) > height(x.right.right)
+    2. if x.right.left.height > x.right.right.height
 
-        let k = height(x.right.left)
+        let k = x.right.left.height
 
               k+2 x                               y k+1
                  / \                            /   \
