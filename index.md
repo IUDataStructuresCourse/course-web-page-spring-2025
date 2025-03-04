@@ -111,8 +111,8 @@ Feb. 25 | [Balanced Search Trees (AVL)](./lectures/balanced-search-trees.md) | C
 Feb. 27 | [More AVL](./lectures/more-avl-trees.md)
 Feb. 27 or 28 | | | Lab: work on [Project 2: Segment Intersection](./SegmentIntersection.md) | [code](https://autograder.luddy.indiana.edu/web/project/1530), [test](https://autograder.luddy.indiana.edu/web/project/1529)
 Feb. 28 | | | [Extra Credit: List Search](./ListSearch.md) | [submit](https://autograder.luddy.indiana.edu/web/project/1635)
-March 4 | [Recipes for Time Analysis and Testing](./lectures/analysis-and-testing-recipes.md)
-March 6 | [Hash Tables](./lectures/hash-tables.md) | Ch. 5 sec. 1,2,3,5,6 |
+March 4 | Code Review: Merge Sort, [Hash Tables](./lectures/hash-tables.md) | Ch. 5 sec. 1,2,3,5,6 |
+March 6 | More Hash Tables
 March 6 or 7 | | | Lab: finish [Project 2: Segment Intersection](./SegmentIntersection.md) | [code](https://autograder.luddy.indiana.edu/web/project/1530), [test](https://autograder.luddy.indiana.edu/web/project/1529)
 March 11 | Review for Midterm Exam |  | Project Segment Intersection due
 March 13 | **Midterm Exam** (in class)
