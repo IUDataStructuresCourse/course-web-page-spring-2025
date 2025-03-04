@@ -1,6 +1,9 @@
 # Hash Tables
 
-Java's `HashMap` and `HashSet` classes are implemented with hash tables
+Java's `HashMap` and `HashSet` classes are implemented with hash tables.
+
+Compared to Binary Search Trees, Hash Tables do not provide an
+ordering of the elements.
 
 Most programming languages have hash tables built-in or in the
 standard library.
@@ -16,9 +19,6 @@ The Map Abstract Data Type (aka. "dictionary")
 
     Map<K, Boolean> ~~ Set<K>
 	
-Compared to Binary Search Trees, the Map ADT does not provide an
-ordering of the elements.
-
 Motivation: maps are everywhere!
 
 * compilers
