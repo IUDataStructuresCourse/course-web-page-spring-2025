@@ -98,8 +98,20 @@ Into a table of size 4, using mod for the hash function.
 
     0| -> (8, "beth")
     1|
-    2| -> (2, "sue") -> (6, "joe)
+    2| -> (6, "joe") -> (2, "sue")
     3| -> (3, "larry")
+
+
+Retrieve value for key 6
+   6 % 4 = 2 (array index)
+   search for key 6 in (6, "joe") -> (2, "sue")
+   find (6,"joe")
+   => "joe"
+
+Retrieve value for key 1
+  1 % 4 = 1
+  searching for 1 in empty list (null)
+  not in hashtable
 
 Worst case: search in O(n)
 

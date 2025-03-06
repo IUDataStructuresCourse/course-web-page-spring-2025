@@ -141,17 +141,19 @@ May 8 | **Final Exam** (in class) 10:20am-12:20pm
 **Resources**
 
 * Practice Midterm Exams 
-  * 2021 [with solutions](./midterm-2021-solns.pdf)
-     and [without solutions](./midterm-2021.pdf).
+  * 2024 [with solutions](./midterm-2024-solns.pdf)
+     and [without solutions](./midterm-2024.pdf).
   * 2022 [with solutions](./midterm-a-2022.pdf)
      and [without solutions](./midterm-a-2022-questions.pdf).
+  * 2021 [with solutions](./midterm-2021-solns.pdf)
+     and [without solutions](./midterm-2021.pdf).
 
 * Practice Final Exams
   * 2024 [with solutions](./final-2024-solns.pdf)
-  * 2021 [with solutions](./final-2021-solns.pdf)
-     and [without solutions](./final-2021.pdf).
   * 2022 [with solutions](./final-2022-solns.pdf)
      and [without solutions](./final-2022.pdf).
+  * 2021 [with solutions](./final-2021-solns.pdf)
+     and [without solutions](./final-2021.pdf).
 
 * [Autograder](https://autograder.luddy.indiana.edu/web/course/138) for submitting coding assignments.
 
