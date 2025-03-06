@@ -36,7 +36,7 @@ We could implement the Map ADT with AVL Trees, then `get()` is O(log(n)).
 
 If keys are integers, we can use an array.
         
-Store items in array indexed by key (draw picture) use None to
+Store items in array indexed by key (draw picture) use null to
 indicate absense of key.
 
 What's good?
@@ -85,10 +85,23 @@ The word "hash" is from cooking: "a finely chopped mixture".
 
 ## Chaining fixes collisions.
 
-* each slot of the hashtable contains a linked list of the items that
-  collided (had the same hash value)
-* draw picture
-* worst case: search in O(n)
+Each slot of the hashtable contains a linked list of the items that
+collided (had the same hash value).
+
+Suppose we insert these key-value pairs:
+
+    (2, "sue"), (3, "larry"), (6, "joe"), (8, "beth")
+
+Into a table of size 4, using mod for the hash function.
+
+    hash(key) = key % 4
+
+    0| -> (8, "beth")
+    1|
+    2| -> (2, "sue") -> (6, "joe)
+    3| -> (3, "larry")
+
+Worst case: search in O(n)
 
 Towards proving that the average case time is O(1).
 
@@ -110,6 +123,18 @@ Towards proving that the average case time is O(1).
 	but λ <= 2, so total is O(1)
 
 Takeaway: need to grow table size m as n increases so that λ stays small.
+
+## Rehashing
+
+When the load factor gets too high, we need to grow the table.
+
+1. Allocate a new table that is double the size.
+
+2. Insert all of the entries from the old table into the new table,
+   using the new table size (the `m`) in the hash function.
+
+Rehashing is an O(n) operation, but by doubling the same of the table,
+it doesn't need to happen very often.
 
 ## hash functions
     
@@ -150,14 +175,28 @@ keys 4, 1, 3, 2, 0 into a hash table with table size 3 (m=3).
 [solution](./Sep-25-solutions.md#student-exercise-1)
 
 
-## Rehashing
+## HashTable Lab Introduction
 
-When the load factor gets too high, we need to grow the table.
+```
+public class HashTable<K,V> implements Map<K,V> {
 
-1. Allocate a new table that is double the size.
+    class Entry {
+        Entry(K k, V v) { key = k; value = v; }
+        K key; V value;
+    };
 
-2. Insert all of the entries from the old table into the new table,
-   using the new table size (the `m`) in the hash function.
+    protected ArrayList<LinkedList<Entry>> table;
 
-Rehashing is an O(n) operation, but by doubling the same of the table,
-it doesn't need to happen very often.
+    protected int hash(K key) { ... }
+
+    public HashTable(int table_size) { ... }
+
+    public boolean containsKey(K key) { ... }
+
+    public V get(K key) throws Exception { ... }
+
+    public void put(K key, V value) { ... }
+
+    public void remove(K key) { ... }
+}
+```
