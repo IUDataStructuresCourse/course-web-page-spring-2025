@@ -9,10 +9,7 @@ the methods that should be provided by your `HashTable` class.
 ## Student Support Code and Submission
 
 + Student support code is at [link](https://github.com/IUDataStructuresCourse/hash-table-student-support-code).
-+ Submit your code file `HashTable.java` ([Problem 1](#problem-1-hash-table)) to
-  [link](https://autograder.luddy.indiana.edu/web/project/1293).
-+ Submit your test file `StudentTest.java` ([Problem 2](#problem-2-testing)) to
-  [link](https://autograder.luddy.indiana.edu/web/project/1313).
++ Submit your code file `HashTable.java` and test file `StudentTest.java` (links can be found in the schedule table on the course webpage).
 
 
 ## Problem Set
