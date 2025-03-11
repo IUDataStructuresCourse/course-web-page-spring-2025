@@ -5,20 +5,27 @@ Topics
 * Labs and Projects
     * Array Search
     * Flood It: time complexity, Java collection classes
-	* Insertion Sort on Linked Lists with Deduce
-    * Quicksort with Iterators 
+	* Linked Lists with Deduce
+    * Proof Exercises with Deduce
+    * Quick Reverse with Deduce
+    * Mergesort with Iterators 
+    * Segment Intersection: BST and AVL
 * Arrays, array algorithms e.g. search, rotate, Java's ArrayList
 * Half-open ranges
 * Testing
-* Math: log/exponent, sums, induction
-* Logic and Deduce
-* Linked lists, Functions, Proofs
+* Math: log, exponent
+* Logic, Proof, and Deduce
+* Linked lists, Functions, Proofs in Deduce
 * Abstract data types
     * interfaces
     * iterators
-* Time complexity
-* Binary Trees, next and prev
-
+* Time complexity: big-O, asymptotic less-than
+* Sorting
+  - Insertion Sort
+  - Merge Sort
+  - Quick Sort
+* Binary Search Trees
+* Balanced Binary Search Trees via AVL Trees
 
 ## Big-O
 
@@ -219,45 +226,3 @@ Prove that
     sum(xs ++ ys) = sum(xs) + sum(ys)
 
 	
-# Sums, Induction
-
-Prove by induction that
-
-	N
-	Σ i^2  = N(N + 1)(2N+1) / 6
-	i=0
-
-Base case (N=0):
-
-    0^2 = 0 = 0 / 6
-	
-Induction step:
-
-	N+1
-	Σ i^2
-	i=0
-	=  (by def. of Σ)
-	N
-	Σ i^2   + (N+1)^2
-	i=0
-    =  (by induction hypothesis)
-    N(N+1)(2N+1) / 6  + (N+1)^2
-	= 
-    N(N+1)(2N+1) / 6  + N^2 + 2N + 1
-	= 
-    N(N+1)(2N+1) / 6  + (6N^2 + 12N + 6) / 6
-	=
-    (N(N+1)(2N+1) + 6N^2 + 12N + 6) / 6
-	= 
-	((N^2 + N)(2N+1) + 6N^2 + 12N + 6) / 6
-	= 
-	(2N^3 + 2N^2 + N^2 + N + 6N^2 + 12N + 6) / 6
-	= 
-	(2N^3 + 9N^2 + 13N + 6) / 6
-	=
-	((2N^3 + 6N^2 + 4N) + (3N^2 + 9N + 6)) / 6
-    =
-	(N^2 + 3N + 2)(2N + 3) / 6
-    =
-	(N+1)(N+2)(2(N+1) + 1) / 6
-

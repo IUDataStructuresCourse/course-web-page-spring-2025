@@ -254,8 +254,7 @@ Merge the two halves.
 
     private static int[] merge(int[] left, int[] right) {
        int[] A = new int[left.length + right.length];
-       int i = 0;
-       int j = 0;
+       int i = 0, j = 0;
        for (int k = 0; k != A.length; ++k) {
            if (i < left.length
                && (j ≥ right.length || left[i] <= right[j])) {
