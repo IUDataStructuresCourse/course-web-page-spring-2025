@@ -49,11 +49,18 @@ Simplest example
 Example that requires a more interesting choice of k.
 
         show that n + 100 ≲ n²
+                  n + 100 ∈ O(n²)
 
         f(n) = n + 100
-
         g(n) = n²
-
+        goal: exists c k. for all n ≥ k. n + 100 ≤ c * n²
+        
+        choose c = 1
+        goal: exists k. for all n ≥ k. n + 100 ≤ 1 * n²
+        choose k = 11                
+        goal: for all n ≥ 11. n + 100 ≤ n²
+           yeah, that's true, look at the table
+           
         n   | n + 100 | n²
         --- | ------- | ----
         1   |  101    | 1
@@ -78,7 +85,9 @@ Example that requires a more interesting choice of c.
         if we try c=1, no choice of k will work.
 
         choose c = 3, then any reasonable k will work
-		
+            3 n <= 3 n
+            
+            3 n <= c n
 		    3 n / n <= c n / n 
 			3 <= c
 
