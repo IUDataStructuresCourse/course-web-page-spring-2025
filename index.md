@@ -140,6 +140,8 @@ May 8 | **Final Exam** (in class) 10:20am-12:20pm
 
 **Resources**
 
+* [Algorithm Analysis Recipes](./lectures/analysis-recipes.md)
+
 * Practice Midterm Exams 
   * 2024 [with solutions](./midterm-2024-solns.pdf)
      and [without solutions](./midterm-2024.pdf).

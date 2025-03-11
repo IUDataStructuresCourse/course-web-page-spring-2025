@@ -51,6 +51,7 @@ We can traverse a binary tree in several different ways:
 * inorder: left, me, right
 * postorder: left, right, me
 
+```
 preorder(node) {
    output node.data
    preorder(node.left)
@@ -68,6 +69,7 @@ postorder(node) {
    postorder(node.right)
    output node.data
 }
+```
 
 Example:
 
