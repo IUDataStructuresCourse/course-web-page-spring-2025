@@ -1,15 +1,18 @@
 **Indiana University, Spring 2025**
 
-This course studies the fundamental ideas for efficiently analyzing
-large amounts of data, such as DNA sequence databases and geographic
-information. These fundamental ideas come in two kinds: algorithms and
-data structures. Algorithms are instructions for solving problems and
-data structures are strategies for organizing information on
-computers. Efficient algorithms require appropriate data structures,
-and vice versa, so the study of algorithms and data structures is
-tightly linked. In this course we learn about the algorithms and data
-structures that form the building blocks for many of Today's
-large-scale computer systems. We apply these ideas to solve
+This course studies the fundamental ideas for correctly and
+efficiently analyzing large amounts of data, such as DNA sequence
+databases and geographic information. These fundamental ideas come in
+two kinds: algorithms and data structures. Algorithms are instructions
+for solving problems and data structures are strategies for organizing
+information on computers. To implement algorithms and data structures
+correctly relies on software engineering skills such as testing,
+debugging, and reasoning logically about the code, which we practice
+in this course. Efficient algorithms require appropriate data
+structures, and vice versa, so the study of algorithms and data
+structures is tightly linked. In this course we learn about the
+algorithms and data structures that form the building blocks for many
+of Today's large-scale computer systems. We apply these ideas to solve
 challenging problems in bioinformatics and geographic information
 systems. Warning: a possible side-effect of taking this course is
 doing better on job interview questions.
