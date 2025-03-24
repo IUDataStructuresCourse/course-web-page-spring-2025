@@ -1,4 +1,4 @@
-# Lab: Heap (Huffman Coding)
+# Lab: Heap
 
 ## Background and Overview
 
@@ -6,7 +6,7 @@ The lab is to finish a `Heap` class
 
 ## Support Code and Submission
 
-+ Student support code is at [link](https://github.com/IUDataStructuresCourse/HuffmanCoding-student-support-code/).
++ Student support code is at [link](https://github.com/IUDataStructuresCourse/Heap-student-support-code/).
 + Submit your code file `Heap.java` 
 + Submit your test file `StudentTest.java` 
 

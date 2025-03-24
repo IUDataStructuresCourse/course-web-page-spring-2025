@@ -120,7 +120,7 @@ March 13 or 14 | | | Lab: [Hash Table](./LabHashTable.md) | [code](https://autog
 March 17-21 | **Spring Break**
 March 25 | Code Review (Segment Intersection) | | Lab Hash Table due
 March 27 | [Heaps and Priority Queues](./lectures/heaps.md) | Ch. 6 sec. 1-4,9
-March 27 or 28 | | | Lab: [Heap (Huffman Coding)](./Heap.md) | [code](https://autograder.luddy.indiana.edu/web/project/1532), [test](https://autograder.luddy.indiana.edu/web/project/1533)
+March 27 or 28 | | | Lab: [Heap](./Heap.md) | [code](https://autograder.luddy.indiana.edu/web/project/1532), [test](https://autograder.luddy.indiana.edu/web/project/1533)
 April 1 | [Graphs and Breadth-first Search](./lectures/graphs-bfs.md) | Ch. 9, sec. 1,3 | Lab Heap Due
 April 3 | [Depth-first Search](./lectures/dfs.md)                  | Ch. 9 sec. 6
 April 3 or 4 |                                                     |              | Lab: [Connected Components](./ConnectedComponents.md) | [code](https://autograder.luddy.indiana.edu/web/project/1516), [test](https://autograder.luddy.indiana.edu/web/project/1519)
