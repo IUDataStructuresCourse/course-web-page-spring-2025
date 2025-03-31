@@ -70,7 +70,7 @@ Time    | Monday            | Tuesday    | Wednesday      | Thursday    | Friday
 11am    |                   |            |                |             | Dhruv
 12pm    |                   |            |                |             |
 1pm     | Calvin            |            | Calvin, Lillie |             | 
-2pm     | Dhruv             | Ashley**   |                |             |
+2pm     | Dhruv             | Ashley*    |                |             |
 3pm     | Shulin            | Darshal    | Shulin         | Aniruthan   | 
 4pm     | Matei             | Darshal    | Matei          | Aniruthan   |
 5pm     |                   |            |                |             |
