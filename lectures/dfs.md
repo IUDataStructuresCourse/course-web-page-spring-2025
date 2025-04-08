@@ -29,8 +29,10 @@ from both A and E. The usual thing is to not revisit any nodes,
 even after restarting. So vertex D would be visited in the search
 that started from A but not in the search that started from E.
 
-There are two ways to implement DFS. The first is like the algorithm
-for BFS, but replaces the queue with a stack.
+There are two ways to implement DFS. The first is similar to the
+algorithm for BFS, but replaces the queue with a stack.  (It also
+changes the moment at which a node is marked as visited to when
+it is removed from the stack.)
 
     stack.push(start)
     while not stack.empty()
@@ -51,7 +53,7 @@ The second algorithm for DFS is recursive:
           DFS(v, G, parent_map, visited)
 
 DFS and BFS both are good choices for generic search problems, that is,
-when you're searching for a vertex.
+when you're just searching for a vertex.
 
 - BFS may require more storage if the graph has many high degree
   vertices because the queue gets big. 
