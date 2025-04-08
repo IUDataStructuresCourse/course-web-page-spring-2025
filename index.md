@@ -128,8 +128,8 @@ April 3 or 4 |                                                     |            
 April 8 | [Shortest Paths](./lectures/shortest-paths.md)           | Ch. 9 sec. 3 | Lab Connected Components due
 April 10 | [Backtracking](./lectures/backtracking.md)                  | Ch. 10 sec. 5
 April 10 or 11 | | | Project: [Routing Wires](./RoutingWires) | [code](https://autograder.luddy.indiana.edu/web/project/1518)
-April 15 | [Minimum Spanning Tree](./lectures/minimum-spanning-tree.md) | Ch. 9 sec. 5
-April 17 | [Union Find](./lectures/union-find.md) and [Dynamic Programming](./lectures/dynamic-programming.md)     | Ch. 8, Ch. 10, sec. 3
+April 15 | [Union Find](./lectures/union-find.md) and [Minimum Spanning Tree](./lectures/minimum-spanning-tree.md) | Ch. 8, Ch. 9 sec. 5
+April 17 | [Dynamic Programming](./lectures/dynamic-programming.md)     | Ch. 10, sec. 3
 April 17 or 18 | | | Project: [Routing Wires](./RoutingWires), cont'd
 April 22 | [DNA Alignment](./lectures/DNA-alignment.md) | | Routing Wires due 
 April 24 | [More Dynamic Programming](./lectures/more-dynamic-programming.md)
