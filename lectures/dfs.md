@@ -34,23 +34,21 @@ for BFS, but replaces the queue with a stack.
 
     stack.push(start)
     while not stack.empty()
-	  u = stack.pop()
-	  if not visited[u]
-		visited[u] = true
-		for v in G.adjacent(u)
-		  if not visited[v]
-			parent_map[v] = u
-			stack.push(v)
+      u = stack.pop()
+      visited[u] = true
+      for v in G.adjacent(u)
+        if not visited[v]
+          parent_map[v] = u
+          stack.push(v)
 
 The second algorithm for DFS is recursive:
 
     DFS(u, G, parent_map, visited) =
-	  if not visited[u]
-		visited[u] = true
-		for v in G.adjacent(u)
-		  if not visited[v]
-			parent_map[v] = u
-			DFS(v, G, parent_map, visited)
+      visited[u] = true
+      for v in G.adjacent(u)
+        if not visited[v]
+          parent_map[v] = u
+          DFS(v, G, parent_map, visited)
 
 DFS and BFS both are good choices for generic search problems, that is,
 when you're searching for a vertex.
