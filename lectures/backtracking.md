@@ -15,9 +15,9 @@ of the following form.
         return partialSolution
       else
         for every way to extend partialSolution to partialSolution2:
-          partialSolution3 = solve(partialSolution2)
-          if partialSolution3 != null
-            return partialSolution3
+          totalSolution = solve(partialSolution2)
+          if totalSolution != null
+            return totalSolution
         return null
 
 Example: Sudoku (world's hardest by the mathematician Arto Inkala)
