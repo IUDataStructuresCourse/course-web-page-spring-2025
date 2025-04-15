@@ -52,7 +52,7 @@ The following theorem tells us that to find a safe edge, it suffices
 to find a light edge.
 
 **Theorem 23.1**
-Let A be a subset of some MST of G=(V,E). Let (S,V-S) be a cut of G
+Let A be a subset of some MST of G=(V,E). Let S be a cut of G
 that respects A. Let (u,v) be a light edge wrt. the cut. Then
 (u,v) is a safe edge.
 
