@@ -26,7 +26,7 @@ contain the best solution to each subproblem. The algorithm fills in
 the entries of the table in row-major order with the best result for
 every possible prefix of the alignment. More specifically, the entry
 at row i and column j contains the score of the best match between the
-first i characters of x and the first j characters of y.
+first i characters of S and the first j characters of T.
 
 **[Example]**
 
@@ -71,8 +71,8 @@ read the code carefully because you will need to store instances of
 Result in your cache. A `Result` is a structure that holds a solution to
 a subproblem. A solution consists of a score and a mutation that
 indicates the last choice that was made.  The possible choices are M
-(for match), I (for insertion in x), and D (for deletion in x, or
-equivalently, for insertion in y). Because we ultimately wish to trace
+(for match), I (for insertion in S), and D (for deletion in S, or
+equivalently, for insertion in T). Because we ultimately wish to trace
 back through the path of choices, we represent the mutation with a
 `Direction`. We use `DIAGONAL` for M, `LEFT` for I, and `UP` for D. The
 `mark` field in a `Result` is used to indicate whether or not the entry
@@ -88,20 +88,20 @@ development. Pay attention to the time bounds.
 + `private void fillCache()`: Solves the alignment problem using the _bottom-up_
     dynamic programming algorithm described in lecture. The array `cache[i][j]`
     will hold the result of solving the alignment problem for the first `i` characters
-    in string `x` and the first `j` characters in string `y`.
-    Your algorithm must run in $O(n m)$ time, where n is the length of `x`
-    and m is the length of `y`.
+    in string `S` and the first `j` characters in string `T`.
+    Your algorithm must run in $O(n m)$ time, where n is the length of `S`
+    and m is the length of `T`.
 + `public Result getResult(int i, int j)`: Returns the result of solving the alignment
-    problem for the first `i` characters in `x` and the first `j` characters in `y`.
+    problem for the first `i` characters in `S` and the first `j` characters in `T`.
     The method should find the result in O(1) time by looking into the cache.
 + `private void traceback()`: Marks the path by tracing back through parent pointers, 
      starting with the lower right corner of the cache. Call `markPath()`
      on each `Result` along the path. The GUI will highlight all such marked cells
      when you check 'Show path'. As you're tracing back along the path, build
-     the aligned strings in `alignedX` and `alignedY` (using `Constants.GAP_CHAR`
+     the aligned strings in `alignedS` and `alignedT` (using `Constants.GAP_CHAR`
      to denote a gap in the strand).
-     Your algorithm must run in $O(n + m)$ time, where n is the length of `x`
-     and m is the length of `y`.
+     Your algorithm must run in $O(n + m)$ time, where n is the length of `S`
+     and m is the length of `T`.
 
 The `Driver` class will launch a GUI to help you visualize the
 algorithm. Be sure to read the comments to see how you can modify the
