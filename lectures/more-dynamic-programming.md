@@ -12,10 +12,10 @@ Here's the resulting table, which contains the solution for how to
 best align the two strings and every pair of prefixes of them.
 
 
-          Y =            G     G     A
+          T =            G     G     A
           j =      0  |  1  |  2  |  3
               --------------------------
-        X i = 0 |  0  |I:-1 |I:-2 |I:-3
+        S i = 0 |  0  |I:-1 |I:-2 |I:-3
           G   1 |D:-1 |M:2  |M:1  |I:0
           A   2 |D:-2 |D:1  |M:0  |M:3
           A   3 |D:-3 |D:0  |I:-1 |D:2
@@ -28,11 +28,11 @@ To obtain the best alignment, start at the bottom-right corner
 (row 3, column 3) and consult the choice that was made.
 
 The choice was D (delete), so that corresponds to aligning
-the last letter in X with a gap:
+the last letter in S with a gap:
 
          Partial Solution      Remaining Strings
-    X    A                     GA
-    Y    _                     GGA
+    S    A                     GA
+    T    _                     GGA
 
 To get the rest of the solution, we move up one cell because the
 choice was D (delete).
@@ -42,8 +42,8 @@ corresponds to aligning the last letter of each of the remaining
 strings (A and A).
 
          Partial Solution      Remaining Strings
-    X    AA                    G
-    Y    A_                    GG
+    S    AA                    G
+    T    A_                    GG
 
 To get the rest of then solution, we move diagonally up and left
 because the choice was M (match/mismatch).
@@ -51,24 +51,24 @@ because the choice was M (match/mismatch).
 The choice in row 1, column 2 was M (match/mismatch).
 
          Partial Solution      Remaining Strings
-    X    GAA
-    Y    GA_                   G
+    S    GAA
+    T    GA_                   G
 
 Again we move diagonally up and left.
 
 The choice in row 0, column 1 is I (insert), so we align
-the letter G from Y with a gap.
+the letter G from T with a gap.
 
          Partial Solution      Remaining Strings
-    X    _GAA                  
-    Y    GGA_                  
+    S    _GAA                  
+    T    GGA_                  
 
 Because we did an insert, we move to the left one cell.
 
-So the best alignment of the strings X and Y is:
+So the best alignment of the strings S and T is:
 
-    X    _GAA
-    Y    GGA_
+    S    _GAA
+    T    GGA_
 	     -1 2 2 -1 = 2
 
 Summary:

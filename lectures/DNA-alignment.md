@@ -146,6 +146,111 @@ score for the rest, then add in the score for the current choice.
 
 Return the max of all the choices.
 
+
+```
+Result align(String S, String T) {
+  if (S.length() == 0 && T.length() == 0) {
+    return Result(0);
+  } else if (S.length() == 0) {
+    rest = align(S, T.substring(0, T.length()-1));
+    return Result(rest.score - 1, Direction.LEFT)
+  } else if (T.length() == 0) {
+    rest = align(S.substring(0, S.length()-1), T);
+    return Result(rest.score - 1, Direction.UP)
+  } else {
+    char s = S.charAt(S.length() - 1);
+    char t = T.charAt(T.length() - 1);
+    // option 1: line up
+    rest1 = align(S.substring(0, S.length()-1),
+                  T.substring(0, T.length()-1));
+    option1 = rest1.score + match(s, t);
+    best_score = option1;
+    best_direction = DIAGONAL;
+    // option 2: gap on top (S)
+    rest2 = align(S, T.substring(0, T.length()-1));
+    option2 = rest2.score - 1;
+    if (option2 > best_score) {
+      best_score = option2;
+      best_direction = LEFT;
+    }
+    // option 3: gap on bottom (T)
+    rest3 = align(S.substring(0, S.length()-1), T);
+    option3 = rest3.score - 1;
+    if (option3 > best_score) {
+      best_score = option3;
+      best_direction = UP;
+    }
+    return Result(best_score, best_direction);
+  }
+}
+```
+
+Memoize
+```
+void put_2D(HashMap<String, HashMap<String, Result> > R,
+       String S, String T) {
+    if (R.contains(S)) {
+      R.get(S).put(T, result);
+    } else {
+      R.put(S, new HashMap<String,Result>());
+      R.get(S).put(T, result);
+    }
+}
+
+
+Result align(String S, String T,
+             HashMap<String, HashMap<String, Result> > R)
+{
+  if (R.contains(S) and R.get(S).contains(T)) {
+    return R.get(S).get(T);
+  }
+  
+  if (S.length() == 0 && T.length() == 0) {
+    result = Result(0);
+    put_2D(R, S, T);
+    return result;
+  } else if (S.length() == 0) {
+    rest = align(S, T.substring(0, T.length()-1), R)
+    result = Result(rest.score - 1, Direction.LEFT);
+    put_2D(R, S, T);
+    return result;
+  } else if (T.length() == 0) {
+    rest = align(S.substring(0, S.length()-1), T, R);
+    result = Result(rest.score - 1, Direction.UP)
+    put_2D(R, S, T);
+    return result;
+  } else {
+    char s = S.charAt(S.length() - 1);
+    char t = T.charAt(T.length() - 1);
+    // option 1: line up
+    rest1 = align(S.substring(0, S.length()-1),
+                  T.substring(0, T.length()-1), R);
+    option1 = rest1.score + match(s, t);
+    best_score = option1;
+    best_direction = DIAGONAL;
+    // option 2: gap on top (S)
+    rest2 = align(S, T.substring(0, T.length()-1), R);
+    option2 = rest2.score - 1;
+    if (option2 > best_score) {
+      best_score = option2;
+      best_direction = LEFT;
+    }
+    // option 3: gap on bottom (T)
+    rest3 = align(S.substring(0, S.length()-1), T, R);
+    option3 = rest3.score - 1;
+    if (option3 > best_score) {
+      best_score = option3;
+      best_direction = UP;
+    }
+    result = Result(best_score, best_direction);
+    put_2D(R, S, T);
+    return result;
+  }
+}
+```
+
+
+
 ## Subproblem identification
 
 Instead of using the entire rest of S and T as the inputs to the
