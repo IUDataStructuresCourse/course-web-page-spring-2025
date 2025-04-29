@@ -115,9 +115,9 @@ DNA strands affects the solution.
   Please make sure to go through existing code, especially `Result.java` and the example tests
   in `StudentTest.java`, before you start.
 + Submit your code file `Judge.java` and `SequenceAligner.java` to
-  [link](https://autograder.luddy.indiana.edu/web/project/1306).
+  the `DNA_Alignment` project on the autograder.
 + Submit your test file `StudentTest.java` to
-  [link](https://autograder.luddy.indiana.edu/web/project/1318).
+  the `DNA_Alignment_Test` project on the autograder.
 
 -----------------
 

@@ -280,11 +280,11 @@ memoization.
             return r;
         }
         String item = items.get(numItemsRemaining - 1);
-        // Don't purchase the numItemsRemaining
+        // Don't purchase the item
         Result rest1 = knapsack_aux2_memo(availableWeight,
                     numItemsRemaining - 1, items, weight, calories, R);
         Result best_result = rest1;
-        // Purchase the numItemsRemaining
+        // Purchase the item
         if (weight.get(item) <= availableWeight) {
             Result rest2 = knapsack_aux2_memo(availableWeight - weight.get(item),
                     numItemsRemaining - 1, items, weight, calories, R);
@@ -328,10 +328,10 @@ We'll put the code for the recursive case in the following function.
                              HashMap<String, Integer> weight,
                              HashMap<String, Integer> calories, Result[][] R) {
         String item = items.get(numItemsRemaining - 1);
-        // Don't purchase the numItemsRemaining
+        // Don't purchase the item
         Result rest1 = R[availableWeight][numItemsRemaining - 1];
         Result best_result = rest1;
-        // Purchase the numItemsRemaining
+        // Purchase the item
         if (weight.get(item) <= availableWeight) {
             Result rest2 = R[availableWeight - weight.get(item)][numItemsRemaining - 1];
             int new_calories = rest2.calories + calories.get(item);
