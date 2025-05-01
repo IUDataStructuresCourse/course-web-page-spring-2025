@@ -135,7 +135,7 @@ April 22 | [DNA Alignment](./lectures/DNA-alignment.md) | | Routing Wires due
 April 24 | [More Dynamic Programming](./lectures/more-dynamic-programming.md)
 April 24 or 25 | | | Lab: [DNA Sequence Alignment](./DnaAlignment.md) | [code](https://autograder.luddy.indiana.edu/web/project/1513), [test](https://autograder.luddy.indiana.edu/web/project/1525)
 April 29 | Code Review (Routing Wires) | | Lab DNA Sequence Alignment due
-May 1 | Review for Final Exam
+May 1 | [Review for Final Exam](./lectures/final-review.md)
 May 1 or 2 | | | Optional lab for exam review
 May 8 | **Final Exam** (in class) 10:20am-12:20pm
 

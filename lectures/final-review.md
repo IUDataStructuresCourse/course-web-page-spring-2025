@@ -4,15 +4,10 @@
 
 * Hash tables
 * Heaps, Priority Queues
-* Binomial Queues
-* Sorting
-    * quicksort, partition
-    * counting sort
-    * radix sort
-	* bucket sort
 * Graphs
     * Adjacency List, Adjacency Matrix
-    * BFS, DFS
+    * BFS
+    * DFS
     * Shortest Paths: Dijkstra's
     * Connected Components
     * Minimum Spanning Trees: Kruskal's
@@ -21,11 +16,7 @@
 * Dynamic Programming
     * Rod cutting
     * DNA Sequence Alignment
-	* 0-1 Knapsack
-* Greedy Algorithms
-    * Activity Selection
-    * Huffman Codes
-	* Fractional Knapsack
+    * 0-1 Knapsack
 
 ## Hash tables
 
