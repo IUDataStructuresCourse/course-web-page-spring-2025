@@ -67,7 +67,7 @@ Let T be a MST of G that includes A.
     
     Because T is spanning, u and v are in T, so there
     is already a path from u to v in T. Thus, (u,v) completes a cycle.
-	Recall the premise that (u,v) crosses the cut (S,V-S).
+        Recall the premise that (u,v) crosses the cut (S,V-S).
     A cycle with a crossing edge must have another crossing
     edge as shown in the following diagram.
     Let that other crossing edge be (x,y) . 
@@ -109,34 +109,34 @@ Demo of Kruskal's algorithm
 
 ![**Example graph for MST problem.**](./graph2.png)
 
-	sorted list of edges:
-	A-1-B, B-2-E, C-2-F, A-3-E, D-4-E, A-4-D, D-4-B, C-4-E, E-7-F
+        sorted list of edges:
+        A-1-B, B-2-E, C-2-F, A-3-E, D-4-E, A-4-D, D-4-B, C-4-E, E-7-F
 
 * Process A-1-B, union {A} and {B}:
 
-			A--B  C
+                        A--B  C
 
-			D  E  F
+                        D  E  F
 
 * Process B-2-E, union {A,B} and {E}
 
-			A--B  C
-			   |
-			D  E  F
+                        A--B  C
+                           |
+                        D  E  F
 
 * Process C-2-F, union {C} and {F}
 
-			A--B  C
-			   |  |
-			D  E  F
+                        A--B  C
+                           |  |
+                        D  E  F
 
 * Process A-3-E, do nothing
 
 * Process D-4-E, union {A,B,E} and {D}
 
-			A--B  C
-			   |  |
-			D--E  F
+                        A--B  C
+                           |  |
+                        D--E  F
 
 * Process A-4-D, do nothing
 
@@ -144,10 +144,10 @@ Demo of Kruskal's algorithm
 
 * Process C-4-E, union {A,B,D,E} and {C,F} 
 
-			A--B  C
-			   | /|
-			   |/ |
-			D--E  F
+                        A--B  C
+                           | /|
+                           |/ |
+                        D--E  F
 
 
 ### Implementation Ideas
@@ -158,12 +158,12 @@ Demo of Kruskal's algorithm
 * use union-find (aka DisjointSets) to keep track of the trees.
   Recall how DisjointSets works:
   
-	 - We represent each partition as a tree whose 
-	   root is the representative.
-	 - The tree is stored just in terms of "parent" pointers.
-	 - sets.make_set(x) sets the parent pointer of x to x.
-	 - sets.find_set(x) walks up the parent pointers to the root.
-	 - sets.union(x,y) sets the parent point of x to y (or vice versa).
+         - We represent each partition as a tree whose 
+           root is the representative.
+         - The tree is stored just in terms of "parent" pointers.
+         - sets.make_set(x) sets the parent pointer of x to x.
+         - sets.find_set(x) walks up the parent pointers to the root.
+         - sets.union(x,y) sets the parent point of x to y (or vice versa).
 
 ### Implementation of Kruskal's algorithm in Java
 
@@ -177,14 +177,13 @@ Demo of Kruskal's algorithm
         ArrayList<Edge<V>> edges = new ArrayList<Edge<V>>();
         for (Edge<V> e : G.edges())
             edges.add(e);
-        // bucket sort O(n), mergesort O(n log n)			
-        sort(edges, new CompareWeight<V>(weight));
-        for (Edge<V> e : edges) {
+        sort(edges, new CompareWeight<V>(weight));  // O(m log m)
+        for (Edge<V> e : edges) {                   // O(m α(n))
             if (sets.find(e.source()) != sets.find(e.target())) {
                 T.add(e);
                 sets.union(e.source(), e.target());
             }
-		}
+        }
     }
 
 ### Time complexity
@@ -206,12 +205,12 @@ apply Kruskal's to the following graph (didn't get to this)
 
 Solution: sorted edges: 
 
-		   A-1-E, G-1-H, B-1-D, D-1-H
-		   F-2-G, A-2-B, 
-		   A-3-C,
-		   E-4-F, C-4-H, D-4-G
-		   C-5-D, 
-		   B-8-F
+                   A-1-E, G-1-H, B-1-D, D-1-H
+                   F-2-G, A-2-B, 
+                   A-3-C,
+                   E-4-F, C-4-H, D-4-G
+                   C-5-D, 
+                   B-8-F
 
 An MST of weight 11: (there are other MST's)
 
